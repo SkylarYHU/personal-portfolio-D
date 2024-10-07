@@ -18,13 +18,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 # This should be set in your environment variables, not generated here
-
-SECRET_KEY = "django-insecure-xd&vd)azg_3+xy_0)b14ncj7hz4fr851sq03z1e982x=549h$-"
+SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = getenv("IS_DEVELOPMENT", True)
+DEBUG = getenv("IS_DEVELOPMENT", "True").lower() == "true"
 
-ALLOWED_HOSTS = ['skylarhu.atwebpages.com', '13.60.173.208', '127.0.0.1']
+# Allowed hosts should be set via environment variables, fallback to local and specific domain.
+ALLOWED_HOSTS = getenv(
+    'ALLOWED_HOSTS', 'skylarhu.atwebpages.com,13.60.173.208,127.0.0.1'
+).split(',')
 
 # Application definition
 INSTALLED_APPS = [
@@ -99,30 +101,18 @@ USE_L10N = True
 USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
-
-# 获取 BASE_DIR
-BASE_DIR = Path(__file__).resolve().parent.parent
-
-# 判断 DEBUG 环境
-DEBUG = getenv("IS_DEVELOPMENT", "True").lower() == "true"
-
 if DEBUG:
-    # 本地开发环境的静态文件和媒体文件设置
+    # Local development settings for static and media files
     STATIC_URL = '/static/'
     STATICFILES_DIRS = [
         os.path.join(BASE_DIR, 'static'),
     ]
-    # collectstatic 收集的路径，仅在本地用
     STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
     MEDIA_URL = '/media/'
     MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 else:
-    # 生产环境的静态文件和媒体文件设置
+    # Production settings for static and media files
     STATIC_URL = '/static/'
-    # 生产环境 collectstatic 收集的路径
     STATIC_ROOT = '/home/ec2-user/personal-portfolio/staticfiles'
     MEDIA_URL = '/media/'
     MEDIA_ROOT = '/home/ec2-user/personal-portfolio/media'
-
-# 允许的主机
-ALLOWED_HOSTS = ['skylarhu.atwebpages.com', '13.60.173.208', '127.0.0.1']
