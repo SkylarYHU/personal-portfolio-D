@@ -1,0 +1,13 @@
+<!-- templates/project_detail.html -->
+<div class="project">
+  <h2>{{ project.title }}</h2>
+  <img src="{{ project.image.url }}" alt="{{ project.title }}">
+  <p>{{ project.description }}</p>
+  <p><strong>Technologies Used:</strong></p>
+  <ul>
+      {% for tag in project.tags.all %}
+          <li>{{ tag.name }}</li>
+      {% endfor %}
+  </ul>
+  <a href="{{ project.link }}" target="_blank">View Project</a>
+</div>
