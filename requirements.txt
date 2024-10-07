@@ -1,6 +1,6 @@
 asgiref==3.8.1
 dj-database-url==2.2.0
-Django==5.1.1
+Django==4.2.16
 django-admin-sortable2==2.2.3
 pillow==10.4.0
 psycopg2==2.9.9
