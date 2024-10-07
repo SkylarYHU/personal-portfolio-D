@@ -99,18 +99,30 @@ USE_L10N = True
 USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
+
+# 获取 BASE_DIR
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+# 判断 DEBUG 环境
+DEBUG = getenv("IS_DEVELOPMENT", "True").lower() == "true"
+
 if DEBUG:
-    # Local Development Static Files
+    # 本地开发环境的静态文件和媒体文件设置
     STATIC_URL = '/static/'
     STATICFILES_DIRS = [
         os.path.join(BASE_DIR, 'static'),
     ]
+    # collectstatic 收集的路径，仅在本地用
     STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
     MEDIA_URL = '/media/'
     MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 else:
-    # Production Static Files
+    # 生产环境的静态文件和媒体文件设置
     STATIC_URL = '/static/'
-    STATIC_ROOT = '/home/ec2-user/personal-portfolio/static/'
+    # 生产环境 collectstatic 收集的路径
+    STATIC_ROOT = '/home/ec2-user/personal-portfolio/staticfiles/'
     MEDIA_URL = '/media/'
     MEDIA_ROOT = '/home/ec2-user/personal-portfolio/media/'
+
+# 允许的主机
+ALLOWED_HOSTS = ['skylarhu.atwebpages.com', '13.60.173.208', '127.0.0.1']
