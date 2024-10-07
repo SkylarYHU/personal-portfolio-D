@@ -18,12 +18,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 # This should be set in your environment variables, not generated here
+
 SECRET_KEY = "django-insecure-xd&vd)azg_3+xy_0)b14ncj7hz4fr851sq03z1e982x=549h$-"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = getenv("IS_DEVELOPMENT", True)
 
-ALLOWED_HOSTS = ['13.60.173.208']
+ALLOWED_HOSTS = ['13.60.173.208', '127.0.0.1']
 
 # Application definition
 INSTALLED_APPS = [
