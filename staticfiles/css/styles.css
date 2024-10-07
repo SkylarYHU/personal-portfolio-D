@@ -202,8 +202,11 @@ p,.nav-links li{
 }
 
 .portfolio-text h3, .role-item h3 {
-  margin-top: 10px;
   font-size: 1.5rem;
+}
+
+.role-item h3{
+  margin-top: 10px;
 }
 
 .portfolio-item p {
