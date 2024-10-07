@@ -99,13 +99,18 @@ USE_L10N = True
 USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
-STATIC_URL = "/static/"
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
-]
-STATIC_ROOT = BASE_DIR / "staticfiles"
-# Default primary key field type
-DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
-
-MEDIA_URL = '/media/'  # 上传文件的访问 URL
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')  # 上传文件的存储路径
+if DEBUG:
+    # Local Development Static Files
+    STATIC_URL = '/static/'
+    STATICFILES_DIRS = [
+        os.path.join(BASE_DIR, 'static'),
+    ]
+    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+    MEDIA_URL = '/media/'
+    MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+else:
+    # Production Static Files
+    STATIC_URL = '/static/'
+    STATIC_ROOT = '/home/ec2-user/personal-portfolio/static/'
+    MEDIA_URL = '/media/'
+    MEDIA_ROOT = '/home/ec2-user/personal-portfolio/media/'
