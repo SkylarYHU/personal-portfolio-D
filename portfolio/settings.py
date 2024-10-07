@@ -120,9 +120,9 @@ else:
     # 生产环境的静态文件和媒体文件设置
     STATIC_URL = '/static/'
     # 生产环境 collectstatic 收集的路径
-    STATIC_ROOT = '/home/ec2-user/personal-portfolio/staticfiles/'
+    STATIC_ROOT = '/home/ec2-user/personal-portfolio/staticfiles'
     MEDIA_URL = '/media/'
-    MEDIA_ROOT = '/home/ec2-user/personal-portfolio/media/'
+    MEDIA_ROOT = '/home/ec2-user/personal-portfolio/media'
 
 # 允许的主机
 ALLOWED_HOSTS = ['skylarhu.atwebpages.com', '13.60.173.208', '127.0.0.1']
