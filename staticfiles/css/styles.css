@@ -157,8 +157,12 @@ p,.nav-links li{
   margin-bottom: 2.5rem;
 }
 
-.portfolio-link{
+.portfolio-link, .portfolio-text h3{
   text-decoration: none;
+}
+
+.portfolio-item {
+  pointer-events: auto; /* 确保点击事件没有被禁用 */
 }
 
 .portfolio-grid {
@@ -197,7 +201,7 @@ p,.nav-links li{
   padding: 25px;
 }
 
-.portfolio-item h3, .role-item h3 {
+.portfolio-text h3, .role-item h3 {
   margin-top: 10px;
   font-size: 1.5rem;
 }
