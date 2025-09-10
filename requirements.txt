@@ -3,8 +3,7 @@ dj-database-url==2.2.0
 Django==4.2.16
 django-admin-sortable2==2.2.3
 pillow==10.4.0
-psycopg2==2.9.9
-psycopg2-binary==2.9.9
+psycopg2-binary==2.9.10
 setuptools==75.1.0
 sqlparse==0.5.1
 typing_extensions==4.12.2
