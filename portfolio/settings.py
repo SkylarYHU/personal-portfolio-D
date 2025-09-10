@@ -15,7 +15,7 @@ SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
 DEBUG = getenv("IS_DEVELOPMENT", "True").lower() == "true"
 
 # Allowed hosts should be set via environment variables, fallback to local and specific domain.
-default_hosts = 'skylarhu.atwebpages.com,13.60.173.208,127.0.0.1,.herokuapp.com'
+default_hosts = 'skylarhu.atwebpages.com,13.60.173.208,127.0.0.1,.herokuapp.com,skylarhu.work,www.skylarhu.work'
 
 # Get the Heroku app name from environment variable
 heroku_app_name = os.getenv('HEROKU_APP_NAME', '')
