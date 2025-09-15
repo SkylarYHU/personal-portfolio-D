@@ -26,9 +26,13 @@ urlpatterns = [
 
 # 添加媒体文件的 URL 配置
 # 在生产环境中，如果使用本地存储作为fallback，也需要URL路由
-if settings.DEBUG or not hasattr(settings, 'DEFAULT_FILE_STORAGE') or 'S3' not in getattr(settings, 'DEFAULT_FILE_STORAGE', ''):
+# Always serve media files in development, and provide URL routing in production
+if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL,
                           document_root=settings.MEDIA_ROOT)
+else:
+    # In production with S3, Django still needs to handle media URL routing
+    urlpatterns += static(settings.MEDIA_URL, document_root='')
 
 # 静态文件的 URL 配置（仅用于开发环境）
 if settings.DEBUG:
