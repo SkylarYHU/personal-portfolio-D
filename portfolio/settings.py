@@ -5,18 +5,23 @@ from os import getenv
 import socket
 from dotenv import load_dotenv
 
-# Load environment variables from .env file
-load_dotenv()
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+# Check if we're in production (Heroku sets this)
+IS_PRODUCTION = os.getenv('DYNO') is not None
+
+# Only load .env file in local development
+if not IS_PRODUCTION:
+    load_dotenv()
 
 # SECURITY WARNING: keep the secret key used in production secret!
 # This should be set in your environment variables, not generated here
 SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'django-insecure-local-dev-key-change-in-production-123456789')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = getenv("IS_DEVELOPMENT", "True").lower() == "true"
+# In production, IS_DEVELOPMENT should be explicitly set to False
+DEBUG = os.getenv("IS_DEVELOPMENT", "True").lower() == "true" and not IS_PRODUCTION
 
 # Allowed hosts should be set via environment variables, fallback to local and specific domain.
 default_hosts = 'skylarhu.atwebpages.com,13.60.173.208,127.0.0.1,.herokuapp.com,skylarhu.work,www.skylarhu.work'
