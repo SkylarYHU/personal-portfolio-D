@@ -13,7 +13,6 @@ __pycache__/
 *.env
 
 # 静态文件和媒体文件
-/static/
 /media/
 /staticfiles/
 
