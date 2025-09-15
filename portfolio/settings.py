@@ -142,7 +142,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
 
-# Media files - default settings (will be overridden in production)
+# Media files
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
@@ -152,25 +152,39 @@ AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
 AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME')
 AWS_S3_REGION_NAME = os.getenv('AWS_S3_REGION_NAME', 'us-east-1')
 AWS_S3_CUSTOM_DOMAIN = os.getenv('AWS_S3_CUSTOM_DOMAIN')
-AWS_DEFAULT_ACL = None  # 存储桶不支持ACL，使用存储桶策略
+AWS_DEFAULT_ACL = 'public-read'  # 设置文件为公共可读
 AWS_QUERYSTRING_AUTH = False  # 不使用查询字符串认证，允许公共访问
 AWS_S3_OBJECT_PARAMETERS = {
     'CacheControl': 'max-age=86400',
 }
 
+# 添加文件类型映射，确保图片文件有正确的 Content-Type
+AWS_S3_FILE_OVERWRITE = False  # 避免覆盖同名文件
+AWS_S3_SIGNATURE_VERSION = 's3v4'  # 使用签名版本4
+
+# 自定义存储类来设置正确的 Content-Type
+from storages.backends.s3boto3 import S3Boto3Storage
+
+class MediaStorage(S3Boto3Storage):
+    bucket_name = AWS_STORAGE_BUCKET_NAME
+    custom_domain = AWS_S3_CUSTOM_DOMAIN
+    default_acl = 'public-read'
+    querystring_auth = False
+    
+    def _save(self, name, content):
+        # 根据文件扩展名设置正确的 Content-Type
+        import mimetypes
+        content_type, _ = mimetypes.guess_type(name)
+        if content_type:
+            content.content_type = content_type
+        return super()._save(name, content)
+
 # Production settings - force S3 usage when in production
 if IS_PRODUCTION or not DEBUG:
     # Use S3 for media files in production
     if AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY and AWS_STORAGE_BUCKET_NAME and AWS_S3_CUSTOM_DOMAIN:
-        # S3 Storage Configuration
-        DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-        AWS_S3_FILE_OVERWRITE = False
-        AWS_S3_VERIFY = True
-        
-        # Override MEDIA_URL for S3 - this ensures ImageField.url returns full S3 URLs
+        DEFAULT_FILE_STORAGE = 'portfolio.settings.MediaStorage'
         MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/'
-        # Clear MEDIA_ROOT since we're using S3
-        MEDIA_ROOT = ''
         print(f"[SETTINGS] Using S3 storage: {MEDIA_URL}")
     else:
         print(f"[SETTINGS] Missing AWS config - AWS_ACCESS_KEY_ID: {bool(AWS_ACCESS_KEY_ID)}, AWS_SECRET_ACCESS_KEY: {bool(AWS_SECRET_ACCESS_KEY)}, AWS_STORAGE_BUCKET_NAME: {AWS_STORAGE_BUCKET_NAME}, AWS_S3_CUSTOM_DOMAIN: {AWS_S3_CUSTOM_DOMAIN}")
@@ -178,11 +192,8 @@ if IS_PRODUCTION or not DEBUG:
         STATICFILES_DIRS.append(os.path.join(BASE_DIR, 'media'))
 else:
     print(f"[SETTINGS] Development mode - using local storage")
-
-# Static files configuration
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
-WHITENOISE_USE_FINDERS = True
-WHITENOISE_AUTOREFRESH = True
-
-# Default primary key field type
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+    
+    # Keep WhiteNoise for static files
+    STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
+    WHITENOISE_USE_FINDERS = True
+    WHITENOISE_AUTOREFRESH = True
