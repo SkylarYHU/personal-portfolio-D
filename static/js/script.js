@@ -10,11 +10,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // reset: true // 如果希望动画重复播放，取消注释这行
   });
 
-  // Hero section animation
-  sr.reveal('.hero h1', {
-    origin: 'left',
-    delay: 200
-  });
+  // Hero section now uses Animate.css fadeInDown animation
+  // Removed ScrollReveal animation to avoid conflicts
 
   // Portfolio section animations
   sr.reveal('.portfolio h2', {
