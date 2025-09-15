@@ -6,6 +6,11 @@
 
 body {
   background-color: #0f172a;
+  background-image: url('../images/background-blurs.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   display: flex;
 }
 
@@ -169,8 +174,8 @@ p,
 .shape-cube {
   width: 80px;
   height: auto;
-  top: 15%;
-  left: 10%;
+  top: 45%;
+  left: 15%;
   animation-delay: 0s;
   transform: rotate(15deg);
 }
@@ -223,8 +228,8 @@ p,
   .shape-cube {
     width: 60px;
     height: auto;
-    top: 10%;
-    left: 5%;
+    top: 40%;
+    left: 8%;
   }
   
   .shape-cylinder {
