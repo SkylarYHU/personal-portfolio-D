@@ -1,6 +1,61 @@
 document.addEventListener('DOMContentLoaded', function() {
   console.log('JavaScript Loaded'); // 确保 JavaScript 已加载
 
+  // GSAP 鼠标跟随光晕效果
+  function initSpotlightEffect() {
+    // 只在桌面设备启用
+    if (window.innerWidth > 768) {
+      // 创建光晕元素
+      const spotlight = document.createElement('div');
+      spotlight.className = 'spotlight';
+      document.body.appendChild(spotlight);
+
+      // 鼠标移动事件
+      document.addEventListener('mousemove', (e) => {
+        gsap.to(spotlight, {
+          x: e.clientX,
+          y: e.clientY,
+          duration: 0.3,
+          ease: "power2.out"
+        });
+        
+        // 显示光晕
+        spotlight.classList.add('active');
+      });
+
+      // 鼠标离开页面时隐藏光晕
+      document.addEventListener('mouseleave', () => {
+        spotlight.classList.remove('active');
+      });
+
+      // 交互式亮度变化
+      document.addEventListener('mouseover', (e) => {
+        if (e.target.matches('.portfolio-item, .role-item, .nav-links a, .contact-item')) {
+          gsap.to(spotlight, {
+            scale: 1.5,
+            duration: 0.3,
+            ease: "power2.out"
+          });
+          spotlight.classList.add('spotlight-hover');
+        }
+      });
+
+      document.addEventListener('mouseout', (e) => {
+        if (e.target.matches('.portfolio-item, .role-item, .nav-links a, .contact-item')) {
+          gsap.to(spotlight, {
+            scale: 1,
+            duration: 0.3,
+            ease: "power2.out"
+          });
+          spotlight.classList.remove('spotlight-hover');
+        }
+      });
+    }
+  }
+
+  // 初始化光晕效果
+  initSpotlightEffect();
+
   // Initialize ScrollReveal
   const sr = ScrollReveal({
     origin: 'bottom',
