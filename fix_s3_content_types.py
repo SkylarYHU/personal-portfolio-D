@@ -70,8 +70,7 @@ def fix_s3_content_types():
                         Bucket=bucket_name,
                         Key=key,
                         ContentType=correct_content_type,
-                        MetadataDirective='REPLACE',
-                        ACL='public-read'  # 确保文件仍然是公共可读的
+                        MetadataDirective='REPLACE'
                     )
                     
                     files_fixed += 1
