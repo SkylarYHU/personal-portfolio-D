@@ -23,8 +23,8 @@ class Command(BaseCommand):
                 description='Complete brand identity design for Alibaba including logo, color palette, and brand guidelines.',
                 image='images/Alibaba-logo.png',
                 about_brand='Alibaba is a leading e-commerce platform.',
-                brand_logo='images/Alibaba-logo.svg',
-                brand_color_palette='#FF6A00, #FFFFFF, #000000'
+                goals='Create a modern and trustworthy brand identity for the e-commerce platform.',
+                tools_apps='Adobe Illustrator, Adobe Photoshop, Figma'
             )
             
             branding2 = BrandingProject.objects.create(
@@ -32,8 +32,8 @@ class Command(BaseCommand):
                 description='Brand redesign project for Meituan food delivery platform.',
                 image='images/meituan-logo.png',
                 about_brand='Meituan is China\'s leading food delivery service.',
-                brand_logo='images/meituan-logo.svg',
-                brand_color_palette='#FFD100, #32CD32, #FFFFFF'
+                goals='Redesign the brand to be more modern and user-friendly.',
+                tools_apps='Adobe Creative Suite, Sketch'
             )
             
             branding3 = BrandingProject.objects.create(
@@ -41,8 +41,8 @@ class Command(BaseCommand):
                 description='Visual identity system for Taobao marketplace.',
                 image='images/taobao-logo.png',
                 about_brand='Taobao is China\'s largest online shopping platform.',
-                brand_logo='images/taobao-logo1.svg',
-                brand_color_palette='#FF4500, #FFA500, #FFFFFF'
+                goals='Create a cohesive visual identity system for the marketplace.',
+                tools_apps='Adobe Illustrator, Adobe Photoshop'
             )
             
             self.stdout.write(self.style.SUCCESS('Branding projects created'))
