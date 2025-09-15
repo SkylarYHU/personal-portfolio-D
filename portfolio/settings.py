@@ -124,6 +124,19 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# File Upload Settings
+# 限制文件上传大小，防止内存溢出和超时
+FILE_UPLOAD_MAX_MEMORY_SIZE = 10 * 1024 * 1024  # 10MB
+DATA_UPLOAD_MAX_MEMORY_SIZE = 10 * 1024 * 1024  # 10MB
+DATA_UPLOAD_MAX_NUMBER_FIELDS = 1000
+
+# Request timeout settings
+# 防止长时间请求导致超时
+if IS_PRODUCTION:
+    # 生产环境使用较短的超时时间
+    CONN_MAX_AGE = 60
+    DATABASES['default']['CONN_MAX_AGE'] = CONN_MAX_AGE
+
 # Internationalization
 LANGUAGE_CODE = "en-us"
 TIME_ZONE = "UTC"
