@@ -152,7 +152,7 @@ AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
 AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME')
 AWS_S3_REGION_NAME = os.getenv('AWS_S3_REGION_NAME', 'us-east-1')
 AWS_S3_CUSTOM_DOMAIN = os.getenv('AWS_S3_CUSTOM_DOMAIN')
-AWS_DEFAULT_ACL = 'public-read'  # 设置文件为公共可读
+AWS_DEFAULT_ACL = None  # 不设置ACL，因为存储桶不允许ACL
 AWS_QUERYSTRING_AUTH = False  # 不使用查询字符串认证，允许公共访问
 AWS_S3_OBJECT_PARAMETERS = {
     'CacheControl': 'max-age=86400',
@@ -168,7 +168,7 @@ from storages.backends.s3boto3 import S3Boto3Storage
 class MediaStorage(S3Boto3Storage):
     bucket_name = AWS_STORAGE_BUCKET_NAME
     custom_domain = AWS_S3_CUSTOM_DOMAIN
-    default_acl = 'public-read'
+    default_acl = None  # 不设置ACL，因为存储桶不允许ACL
     querystring_auth = False
     
     def _save(self, name, content):
