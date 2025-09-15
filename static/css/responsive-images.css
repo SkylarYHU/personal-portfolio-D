@@ -1,0 +1,40 @@
+
+/* 响应式背景图片优化 */
+@media (max-width: 768px) {
+  body {
+    background-image: url("../images/background-blurs-mobile.jpg");
+  }
+}
+
+@media (min-width: 769px) {
+  body {
+    background-image: url("../images/background-blurs-optimized.jpg");
+  }
+}
+
+/* WebP支持检测 */
+@supports (background-image: url("image.webp")) {
+  body {
+    background-image: url("../images/background-blurs-webp.webp");
+  }
+  
+  @media (max-width: 768px) {
+    body {
+      background-image: url("../images/background-blurs-webp.webp");
+    }
+  }
+}
+
+/* 预加载优化 */
+.preload-images {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.preload-images::after {
+  content: url("../images/background-blurs-optimized.jpg") url("../images/background-blurs-mobile.jpg");
+}

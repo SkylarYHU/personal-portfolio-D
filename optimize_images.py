@@ -1,161 +1,141 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 """
-图片优化脚本 - 压缩现有图片以提升加载速度
-使用方法: python optimize_images.py
+Advanced image optimization script for better web performance
+This will create multiple optimized versions of images
 """
 
 import os
-import sys
-from PIL import Image
-import glob
-from pathlib import Path
+from PIL import Image, ImageFilter
+import subprocess
 
-def optimize_image(image_path, quality=85, max_width=1920):
-    """
-    优化单个图片文件
+def optimize_background_image():
+    """Create highly optimized versions of background image"""
+    input_path = "media/images/background-blurs.png"
     
-    Args:
-        image_path: 图片文件路径
-        quality: JPEG质量 (1-100)
-        max_width: 最大宽度像素
-    """
-    try:
-        with Image.open(image_path) as img:
-            # 获取原始信息
-            original_size = os.path.getsize(image_path)
-            original_width, original_height = img.size
-            
-            # 转换为RGB模式（如果需要）
-            if img.mode in ('RGBA', 'LA', 'P'):
-                # 创建白色背景
-                background = Image.new('RGB', img.size, (255, 255, 255))
-                if img.mode == 'P':
-                    img = img.convert('RGBA')
-                background.paste(img, mask=img.split()[-1] if img.mode == 'RGBA' else None)
-                img = background
-            elif img.mode != 'RGB':
-                img = img.convert('RGB')
-            
-            # 调整尺寸（如果需要）
-            if original_width > max_width:
-                ratio = max_width / original_width
-                new_height = int(original_height * ratio)
-                img = img.resize((max_width, new_height), Image.Resampling.LANCZOS)
-                print(f"  调整尺寸: {original_width}x{original_height} -> {max_width}x{new_height}")
-            
-            # 保存优化后的图片
-            img.save(image_path, 'JPEG', quality=quality, optimize=True, progressive=True)
-            
-            # 计算压缩效果
-            new_size = os.path.getsize(image_path)
-            compression_ratio = (1 - new_size / original_size) * 100
-            
-            print(f"  原始大小: {original_size:,} bytes")
-            print(f"  优化后: {new_size:,} bytes")
-            print(f"  压缩率: {compression_ratio:.1f}%")
-            
-            return True
-            
-    except Exception as e:
-        print(f"  错误: {e}")
-        return False
-
-def optimize_static_images():
-    """
-    优化static目录中的图片
-    """
-    print("=== 优化静态图片文件 ===")
-    
-    static_dir = Path('static/images')
-    if not static_dir.exists():
-        print("static/images 目录不存在")
+    if not os.path.exists(input_path):
+        print(f"❌ Input file not found: {input_path}")
         return
     
-    # 支持的图片格式
-    image_extensions = ['*.jpg', '*.jpeg', '*.png', '*.bmp', '*.tiff']
-    
-    total_original = 0
-    total_optimized = 0
-    optimized_count = 0
-    
-    for extension in image_extensions:
-        for image_path in static_dir.glob(extension):
-            print(f"\n优化: {image_path.name}")
-            
-            original_size = image_path.stat().st_size
-            total_original += original_size
-            
-            if optimize_image(str(image_path)):
-                optimized_size = image_path.stat().st_size
-                total_optimized += optimized_size
-                optimized_count += 1
-    
-    if optimized_count > 0:
-        total_compression = (1 - total_optimized / total_original) * 100
-        print(f"\n=== 优化完成 ===")
-        print(f"优化文件数: {optimized_count}")
-        print(f"总原始大小: {total_original:,} bytes ({total_original/1024/1024:.1f} MB)")
-        print(f"总优化后: {total_optimized:,} bytes ({total_optimized/1024/1024:.1f} MB)")
-        print(f"总压缩率: {total_compression:.1f}%")
-        print(f"节省空间: {(total_original-total_optimized):,} bytes ({(total_original-total_optimized)/1024/1024:.1f} MB)")
-    else:
-        print("没有找到需要优化的图片文件")
-
-def create_webp_versions():
-    """
-    为现有图片创建WebP版本（更小的文件大小）
-    """
-    print("\n=== 创建WebP版本 ===")
-    
-    static_dir = Path('static/images')
-    if not static_dir.exists():
-        return
-    
-    webp_count = 0
-    
-    for image_path in static_dir.glob('*.jpg'):
-        webp_path = image_path.with_suffix('.webp')
+    # Open original image
+    with Image.open(input_path) as img:
+        print(f"📊 Original image: {img.size[0]}x{img.size[1]}, Mode: {img.mode}")
         
-        try:
-            with Image.open(image_path) as img:
-                # 转换为WebP格式
-                img.save(str(webp_path), 'WEBP', quality=80, method=6)
+        # Convert to RGB if needed
+        if img.mode in ('RGBA', 'LA'):
+            # Create a white background
+            background = Image.new('RGB', img.size, (15, 23, 42))  # #0f172a color
+            if img.mode == 'RGBA':
+                background.paste(img, mask=img.split()[-1])  # Use alpha channel as mask
+            else:
+                background.paste(img)
+            img = background
+        
+        # Create different optimized versions
+        versions = [
+            {
+                'name': 'background-blurs-optimized.jpg',
+                'size': (1920, 1080),
+                'quality': 85,
+                'format': 'JPEG'
+            },
+            {
+                'name': 'background-blurs-mobile.jpg', 
+                'size': (1080, 720),
+                'quality': 80,
+                'format': 'JPEG'
+            },
+            {
+                'name': 'background-blurs-webp.webp',
+                'size': (1920, 1080), 
+                'quality': 80,
+                'format': 'WEBP'
+            }
+        ]
+        
+        for version in versions:
+            # Resize image
+            resized = img.copy()
+            resized.thumbnail(version['size'], Image.Resampling.LANCZOS)
+            
+            # Apply slight blur for better compression
+            if 'blur' in input_path:
+                resized = resized.filter(ImageFilter.GaussianBlur(radius=0.5))
+            
+            # Save optimized version
+            output_path = f"static/images/{version['name']}"
+            
+            save_kwargs = {
+                'format': version['format'],
+                'optimize': True
+            }
+            
+            if version['format'] in ['JPEG', 'WEBP']:
+                save_kwargs['quality'] = version['quality']
                 
-                original_size = image_path.stat().st_size
-                webp_size = webp_path.stat().st_size
-                compression = (1 - webp_size / original_size) * 100
+            if version['format'] == 'JPEG':
+                save_kwargs['progressive'] = True
                 
-                print(f"创建: {webp_path.name} (压缩 {compression:.1f}%)")
-                webp_count += 1
-                
-        except Exception as e:
-            print(f"WebP转换失败 {image_path.name}: {e}")
-    
-    print(f"创建了 {webp_count} 个WebP文件")
+            resized.save(output_path, **save_kwargs)
+            
+            # Get file size
+            size_kb = os.path.getsize(output_path) / 1024
+            print(f"✅ Created {version['name']}: {resized.size[0]}x{resized.size[1]}, {size_kb:.1f}KB")
 
-def main():
-    print("图片优化工具")
-    print("=" * 50)
-    
-    # 检查PIL是否可用
-    try:
-        from PIL import Image
-    except ImportError:
-        print("错误: 需要安装Pillow库")
-        print("运行: pip install Pillow")
-        return
-    
-    # 优化现有图片
-    optimize_static_images()
-    
-    # 创建WebP版本
-    create_webp_versions()
-    
-    print("\n=== 后续建议 ===")
-    print("1. 配置CloudFront CDN (参考 setup_cloudfront_cdn.md)")
-    print("2. 在模板中使用WebP格式 (支持的浏览器)")
-    print("3. 实现图片懒加载")
-    print("4. 使用响应式图片 (srcset)")
+def create_responsive_css():
+    """Create CSS for responsive background images"""
+    css_content = """
+/* 响应式背景图片优化 */
+@media (max-width: 768px) {
+  body {
+    background-image: url("../images/background-blurs-mobile.jpg");
+  }
+}
 
-if __name__ == '__main__':
-    main()
+@media (min-width: 769px) {
+  body {
+    background-image: url("../images/background-blurs-optimized.jpg");
+  }
+}
+
+/* WebP支持检测 */
+@supports (background-image: url("image.webp")) {
+  body {
+    background-image: url("../images/background-blurs-webp.webp");
+  }
+  
+  @media (max-width: 768px) {
+    body {
+      background-image: url("../images/background-blurs-webp.webp");
+    }
+  }
+}
+
+/* 预加载优化 */
+.preload-images {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.preload-images::after {
+  content: url("../images/background-blurs-optimized.jpg") url("../images/background-blurs-mobile.jpg");
+}
+"""
+    
+    with open("static/css/responsive-images.css", "w") as f:
+        f.write(css_content)
+    
+    print("✅ Created responsive-images.css")
+
+if __name__ == "__main__":
+    print("🚀 Starting advanced image optimization...")
+    optimize_background_image()
+    create_responsive_css()
+    print("\n🎉 Optimization complete!")
+    print("\n📝 Next steps:")
+    print("1. Add responsive-images.css to your HTML")
+    print("2. Test the optimized images")
+    print("3. Deploy to production")

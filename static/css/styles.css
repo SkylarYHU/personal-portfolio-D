@@ -10,8 +10,11 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-attachment: scroll; /* 改为scroll提高性能 */
   display: flex;
+  /* 添加图片优化 */
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
 }
 
 /* 图片优化 */
@@ -19,6 +22,23 @@ img {
   max-width: 100%;
   height: auto;
   loading: lazy;
+  /* 添加更多优化 */
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  will-change: transform;
+}
+
+/* 关键图片预加载 */
+.critical-image {
+  loading: eager;
+}
+
+/* 背景图片优化 */
+@media (max-width: 768px) {
+  body {
+    background-attachment: scroll;
+    background-size: cover;
+  }
 }
 
 /* 预加载关键图片 */
