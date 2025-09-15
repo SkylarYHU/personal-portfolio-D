@@ -197,6 +197,36 @@
               </div>
             </div>
             {% endif %}
+
+            <!-- Landing Pages Section -->
+            {% if mobile_landing_page.landing_pages_image %}
+            <div
+              style="
+                margin-bottom: 3rem;
+                padding: 2rem 2.5rem;
+                background-color: rgba(59, 77, 98, 0.1);
+                border-radius: 10px;
+              "
+            >
+              <h2
+                style="
+                  color: white;
+                  font-size: 1.8rem;
+                  margin-bottom: 1.5rem;
+                  text-align: left;
+                "
+              >
+                Landing Pages
+              </h2>
+              <div class="image-container">
+                <img
+                  src="{{ mobile_landing_page.landing_pages_image.url }}"
+                  alt="Landing Pages for {{ mobile_landing_page.title }}"
+                  style="width: 100%; height: auto; object-fit: contain"
+                />
+              </div>
+            </div>
+            {% endif %}
           </div>
 
           {% if mobile_landing_page.tags.all %}

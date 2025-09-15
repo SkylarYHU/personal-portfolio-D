@@ -51,6 +51,22 @@ class SocialMediaPostAdmin(admin.ModelAdmin):
 class MobileLandingPageAdmin(SortableAdminMixin, admin.ModelAdmin):
     list_display = ('title', 'description', 'link')
     ordering = ('order',)  # 默认根据 order 字段排序
+    filter_horizontal = ('tags',)  # 允许在 admin 中选择标签
+    
+    # 添加字段分组，便于管理
+    fieldsets = (
+        ('基本信息', {
+            'fields': ('title', 'description', 'image', 'link', 'order', 'tags')
+        }),
+        ('页面详情', {
+            'fields': ('about_brand', 'goals'),
+            'classes': ('collapse',)
+        }),
+        ('设计图片', {
+            'fields': ('typefaces_image', 'color_palette_image', 'landing_pages_image'),
+            'classes': ('collapse',)
+        }),
+    )
 
 
 admin.site.register(Tag)
