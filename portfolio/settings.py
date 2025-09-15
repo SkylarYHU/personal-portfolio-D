@@ -163,7 +163,10 @@ if IS_PRODUCTION or not DEBUG:
     # Use S3 for media files in production
     if AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY and AWS_STORAGE_BUCKET_NAME and AWS_S3_CUSTOM_DOMAIN:
         DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+        # Override MEDIA_URL for S3
         MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/'
+        # Clear MEDIA_ROOT since we're using S3
+        MEDIA_ROOT = ''
         print(f"[SETTINGS] Using S3 storage: {MEDIA_URL}")
     else:
         print(f"[SETTINGS] Missing AWS config - AWS_ACCESS_KEY_ID: {bool(AWS_ACCESS_KEY_ID)}, AWS_SECRET_ACCESS_KEY: {bool(AWS_SECRET_ACCESS_KEY)}, AWS_STORAGE_BUCKET_NAME: {AWS_STORAGE_BUCKET_NAME}, AWS_S3_CUSTOM_DOMAIN: {AWS_S3_CUSTOM_DOMAIN}")
