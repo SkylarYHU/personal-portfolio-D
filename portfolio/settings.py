@@ -152,10 +152,12 @@ AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
 AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME')
 AWS_S3_REGION_NAME = os.getenv('AWS_S3_REGION_NAME', 'us-east-1')
 AWS_S3_CUSTOM_DOMAIN = os.getenv('AWS_S3_CUSTOM_DOMAIN')
+AWS_CLOUDFRONT_DOMAIN = os.getenv('AWS_CLOUDFRONT_DOMAIN')  # CloudFront CDN域名
 AWS_DEFAULT_ACL = None  # 不设置ACL，因为存储桶不允许ACL
 AWS_QUERYSTRING_AUTH = False  # 不使用查询字符串认证，允许公共访问
 AWS_S3_OBJECT_PARAMETERS = {
-    'CacheControl': 'max-age=86400',
+    'CacheControl': 'max-age=31536000',  # 1年缓存
+    'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
 }
 
 # 添加文件类型映射，确保图片文件有正确的 Content-Type
@@ -167,7 +169,7 @@ from storages.backends.s3boto3 import S3Boto3Storage
 
 class MediaStorage(S3Boto3Storage):
     bucket_name = AWS_STORAGE_BUCKET_NAME
-    custom_domain = AWS_S3_CUSTOM_DOMAIN
+    custom_domain = AWS_CLOUDFRONT_DOMAIN or AWS_S3_CUSTOM_DOMAIN  # 优先使用CloudFront
     default_acl = None  # 不设置ACL，因为存储桶不允许ACL
     querystring_auth = False
     
@@ -182,10 +184,14 @@ class MediaStorage(S3Boto3Storage):
 # Production settings - force S3 usage when in production
 if IS_PRODUCTION or not DEBUG:
     # Use S3 for media files in production
-    if AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY and AWS_STORAGE_BUCKET_NAME and AWS_S3_CUSTOM_DOMAIN:
+    if AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY and AWS_STORAGE_BUCKET_NAME and (AWS_CLOUDFRONT_DOMAIN or AWS_S3_CUSTOM_DOMAIN):
         DEFAULT_FILE_STORAGE = 'portfolio.settings.MediaStorage'
-        MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/'
-        print(f"[SETTINGS] Using S3 storage: {MEDIA_URL}")
+        domain = AWS_CLOUDFRONT_DOMAIN or AWS_S3_CUSTOM_DOMAIN
+        MEDIA_URL = f'https://{domain}/'
+        if AWS_CLOUDFRONT_DOMAIN:
+            print(f"[SETTINGS] Using CloudFront CDN: {MEDIA_URL}")
+        else:
+            print(f"[SETTINGS] Using S3 storage: {MEDIA_URL}")
     else:
         print(f"[SETTINGS] Missing AWS config - AWS_ACCESS_KEY_ID: {bool(AWS_ACCESS_KEY_ID)}, AWS_SECRET_ACCESS_KEY: {bool(AWS_SECRET_ACCESS_KEY)}, AWS_STORAGE_BUCKET_NAME: {AWS_STORAGE_BUCKET_NAME}, AWS_S3_CUSTOM_DOMAIN: {AWS_S3_CUSTOM_DOMAIN}")
         # Fallback to local media serving
