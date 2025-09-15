@@ -21,27 +21,27 @@ class Command(BaseCommand):
             branding1 = BrandingProject.objects.create(
                 title='Alibaba Brand Identity',
                 description='Complete brand identity design for Alibaba including logo, color palette, and brand guidelines.',
-                image='static/images/Alibaba-logo.png',
+                image='images/Alibaba-logo.png',
                 about_brand='Alibaba is a leading e-commerce platform.',
-                brand_logo='static/images/Alibaba-logo.svg',
+                brand_logo='images/Alibaba-logo.svg',
                 brand_color_palette='#FF6A00, #FFFFFF, #000000'
             )
             
             branding2 = BrandingProject.objects.create(
                 title='Meituan Brand Design',
                 description='Brand redesign project for Meituan food delivery platform.',
-                image='static/images/meituan-logo.png',
+                image='images/meituan-logo.png',
                 about_brand='Meituan is China\'s leading food delivery service.',
-                brand_logo='static/images/meituan-logo.svg',
+                brand_logo='images/meituan-logo.svg',
                 brand_color_palette='#FFD100, #32CD32, #FFFFFF'
             )
             
             branding3 = BrandingProject.objects.create(
                 title='Taobao Visual Identity',
                 description='Visual identity system for Taobao marketplace.',
-                image='static/images/taobao-logo.png',
+                image='images/taobao-logo.png',
                 about_brand='Taobao is China\'s largest online shopping platform.',
-                brand_logo='static/images/taobao-logo1.svg',
+                brand_logo='images/taobao-logo1.svg',
                 brand_color_palette='#FF4500, #FFA500, #FFFFFF'
             )
             
@@ -52,17 +52,44 @@ class Command(BaseCommand):
             project1 = Project.objects.create(
                 title='Sample Project 1',
                 description='This is a sample project description.',
-                image='projects/sample1.jpg'
+                image='images/home.png'
             )
             project1.tags.add(tag1, tag2)
             
             project2 = Project.objects.create(
                 title='Sample Project 2', 
                 description='Another sample project description.',
-                image='projects/sample2.jpg'
+                image='images/cube.png'
             )
             project2.tags.add(tag2, tag3)
             
             self.stdout.write(self.style.SUCCESS('Sample projects created'))
+
+        # Create social media posts
+        if not SocialMediaPost.objects.exists():
+            social1 = SocialMediaPost.objects.create(
+                title='Food & Beverage',
+                mockup_image_1='images/meituan-logo.png',
+                mockup_image_2='images/taobao-logo.png',
+                mockup_image_3='images/Alibaba-logo.png',
+                about='Creative social media designs for food and beverage brands.',
+                tools='Adobe Photoshop, Illustrator, Figma',
+                goals='Increase brand engagement and visual appeal.'
+            )
+            
+            self.stdout.write(self.style.SUCCESS('Social media posts created'))
+
+        # Create mobile landing pages
+        if not MobileLandingPage.objects.exists():
+            mobile1 = MobileLandingPage.objects.create(
+                title='E-commerce App Landing',
+                description='Modern mobile landing page design for e-commerce applications.',
+                image='images/sphere.png',
+                about_brand='Innovative mobile experience design.',
+                goals='Create intuitive and engaging mobile interfaces.'
+            )
+            mobile1.tags.add(tag3)
+            
+            self.stdout.write(self.style.SUCCESS('Mobile landing pages created'))
 
         self.stdout.write(self.style.SUCCESS('Data initialization completed!'))

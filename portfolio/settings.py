@@ -135,8 +135,10 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 if not DEBUG:
-    # Production settings for static file serving with whitenoise
+    # WhiteNoise configuration for static files
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
-    # WhiteNoise configuration
     WHITENOISE_USE_FINDERS = True
     WHITENOISE_AUTOREFRESH = True
+    
+    # Serve media files through static in production
+    STATICFILES_DIRS.append(os.path.join(BASE_DIR, 'media'))
