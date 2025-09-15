@@ -168,7 +168,7 @@ p,
 
 .shape-cube {
   width: 80px;
-  height: 80px;
+  height: auto;
   top: 15%;
   left: 10%;
   animation-delay: 0s;
@@ -176,8 +176,8 @@ p,
 }
 
 .shape-cylinder {
-  width: 100px;
-  height: 120px;
+  width: 80px;
+  height: auto;
   top: 60%;
   right: 15%;
   animation-delay: 2s;
@@ -185,8 +185,8 @@ p,
 }
 
 .shape-sphere {
-  width: 90px;
-  height: 90px;
+  width: 80px;
+  height: auto;
   top: 25%;
   right: 20%;
   animation-delay: 4s;
@@ -222,21 +222,21 @@ p,
   
   .shape-cube {
     width: 60px;
-    height: 60px;
+    height: auto;
     top: 10%;
     left: 5%;
   }
   
   .shape-cylinder {
-    width: 70px;
-    height: 85px;
+    width: 60px;
+    height: auto;
     top: 70%;
     right: 10%;
   }
   
   .shape-sphere {
-    width: 65px;
-    height: 65px;
+    width: 60px;
+    height: auto;
     top: 20%;
     right: 15%;
   }
