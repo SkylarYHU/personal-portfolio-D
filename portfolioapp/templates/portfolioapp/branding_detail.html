@@ -1,0 +1,449 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="{{ branding_project.title }} - Brand Design Project by Skylar Hu"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/styles.css' %}"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>{{ branding_project.title }} - Skylar's Portfolio</title>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <header>
+      <nav class="navbar">
+        <div class="logo">
+          <a href="{% url 'home' %}"
+            ><img src="{% static 'images/home.png' %}" alt="home logo"
+          /></a>
+        </div>
+        <div class="nav-right">
+          <div class="toggle" onclick="toggleMenu()">&#9776;</div>
+          <ul class="nav-links">
+            <li><a href="{% url 'home' %}#table-of-content">Content</a></li>
+            <li><a href="{% url 'home' %}#previous-role">Work</a></li>
+            <li><a href="{% url 'home' %}#client-experience">Client</a></li>
+            <li><a href="{% url 'home' %}#contact">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <div class="container">
+      <!-- Project Detail Section -->
+      <section class="portfolio" style="margin-top: 8rem">
+        <div style="text-align: center; margin-bottom: 3rem">
+          <h1 style="color: white; font-size: 2.5rem; margin-bottom: 1rem">
+            {{ branding_project.title }}
+          </h1>
+
+        </div>
+
+        <div
+          class="portfolio-detail"
+          style="max-width: 1200px; margin: 0 auto; padding: 0 1rem"
+        >
+
+
+          <!-- About Brand Section -->
+          {% if branding_project.about_brand %}
+          <div
+            style="
+              margin-bottom: 3rem;
+              padding: 2rem 2.5rem;
+              background-color: rgba(59, 77, 98, 0.1);
+              border-radius: 10px;
+            "
+          >
+            <h2
+              style="
+                color: white;
+                font-size: 1.8rem;
+                margin-bottom: 1rem;
+                text-align: left;
+              "
+            >
+              About Brand
+            </h2>
+            <p
+              style="
+                color: rgba(255, 255, 255, 0.85);
+                font-size: 1.012rem;
+                line-height: 1.92;
+                text-align: left;
+                max-width: 100%;
+                padding: 0;
+              "
+            >
+              {{ branding_project.about_brand }}
+            </p>
+          </div>
+          {% endif %}
+
+          <!-- Goals Section -->
+          {% if branding_project.goals %}
+          <div
+            style="
+              margin-bottom: 3rem;
+              padding: 2rem 2.5rem;
+              background-color: rgba(59, 77, 98, 0.1);
+              border-radius: 10px;
+            "
+          >
+            <h2
+              style="
+                color: white;
+                font-size: 1.8rem;
+                margin-bottom: 1rem;
+                text-align: left;
+              "
+            >
+              Goals
+            </h2>
+            <p
+              style="
+                color: rgba(255, 255, 255, 0.85);
+                font-size: 1.012rem;
+                line-height: 1.92;
+                text-align: left;
+                max-width: 100%;
+                padding: 0;
+              "
+            >
+              {{ branding_project.goals }}
+            </p>
+          </div>
+          {% endif %}
+
+          <!-- Tools & Apps Section -->
+          {% if branding_project.tools_apps %}
+          <div
+            style="
+              margin-bottom: 3rem;
+              padding: 2rem 2.5rem;
+              background-color: rgba(59, 77, 98, 0.1);
+              border-radius: 10px;
+            "
+          >
+            <h2
+              style="
+                color: white;
+                font-size: 1.8rem;
+                margin-bottom: 1rem;
+                text-align: left;
+              "
+            >
+              Tools & Apps
+            </h2>
+            <p
+              style="
+                color: rgba(255, 255, 255, 0.85);
+                font-size: 1.012rem;
+                line-height: 1.92;
+                text-align: left;
+                max-width: 100%;
+                padding: 0;
+              "
+            >
+              {{ branding_project.tools_apps }}
+            </p>
+          </div>
+          {% endif %}
+
+          <!-- Logos Section -->
+          {% if branding_project.logos_image %}
+          <div
+            style="
+              margin-bottom: 3rem;
+              padding: 2rem 2.5rem;
+              background-color: rgba(59, 77, 98, 0.1);
+              border-radius: 10px;
+            "
+          >
+            <h2
+              style="
+                color: white;
+                font-size: 1.8rem;
+                margin-bottom: 1.5rem;
+                text-align: left;
+              "
+            >
+              Logos
+            </h2>
+            <div class="image-container">
+              <img
+                src="{{ branding_project.logos_image.url }}"
+                alt="Logos for {{ branding_project.title }}"
+                style="width: 100%; height: auto; object-fit: contain"
+              />
+            </div>
+          </div>
+          {% endif %}
+
+          <!-- Typefaces Section -->
+          {% if branding_project.typefaces_image %}
+          <div
+            style="
+              margin-bottom: 3rem;
+              padding: 2rem 2.5rem;
+              background-color: rgba(59, 77, 98, 0.1);
+              border-radius: 10px;
+            "
+          >
+            <h2
+              style="
+                color: white;
+                font-size: 1.8rem;
+                margin-bottom: 1.5rem;
+                text-align: left;
+              "
+            >
+              Typefaces
+            </h2>
+            <div class="image-container">
+              <img
+                src="{{ branding_project.typefaces_image.url }}"
+                alt="Typefaces for {{ branding_project.title }}"
+                style="width: 100%; height: auto; object-fit: contain"
+              />
+            </div>
+          </div>
+          {% endif %}
+
+          <!-- Color Palette Section -->
+          {% if branding_project.color_palette_image %}
+          <div
+            style="
+              margin-bottom: 3rem;
+              padding: 2rem 2.5rem;
+              background-color: rgba(59, 77, 98, 0.1);
+              border-radius: 10px;
+            "
+          >
+            <h2
+              style="
+                color: white;
+                font-size: 1.8rem;
+                margin-bottom: 1.5rem;
+                text-align: left;
+              "
+            >
+              Color Palette
+            </h2>
+            <div class="image-container">
+              <img
+                src="{{ branding_project.color_palette_image.url }}"
+                alt="Color palette for {{ branding_project.title }}"
+                style="width: 100%; height: auto; object-fit: contain"
+              />
+            </div>
+          </div>
+          {% endif %}
+
+          <!-- Packaging Section -->
+          {% if branding_project.packaging_image %}
+          <div
+            style="
+              margin-bottom: 3rem;
+              padding: 2rem 2.5rem;
+              background-color: rgba(59, 77, 98, 0.1);
+              border-radius: 10px;
+            "
+          >
+            <h2
+              style="
+                color: white;
+                font-size: 1.8rem;
+                margin-bottom: 1.5rem;
+                text-align: left;
+              "
+            >
+              Packaging
+            </h2>
+            <div class="image-container">
+              <img
+                src="{{ branding_project.packaging_image.url }}"
+                alt="Packaging for {{ branding_project.title }}"
+                style="width: 100%; height: auto; object-fit: contain"
+              />
+            </div>
+          </div>
+          {% endif %}
+
+          <!-- Social Media Section -->
+          {% if branding_project.social_media_image %}
+          <div
+            style="
+              margin-bottom: 3rem;
+              padding: 2rem 2.5rem;
+              background-color: rgba(59, 77, 98, 0.1);
+              border-radius: 10px;
+            "
+          >
+            <h2
+              style="
+                color: white;
+                font-size: 1.8rem;
+                margin-bottom: 1.5rem;
+                text-align: left;
+              "
+            >
+              Social Media
+            </h2>
+            <div class="image-container">
+              <img
+                src="{{ branding_project.social_media_image.url }}"
+                alt="Social media designs for {{ branding_project.title }}"
+                style="width: 100%; height: auto; object-fit: contain"
+              />
+            </div>
+          </div>
+          {% endif %}
+
+          <!-- Posters & Banners Section -->
+          {% if branding_project.posters_banners_image %}
+          <div
+            style="
+              margin-bottom: 3rem;
+              padding: 2rem 2.5rem;
+              background-color: rgba(59, 77, 98, 0.1);
+              border-radius: 10px;
+            "
+          >
+            <h2
+              style="
+                color: white;
+                font-size: 1.8rem;
+                margin-bottom: 1.5rem;
+                text-align: left;
+              "
+            >
+              Posters & Banners
+            </h2>
+            <div class="image-container">
+              <img
+                src="{{ branding_project.posters_banners_image.url }}"
+                alt="Posters and banners for {{ branding_project.title }}"
+                style="width: 100%; height: auto; object-fit: contain"
+              />
+            </div>
+          </div>
+          {% endif %}
+
+          <!-- Others Section -->
+          {% if branding_project.others_image %}
+          <div
+            style="
+              margin-bottom: 3rem;
+              padding: 2rem 2.5rem;
+              background-color: rgba(59, 77, 98, 0.1);
+              border-radius: 10px;
+            "
+          >
+            <h2
+              style="
+                color: white;
+                font-size: 1.8rem;
+                margin-bottom: 1.5rem;
+                text-align: left;
+              "
+            >
+              Others
+            </h2>
+            <div class="image-container">
+              <img
+                src="{{ branding_project.others_image.url }}"
+                alt="Other designs for {{ branding_project.title }}"
+                style="width: 100%; height: auto; object-fit: contain"
+              />
+            </div>
+          </div>
+          {% endif %}
+
+          <!-- Tags and Link Section -->
+          {% if branding_project.tags.all %}
+          <div
+            style="text-align: left; margin-top: 3rem; margin-bottom: 2rem"
+          >
+            <h2 style="color: white; font-size: 1.8rem; margin-bottom: 1rem; text-align: left;">
+              Tags
+            </h2>
+            <ul class="tag-list" style="justify-content: flex-start">
+              {% for tag in branding_project.tags.all %}
+              <li class="tag-item">{{ tag.name }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+          {% endif %} {% if branding_project.link %}
+          <div style="text-align: center; margin-bottom: 3rem">
+            <a
+              href="{{ branding_project.link }}"
+              target="_blank"
+              rel="noopener noreferrer"
+              style="
+                display: inline-block;
+                background-color: #3b4d62;
+                color: white;
+                padding: 12px 24px;
+                border-radius: 25px;
+                text-decoration: none;
+                font-weight: 600;
+                transition: all 0.3s ease;
+              "
+            >
+              View Project
+            </a>
+          </div>
+          {% endif %}
+
+          <div style="text-align: center; margin-top: 3rem">
+            <a
+              href="{% url 'home' %}#branding"
+              style="
+                display: inline-block;
+                background-color: white;
+                color: #2c3e50;
+                padding: 12px 24px;
+                border-radius: 25px;
+                text-decoration: none;
+                font-weight: 600;
+                font-size: 1.1rem;
+                font-family: 'Poppins', sans-serif;
+                transition: all 0.3s ease;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+              "
+            >
+              < Go Back
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script src="{% static 'js/script.js' %}"></script>
+  </body>
+</html>

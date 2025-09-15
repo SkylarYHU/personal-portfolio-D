@@ -44,7 +44,7 @@
         <div class="nav-right">
           <div class="toggle" onclick="toggleMenu()">&#9776;</div>
           <ul class="nav-links">
-            <li><a href="#portfolio">Projects</a></li>
+            <li><a href="#table-of-content">Content</a></li>
             <li><a href="#previous-role">Work</a></li>
             <li><a href="#client-experience">Client</a></li>
             <li><a href="#contact">Contact</a></li>
@@ -67,9 +67,133 @@
         </h1>
       </section>
 
-      <!-- Projects -->
+      <!-- Table of Content -->
+      <section id="table-of-content" class="table-of-content">
+        <h2>Table of Content</h2>
+        <div class="content-grid">
+          <div class="content-item">
+            <h3><a href="#branding">1. Brand Design</a></h3>
+          </div>
+          <div class="content-item">
+            <h3><a href="#social-media-post">2. Social Media Design</a></h3>
+          </div>
+          <div class="content-item">
+            <h3><a href="#mobile-landing-page">3. Mobile Landing Pages</a></h3>
+          </div>
+          <div class="content-item">
+            <h3><a href="#portfolio">4. Websites</a></h3>
+          </div>
+        </div>
+      </section>
+
+      <!-- Brand Design -->
+      <section id="branding" class="portfolio">
+        <h2>Brand Design</h2>
+        <p>
+          Here are some branding projects I've worked on, showcasing my skills in
+          visual identity design, logo creation, and brand development.
+        </p>
+        <div class="portfolio-grid">
+          {% for branding_project in branding_projects %}
+          <a href="{% url 'branding_detail' branding_project.id %}" style="text-decoration: none; color: inherit;">
+            <div class="portfolio-item" data-link="{{ branding_project.link }}">
+              <div class="image-container">
+                <img
+                  src="{{ branding_project.image.url }}"
+                  alt="Screenshot of {{ branding_project.title }}"
+                />
+              </div>
+              <div class="portfolio-text">
+                <h3>{{ branding_project.title }}</h3>
+                <p>{{ branding_project.description }}</p>
+                <ul class="tag-list">
+                  {% for tag in branding_project.tags.all %}
+                  <li class="tag-item">{{ tag.name }}</li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+          </a>
+          {% endfor %}
+        </div>
+      </section>
+
+      <!-- Social Media Design -->
+      <section id="social-media-post" class="portfolio">
+        <h2>Social Media Design</h2>
+        <p>
+          Here are some social media post designs I've created, showcasing creative
+          visual storytelling and brand engagement across different categories.
+        </p>
+        <div class="social-media-grid">
+          {% for post in social_media_posts %}
+          <div class="social-media-item">
+            <h3 class="category-title">{{ post.title }}</h3>
+            <div class="mockup-images">
+              <div class="mockup-image">
+                <img src="{{ post.mockup_image_1.url }}" alt="{{ post.title }} mockup 1" />
+              </div>
+              <div class="mockup-image">
+                <img src="{{ post.mockup_image_2.url }}" alt="{{ post.title }} mockup 2" />
+              </div>
+              <div class="mockup-image">
+                <img src="{{ post.mockup_image_3.url }}" alt="{{ post.title }} mockup 3" />
+              </div>
+            </div>
+            <div class="info-sections">
+              <div class="info-section">
+                <h4>About</h4>
+                <p>{{ post.about }}</p>
+              </div>
+              <div class="info-section">
+                <h4>Tools & Apps</h4>
+                <p>{{ post.tools }}</p>
+              </div>
+              <div class="info-section">
+                <h4>Goals</h4>
+                <p>{{ post.goals }}</p>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </section>
+
+      <!-- Mobile Landing Pages -->
+      <section id="mobile-landing-page" class="portfolio">
+        <h2>Mobile Landing Pages</h2>
+        <p>
+          Here is a mobile landing page design I've created, showcasing
+          user-centered design and optimized mobile experience.
+        </p>
+        <div class="portfolio-grid">
+          {% for page in mobile_landing_pages %}
+          <a href="{% url 'mobile_landing_page_detail' page.id %}" style="text-decoration: none; color: inherit;">
+            <div class="portfolio-item" data-link="{{ page.link }}">
+              <div class="image-container">
+                <img
+                  src="{{ page.image.url }}"
+                  alt="Screenshot of {{ page.title }}"
+                />
+              </div>
+              <div class="portfolio-text">
+                <h3>{{ page.title }}</h3>
+                <p>{{ page.description }}</p>
+                <ul class="tag-list">
+                  {% for tag in page.tags.all %}
+                  <li class="tag-item">{{ tag.name }}</li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+          </a>
+          {% endfor %}
+        </div>
+      </section>
+
+      <!-- Websites -->
       <section id="portfolio" class="portfolio">
-        <h2>Projects</h2>
+        <h2>Websites</h2>
         <p>
           Over the past few years, I’ve worked on several exciting projects that
           have truly fueled my passion for technology. Here are some of my

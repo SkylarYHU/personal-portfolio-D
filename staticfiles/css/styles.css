@@ -6,7 +6,7 @@
 
 body {
   background-color: #0f172a;
-  background-image: url('/static/images/background-blurs.png');
+  background-image: url("/static/images/background-blurs.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -18,8 +18,6 @@ body {
   background-color: #ffeb55;
   color: black;
 }
-
-
 
 .container {
   max-width: 1200px;
@@ -149,7 +147,6 @@ p,
   z-index: 2;
 }
 
-
 /* Hero Shapes */
 .hero-shapes {
   position: absolute;
@@ -196,7 +193,8 @@ p,
 }
 
 @keyframes float {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0px) rotate(var(--rotation, 0deg));
   }
   50% {
@@ -221,21 +219,21 @@ p,
   .shape {
     opacity: 0.5;
   }
-  
+
   .shape-cube {
     width: 72px;
     height: auto;
     top: 40%;
     left: 8%;
   }
-  
+
   .shape-cylinder {
     width: 72px;
     height: auto;
     top: 70%;
     right: 10%;
   }
-  
+
   .shape-sphere {
     width: 72px;
     height: auto;
@@ -247,7 +245,8 @@ p,
 .portfolio h2,
 .previous-role h2,
 .client-experience h2,
-.contact h2 {
+.contact h2,
+.table-of-content h2 {
   color: white;
   font-size: 2rem;
 }
@@ -255,12 +254,18 @@ p,
 .portfolio p,
 .previous-role p,
 .client-experience p,
-.contact p {
-  width: 70%;
+.contact p,
+.table-of-content p {
   font-size: 1.2rem;
   color: #8297bd;
   margin: 1rem 0;
   display: block;
+}
+
+/* Detail page specific styles - override global p width */
+.portfolio-detail p {
+  width: 100% !important;
+  margin: 0 !important;
 }
 
 .dashed-line {
@@ -281,6 +286,154 @@ p,
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   gap: 1.2rem;
+}
+
+/* Branding section specific styles */
+#branding .portfolio-grid {
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 800px;
+  gap: 2rem;
+}
+
+#branding .portfolio-item {
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+}
+
+#branding .image-container {
+  height: 200px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+#branding .image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#branding .portfolio-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  justify-content: space-between;
+}
+
+#branding .portfolio-text h3 {
+  margin-bottom: 5px;
+  font-size: 1.5rem;
+}
+
+#branding .portfolio-item p {
+  flex: 1;
+  margin-top: 5px;
+  font-size: 0.9rem;
+  color: #ced4da;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.5;
+  max-height: calc(1.5em * 3);
+  text-align: left;
+}
+
+#branding .tag-list {
+  margin-top: auto;
+  padding-top: 2px;
+  min-height: 25px;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: flex-start;
+}
+
+/* Social Media Post section styles */
+.social-media-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.social-media-item {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  color: white;
+  border-radius: 15px;
+  padding: 2.5rem;
+  transition: filter 0.3s ease;
+}
+
+.social-media-item:hover {
+  filter: brightness(1.1);
+}
+
+.category-title {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: white;
+}
+
+.mockup-images {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.mockup-image {
+  flex: 1;
+  max-width: 300px;
+  min-width: 250px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.mockup-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.info-sections {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.info-section {
+  flex: 1;
+  text-align: left;
+}
+
+.info-section h4 {
+  font-size: 1.2rem;
+  margin-bottom: 0.8rem;
+  color: white;
+  font-weight: 600;
+  font-family: "Libre Baskerville", serif;
+}
+
+.info-section p {
+  font-size: 0.9rem;
+  color: white;
+  line-height: 1.5;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  text-align: justify;
 }
 
 .portfolio-item {
@@ -309,6 +462,35 @@ p,
   object-fit: contain;
 }
 
+/* Mobile Landing Pages specific image sizing */
+#mobile-landing-page .image-container {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+#mobile-landing-page .image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 16/9;
+}
+
+/* Brand Design specific styling - wider cards for fewer items */
+#branding .portfolio-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  #branding .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .portfolio-text {
   padding: 25px;
 }
@@ -335,6 +517,7 @@ p,
   text-overflow: ellipsis;
   line-height: 1.5;
   max-height: calc(1.5em * 3);
+  text-align: left;
 }
 
 .tag-list {
@@ -357,6 +540,10 @@ p,
 
 .tag-item:hover {
   background-color: #1f2a36;
+}
+
+.portfolio {
+  margin: 8rem 0;
 }
 
 .previous-role {
@@ -572,6 +759,51 @@ p,
     width: 90%;
     font-size: 0.9rem;
   }
+
+  /* Branding responsive styles */
+  #branding .portfolio-grid {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+    gap: 1.5rem;
+  }
+
+  #branding .portfolio-item {
+    height: 380px;
+  }
+
+  #branding .image-container {
+    height: 160px;
+  }
+
+  /* Social Media Post responsive styles */
+  .social-media-grid {
+    gap: 1.5rem;
+  }
+
+  .social-media-item {
+    padding: 2rem;
+  }
+
+  .category-title {
+    font-size: 1.8rem;
+  }
+
+  .mockup-images {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .mockup-image {
+    max-width: 280px;
+    min-width: 200px;
+  }
+
+  .info-sections {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    text-align: left;
+  }
 }
 
 @media (max-width: 480px) {
@@ -590,4 +822,84 @@ p,
 
 html {
   scroll-behavior: smooth;
+}
+
+/* Table of Content Styles */
+.table-of-content {
+  scroll-margin-top: 100px;
+  margin-bottom: 6rem;
+}
+
+.table-of-content .content-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.content-item {
+  padding: 1rem 0;
+  transition: all 0.3s ease;
+}
+
+.content-item:hover {
+  transform: translateY(-3px);
+}
+
+.content-item h3 {
+  margin: 0;
+}
+
+.content-item h3 a {
+  color: white;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-block;
+  position: relative;
+}
+
+.content-item h3 a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  transform: scaleX(0);
+  transition: transform 0.2s ease;
+}
+
+.content-item h3 a:hover::after {
+  transform: scaleX(1);
+}
+
+.content-item h3 a:hover {
+  color: white;
+}
+
+.content-item h3 a:visited {
+  color: white;
+}
+
+.content-item h3 a:active {
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .table-of-content {
+    padding: 2rem 1rem;
+    margin: 1rem;
+  }
+
+  .table-of-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .content-item h3 a {
+    font-size: 1.1rem;
+  }
 }

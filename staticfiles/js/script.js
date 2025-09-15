@@ -108,13 +108,19 @@ document.addEventListener('DOMContentLoaded', function() {
     portfolioGrid.addEventListener('click', function(event) {
       console.log('Portfolio grid clicked'); // 调试信息
       const item = event.target.closest('.portfolio-item');
-      if (item) {
+      const link = event.target.closest('a'); // 检查是否点击了链接
+      
+      if (item && !link) {
+        // 只有当点击的不是链接时才处理data-link
         event.preventDefault();
-        const link = item.getAttribute('data-link');
-        console.log('Clicked portfolio item, link:', link); // 调试输出
-        if (link) {
-          window.open(link, '_blank');
+        const dataLink = item.getAttribute('data-link');
+        console.log('Clicked portfolio item, data-link:', dataLink); // 调试输出
+        if (dataLink) {
+          window.open(dataLink, '_blank');
         }
+      } else if (link) {
+        // 如果点击的是链接，让默认行为继续（跳转到详情页）
+        console.log('Clicked on a link, allowing default behavior');
       } else {
         console.log('Clicked area is not a portfolio item');
       }
