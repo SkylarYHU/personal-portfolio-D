@@ -162,8 +162,12 @@ AWS_S3_OBJECT_PARAMETERS = {
 if IS_PRODUCTION or not DEBUG:
     # Use S3 for media files in production
     if AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY and AWS_STORAGE_BUCKET_NAME and AWS_S3_CUSTOM_DOMAIN:
+        # S3 Storage Configuration
         DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-        # Override MEDIA_URL for S3
+        AWS_S3_FILE_OVERWRITE = False
+        AWS_S3_VERIFY = True
+        
+        # Override MEDIA_URL for S3 - this ensures ImageField.url returns full S3 URLs
         MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/'
         # Clear MEDIA_ROOT since we're using S3
         MEDIA_ROOT = ''
