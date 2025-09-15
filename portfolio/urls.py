@@ -24,10 +24,14 @@ urlpatterns = [
     path('', include('portfolioapp.urls')),
 ]
 
-# 添加媒体文件和静态文件的 URL 配置（仅用于开发环境）
-if settings.DEBUG:
+# 添加媒体文件的 URL 配置
+# 在生产环境中，如果使用本地存储作为fallback，也需要URL路由
+if settings.DEBUG or not hasattr(settings, 'DEFAULT_FILE_STORAGE') or 'S3' not in getattr(settings, 'DEFAULT_FILE_STORAGE', ''):
     urlpatterns += static(settings.MEDIA_URL,
                           document_root=settings.MEDIA_ROOT)
+
+# 静态文件的 URL 配置（仅用于开发环境）
+if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL,
                           document_root=settings.STATIC_ROOT)
 
