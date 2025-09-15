@@ -172,7 +172,7 @@ p,
 }
 
 .shape-cube {
-  width: 80px;
+  width: 96px;
   height: auto;
   top: 45%;
   left: 15%;
@@ -181,7 +181,7 @@ p,
 }
 
 .shape-cylinder {
-  width: 80px;
+  width: 96px;
   height: auto;
   top: 60%;
   right: 15%;
@@ -190,7 +190,7 @@ p,
 }
 
 .shape-sphere {
-  width: 80px;
+  width: 96px;
   height: auto;
   top: 25%;
   right: 20%;
@@ -226,21 +226,21 @@ p,
   }
   
   .shape-cube {
-    width: 60px;
+    width: 72px;
     height: auto;
     top: 40%;
     left: 8%;
   }
   
   .shape-cylinder {
-    width: 60px;
+    width: 72px;
     height: auto;
     top: 70%;
     right: 10%;
   }
   
   .shape-sphere {
-    width: 60px;
+    width: 72px;
     height: auto;
     top: 20%;
     right: 15%;
