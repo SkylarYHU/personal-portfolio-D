@@ -99,7 +99,7 @@
             <div class="portfolio-item" data-link="{{ branding_project.link }}">
               <div class="image-container">
                 <img
-                  src="{% static branding_project.image %}"
+                  src="{{ branding_project.image.url }}"
                   alt="Screenshot of {{ branding_project.title }}"
                 />
               </div>
