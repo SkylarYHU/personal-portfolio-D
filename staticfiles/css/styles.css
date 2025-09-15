@@ -6,12 +6,29 @@
 
 body {
   background-color: #0f172a;
-  background-image: url("/static/images/background-blurs.png");
+  background-image: url("../images/background.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   display: flex;
+}
+
+/* 图片优化 */
+img {
+  max-width: 100%;
+  height: auto;
+  loading: lazy;
+}
+
+/* 预加载关键图片 */
+.preload-bg {
+  background-image: url("../images/background.jpg");
+  background-size: 1px 1px;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
 }
 
 ::selection {
