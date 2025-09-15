@@ -7,8 +7,8 @@ document.addEventListener('DOMContentLoaded', function() {
   const sr = ScrollReveal({
     origin: 'bottom',
     distance: '60px',
-    duration: 2000,
-    delay: 400,
+    duration: 1200,
+    delay: 200,
     // reset: true // 如果希望动画重复播放，取消注释这行
   });
 
@@ -17,74 +17,74 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Portfolio section animations
   sr.reveal('.portfolio h2', {
-    delay: 200
+    delay: 100
   });
   
   sr.reveal('.portfolio p', {
-    delay: 400
+    delay: 200
   });
 
   // Portfolio items with staggered animation
   sr.reveal('.portfolio-item', {
-    interval: 200
+    interval: 150
   });
 
   // Previous role section
   sr.reveal('.previous-role h2', {
-    delay: 200
+    delay: 100
   });
   
   sr.reveal('.previous-role > p', {
-    delay: 400
+    delay: 200
   });
   
   sr.reveal('.dashed-line', {
-    delay: 600
+    delay: 300
   });
 
   // Role items with alternating origins
   sr.reveal('.role-item:nth-child(odd)', {
     origin: 'left',
-    delay: 200
+    delay: 100
   });
   
   sr.reveal('.role-item:nth-child(even)', {
     origin: 'right',
-    delay: 200
+    delay: 100
   });
 
   // Client experience section
   sr.reveal('.client-experience h2', {
-    delay: 200
+    delay: 100
   });
   
   sr.reveal('.client-experience p', {
-    delay: 400
+    delay: 200
   });
   
   sr.reveal('.company-logo li', {
-    interval: 100,
+    interval: 80,
     origin: 'bottom',
     distance: '30px'
   });
 
   // Contact section
   sr.reveal('.contact h2', {
-    delay: 200
+    delay: 100
   });
   
   sr.reveal('.contact p', {
-    delay: 400
+    delay: 200
   });
   
   sr.reveal('.contact-logo li', {
-    interval: 100,
+    interval: 80,
     origin: 'bottom',
     distance: '30px'
   });
   
   sr.reveal('.design-detail', {
-    delay: 600
+    delay: 300
   });
 
   // 菜单按钮的切换逻辑
