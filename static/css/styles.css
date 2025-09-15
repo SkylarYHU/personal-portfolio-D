@@ -149,12 +149,6 @@ p,
   z-index: 2;
 }
 
-.hero span {
-  color: #000000;
-  background-color: #FFEB56;
-  padding: 0 8px;
-  border-radius: 4px;
-}
 
 /* Hero Shapes */
 .hero-shapes {
