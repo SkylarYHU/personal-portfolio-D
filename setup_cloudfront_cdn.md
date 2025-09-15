@@ -41,10 +41,23 @@
 
 ### 步骤5：配置环境变量
 
+⚠️ **重要提醒**：只有在CloudFront分配创建完成后才能设置此环境变量！
+
+在Heroku中设置CloudFront域名：
+
 ```bash
-# 设置 CloudFront 域名
+# 替换为你的实际CloudFront域名
 heroku config:set AWS_CLOUDFRONT_DOMAIN=d1234567890123.cloudfront.net --app skylarhu-portfolio
 ```
+
+**注意事项**：
+- 域名格式必须是：`d1234567890123.cloudfront.net`
+- 不要包含 `https://` 前缀
+- 不要使用占位符文本（如"你的cloudfront域名"）
+- 如果设置错误，使用以下命令移除：
+  ```bash
+  heroku config:unset AWS_CLOUDFRONT_DOMAIN --app skylarhu-portfolio
+  ```
 
 ### 步骤6：部署更新
 
