@@ -43,7 +43,7 @@ except:
 # 获取Heroku的动态IP地址
 heroku_host = os.getenv('HEROKU_HOST', '')
 
-ALLOWED_HOSTS = getenv('ALLOWED_HOSTS', default_hosts).split(',')
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', default_hosts).split(',')
 ALLOWED_HOSTS.append(current_hostname)
 if current_ip:
     ALLOWED_HOSTS.append(current_ip)
@@ -156,15 +156,19 @@ AWS_S3_OBJECT_PARAMETERS = {
     'CacheControl': 'max-age=86400',
 }
 
-if not DEBUG:
-    # Production settings with S3
-    if AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY and AWS_STORAGE_BUCKET_NAME:
-        # Use S3 for media files
+# Production settings - force S3 usage when in production
+if IS_PRODUCTION or not DEBUG:
+    # Use S3 for media files in production
+    if AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY and AWS_STORAGE_BUCKET_NAME and AWS_S3_CUSTOM_DOMAIN:
         DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
         MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/'
+        print(f"[SETTINGS] Using S3 storage: {MEDIA_URL}")
     else:
+        print(f"[SETTINGS] Missing AWS config - AWS_ACCESS_KEY_ID: {bool(AWS_ACCESS_KEY_ID)}, AWS_SECRET_ACCESS_KEY: {bool(AWS_SECRET_ACCESS_KEY)}, AWS_STORAGE_BUCKET_NAME: {AWS_STORAGE_BUCKET_NAME}, AWS_S3_CUSTOM_DOMAIN: {AWS_S3_CUSTOM_DOMAIN}")
         # Fallback to local media serving
         STATICFILES_DIRS.append(os.path.join(BASE_DIR, 'media'))
+else:
+    print(f"[SETTINGS] Development mode - using local storage")
     
     # Keep WhiteNoise for static files
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
