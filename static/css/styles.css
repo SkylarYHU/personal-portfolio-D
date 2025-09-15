@@ -14,50 +14,7 @@ body {
   color: black;
 }
 
-/* GSAP 手电筒照明效果 */
-.flashlight-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.8);
-  pointer-events: none;
-  z-index: 9998;
-  opacity: 0;
-  transition: opacity 0.5s ease;
-  mask: radial-gradient(circle 200px at var(--mouse-x, 50%) var(--mouse-y, 50%), transparent 0%, transparent 40%, black 70%);
-  -webkit-mask: radial-gradient(circle 200px at var(--mouse-x, 50%) var(--mouse-y, 50%), transparent 0%, transparent 40%, black 70%);
-}
 
-.flashlight-overlay.active {
-  opacity: 1;
-}
-
-/* 增强的光晕效果 */
-.flashlight-glow {
-  position: fixed;
-  width: 600px;
-  height: 600px;
-  border-radius: 50%;
-  background: radial-gradient(
-    circle,
-    rgba(255, 235, 85, 0.15) 0%,
-    rgba(255, 235, 85, 0.08) 30%,
-    rgba(255, 235, 85, 0.03) 50%,
-    transparent 70%
-  );
-  pointer-events: none;
-  z-index: 9997;
-  transform: translate(-50%, -50%);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  mix-blend-mode: screen;
-}
-
-.flashlight-glow.active {
-  opacity: 1;
-}
 
 .container {
   max-width: 1200px;
