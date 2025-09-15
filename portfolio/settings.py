@@ -9,7 +9,7 @@ from dotenv import load_dotenv
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Check if we're in production (Heroku sets this)
-IS_PRODUCTION = os.getenv('DYNO') is not None
+IS_PRODUCTION = os.getenv('IS_DEVELOPMENT', 'True').lower() == 'false'
 
 # Only load .env file in local development
 if not IS_PRODUCTION:
