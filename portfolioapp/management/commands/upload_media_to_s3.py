@@ -3,7 +3,6 @@ from django.core.files.storage import default_storage
 from django.conf import settings
 from django.core.files.base import ContentFile
 import os
-import requests
 
 class Command(BaseCommand):
     help = 'Upload media files to S3 - creates sample files if media directory not found'
