@@ -125,4 +125,47 @@ document.addEventListener('DOMContentLoaded', function() {
   } else {
     console.error('Portfolio grid not found.');
   }
+
+  // Accordion functionality for Table of Content
+  const accordionItems = document.querySelectorAll('.accordion-item');
+  
+  accordionItems.forEach(item => {
+    const header = item.querySelector('.accordion-header');
+    const content = item.querySelector('.accordion-content');
+    const targetId = item.getAttribute('data-target');
+    
+    // Add click event for navigation
+    item.addEventListener('click', (e) => {
+      // Prevent default if clicking on a link
+      const isLink = e.target.closest('a');
+      if (!isLink && targetId) {
+        e.preventDefault();
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          targetElement.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    });
+    
+    header.addEventListener('click', () => {
+      const isActive = item.classList.contains('active');
+      
+      // Close all accordion items
+      accordionItems.forEach(otherItem => {
+        otherItem.classList.remove('active');
+        const otherContent = otherItem.querySelector('.accordion-content');
+        if (otherContent) {
+          otherContent.style.maxHeight = null;
+        }
+      });
+      
+      // If the clicked item wasn't active, open it
+      if (!isActive) {
+        item.classList.add('active');
+        if (content) {
+          content.style.maxHeight = content.scrollHeight + 'px';
+        }
+      }
+    });
+  })
 });
