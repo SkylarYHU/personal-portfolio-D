@@ -509,7 +509,7 @@ p,
   padding: 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 5.4px;
+  gap: 4.32px;
   align-items: flex-start;
 }
 
@@ -689,7 +689,7 @@ p,
   padding: 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 9px;
+  gap: 7.2px;
 }
 
 .tag-item {
