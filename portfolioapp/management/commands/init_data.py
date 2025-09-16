@@ -21,7 +21,7 @@ class Command(BaseCommand):
             branding1 = BrandingProject.objects.create(
                 title='Alibaba Brand Identity',
                 description='Complete brand identity design for Alibaba including logo, color palette, and brand guidelines.',
-                image='images/Alibaba-logo.png',
+                image='images/Alibaba-logo.svg',
                 about_brand='Alibaba is a leading e-commerce platform.',
                 goals='Create a modern and trustworthy brand identity for the e-commerce platform.',
                 tools_apps='Adobe Illustrator, Adobe Photoshop, Figma'
@@ -30,7 +30,7 @@ class Command(BaseCommand):
             branding2 = BrandingProject.objects.create(
                 title='Meituan Brand Design',
                 description='Brand redesign project for Meituan food delivery platform.',
-                image='images/meituan-logo.png',
+                image='images/meituan-logo.svg',
                 about_brand='Meituan is China\'s leading food delivery service.',
                 goals='Redesign the brand to be more modern and user-friendly.',
                 tools_apps='Adobe Creative Suite, Sketch'
@@ -39,7 +39,7 @@ class Command(BaseCommand):
             branding3 = BrandingProject.objects.create(
                 title='Taobao Visual Identity',
                 description='Visual identity system for Taobao marketplace.',
-                image='images/taobao-logo.png',
+                image='images/taobao-logo1.svg',
                 about_brand='Taobao is China\'s largest online shopping platform.',
                 goals='Create a cohesive visual identity system for the marketplace.',
                 tools_apps='Adobe Illustrator, Adobe Photoshop'
@@ -69,9 +69,9 @@ class Command(BaseCommand):
         if not SocialMediaPost.objects.exists():
             social1 = SocialMediaPost.objects.create(
                 title='Food & Beverage',
-                mockup_image_1='images/meituan-logo.png',
-                mockup_image_2='images/taobao-logo.png',
-                mockup_image_3='images/Alibaba-logo.png',
+                mockup_image_1='images/meituan-logo.svg',
+                mockup_image_2='images/taobao-logo1.svg',
+                mockup_image_3='images/Alibaba-logo.svg',
                 about='Creative social media designs for food and beverage brands.',
                 tools='Adobe Photoshop, Illustrator, Figma',
                 goals='Increase brand engagement and visual appeal.'

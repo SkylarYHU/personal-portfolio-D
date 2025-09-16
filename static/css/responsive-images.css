@@ -1,5 +1,6 @@
 
-/* 响应式背景图片优化 */
+/* 响应式背景图片优化 - 已禁用，使用纯色背景 */
+/* 
 @media (max-width: 768px) {
   body {
     background-image: url("../images/background-blurs-mobile.jpg");
@@ -12,7 +13,7 @@
   }
 }
 
-/* WebP支持检测 */
+WebP支持检测
 @supports (background-image: url("image.webp")) {
   body {
     background-image: url("../images/background-blurs-webp.webp");
@@ -24,6 +25,7 @@
     }
   }
 }
+*/
 
 /* 预加载优化 */
 .preload-images {
