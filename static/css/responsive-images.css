@@ -27,7 +27,8 @@ WebP支持检测
 }
 */
 
-/* 预加载优化 */
+/* 预加载优化 - 背景图片已移除 */
+/* 
 .preload-images {
   position: absolute;
   top: -9999px;
@@ -40,3 +41,4 @@ WebP支持检测
 .preload-images::after {
   content: url("../images/background-blurs-optimized.jpg") url("../images/background-blurs-mobile.jpg");
 }
+*/
