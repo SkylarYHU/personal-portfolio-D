@@ -637,7 +637,7 @@ p,
   list-style: none;
   gap: 1.5rem;
   margin-top: 6rem;
-  justify-items: center;
+  justify-items: start;
   align-items: center;
 }
 
