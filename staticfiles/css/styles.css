@@ -236,40 +236,35 @@ p,
   font-size: 0.9rem;
   color: rgba(255, 255, 255, 0.7);
   line-height: 1.6;
-  max-width: 43.2%;
+  max-width: 45%;
   margin: 0;
-  text-align: right;
+  text-align: left;
   margin-left: auto;
-  transform: translateY(-40%);
 }
 
 .developer-label {
   font-size: clamp(2.7rem, 6.75vw, 4.725rem);
   font-weight: 700;
   color: #000000;
-  background: #FFEB56;
+  background: #ffeb56;
   padding: 8px 16px;
   position: absolute;
   bottom: 0;
-  left: 0;
-  transform: translateY(20%);
+  left: 5%;
+  transform: translateY(17%);
   animation: slideInFromLeft 1s ease-out;
 }
 
 @keyframes slideInFromLeft {
   0% {
-    transform: translateX(-100%) translateY(20%);
+    transform: translateX(-100%) translateY(17%);
     opacity: 0;
   }
   100% {
-    transform: translateX(0) translateY(20%);
+    transform: translateX(0) translateY(17%);
     opacity: 1;
   }
 }
-
-
-
-
 
 /* Hero Shapes */
 .hero-shapes {
@@ -290,28 +285,28 @@ p,
 }
 
 .shape-cube {
-  width: 106px;
+  width: 130px;
   height: auto;
   top: 45%;
-  left: 15%;
+  left: 10%;
   animation-delay: 0s;
   transform: rotate(15deg);
 }
 
 .shape-cylinder {
-  width: 106px;
+  width: 130px;
   height: auto;
-  top: 60%;
-  right: 15%;
+  top: 63%;
+  right: 12%;
   animation-delay: 2s;
   transform: rotate(-10deg);
 }
 
 .shape-sphere {
-  width: 106px;
+  width: 130px;
   height: auto;
-  top: 25%;
-  right: 20%;
+  top: 17%;
+  right: 10%;
   animation-delay: 4s;
   transform: rotate(25deg);
 }
@@ -371,41 +366,39 @@ p,
     max-width: calc(100% - 2rem);
     min-height: 350px;
   }
-  
+
   .card-header {
     margin-bottom: 1.5rem;
   }
-  
+
   .role-title {
     font-size: 1rem;
   }
-  
+
   .main-title {
     font-size: clamp(2.5rem, 10vw, 4rem);
   }
-  
+
   .card-footer {
     flex-direction: column;
     align-items: flex-start;
     gap: 1rem;
   }
-  
+
   .description {
     max-width: 100%;
     text-align: left;
     font-size: 0.8rem;
   }
-  
+
   .developer-label {
-      position: static;
-      font-size: clamp(2.025rem, 10.8vw, 3.375rem);
-      background: #FFEB56;
-      color: #000000;
-      padding: 8px 16px;
-      animation: slideInFromLeft 1s ease-out;
-    }
-
-
+    position: static;
+    font-size: clamp(2.025rem, 10.8vw, 3.375rem);
+    background: #ffeb56;
+    color: #000000;
+    padding: 8px 16px;
+    animation: slideInFromLeft 1s ease-out;
+  }
 }
 
 .portfolio h2,
