@@ -867,6 +867,10 @@ html {
   margin-bottom: 6rem;
 }
 
+.table-of-content h2 {
+  margin-bottom: 1.8rem; /* 增加20%间距，从1.5rem增加到1.8rem */
+}
+
 .table-of-content .content-grid {
   display: flex;
   flex-direction: column;
