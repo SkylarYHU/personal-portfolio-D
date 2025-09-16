@@ -200,7 +200,7 @@ p,
 }
 
 .shape-cube {
-  width: 96px;
+  width: 106px;
   height: auto;
   top: 45%;
   left: 15%;
@@ -209,7 +209,7 @@ p,
 }
 
 .shape-cylinder {
-  width: 96px;
+  width: 106px;
   height: auto;
   top: 60%;
   right: 15%;
@@ -218,7 +218,7 @@ p,
 }
 
 .shape-sphere {
-  width: 96px;
+  width: 106px;
   height: auto;
   top: 25%;
   right: 20%;
@@ -255,21 +255,21 @@ p,
   }
 
   .shape-cube {
-    width: 72px;
+    width: 79px;
     height: auto;
     top: 40%;
     left: 8%;
   }
 
   .shape-cylinder {
-    width: 72px;
+    width: 79px;
     height: auto;
     top: 70%;
     right: 10%;
   }
 
   .shape-sphere {
-    width: 72px;
+    width: 79px;
     height: auto;
     top: 20%;
     right: 15%;
@@ -419,19 +419,31 @@ p,
 
 .mockup-images {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   gap: 2rem;
   margin-bottom: 2.5rem;
   flex-wrap: wrap;
 }
 
 .mockup-image {
-  flex: 1;
+  flex: 0 0 300px;
   max-width: 300px;
   min-width: 250px;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.info-sections {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.info-section {
+  flex: 0 0 300px;
+  text-align: left;
 }
 
 .mockup-image img {
@@ -441,15 +453,8 @@ p,
   object-fit: cover;
 }
 
-.info-sections {
-  display: flex;
-  justify-content: space-between;
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
 .info-section {
-  flex: 1;
+  flex: 0 0 300px;
   text-align: left;
 }
 
@@ -570,6 +575,7 @@ p,
   font-size: 0.8rem;
   font-weight: 500;
   display: inline-block;
+  font-family: "Courier Prime", monospace;
 }
 
 .tag-item:hover {
@@ -841,7 +847,7 @@ p,
   }
 
   .info-sections {
-    grid-template-columns: 1fr;
+    flex-direction: column;
     gap: 1.5rem;
     text-align: left;
   }
