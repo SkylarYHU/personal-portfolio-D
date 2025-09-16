@@ -212,8 +212,8 @@ if IS_PRODUCTION or not DEBUG:
 else:
     print(f"[SETTINGS] Development mode - using local storage")
     
-    # Keep WhiteNoise for static files
-    STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
+    # Keep WhiteNoise for static files - temporarily disable compression
+    STATICFILES_STORAGE = 'whitenoise.storage.StaticFilesStorage'
     WHITENOISE_USE_FINDERS = True
     WHITENOISE_AUTOREFRESH = True
     # 设置较短的缓存时间以避免图片更新问题
