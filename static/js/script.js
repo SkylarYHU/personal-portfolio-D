@@ -1,7 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-  console.log('JavaScript Loaded'); // 确保 JavaScript 已加载
-
-
 
   // Initialize ScrollReveal
   const sr = ScrollReveal({
