@@ -216,6 +216,9 @@ else:
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
     WHITENOISE_USE_FINDERS = True
     WHITENOISE_AUTOREFRESH = True
+    # 设置较短的缓存时间以避免图片更新问题
+    WHITENOISE_MAX_AGE = 300  # 5分钟缓存
+    WHITENOISE_SKIP_COMPRESS_EXTENSIONS = ['jpg', 'jpeg', 'png', 'gif', 'webp', 'zip', 'gz', 'tgz', 'bz2', 'tbz', 'xz', 'br']
 
 # Logging configuration for better error tracking
 LOGGING = {
