@@ -6,11 +6,6 @@
 
 body {
   background-color: #0f172a;
-  background-image: url("../images/background-blurs.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: scroll; /* 改为scroll提高性能 */
   display: flex;
   /* 添加图片优化 */
   image-rendering: -webkit-optimize-contrast;
@@ -33,7 +28,8 @@ img {
   loading: eager;
 }
 
-/* 背景图片优化 */
+/* 背景图片优化 - 已禁用，使用纯色背景 */
+/* 
 @media (max-width: 768px) {
   body {
     background-attachment: scroll;
@@ -41,7 +37,7 @@ img {
   }
 }
 
-/* 预加载关键图片 */
+预加载关键图片
 .preload-bg {
   background-image: url("../images/background.jpg");
   background-size: 1px 1px;
@@ -50,6 +46,7 @@ img {
   top: -9999px;
   left: -9999px;
 }
+*/
 
 ::selection {
   background-color: #ffeb55;
@@ -865,6 +862,10 @@ html {
 .table-of-content {
   scroll-margin-top: 100px;
   margin-bottom: 6rem;
+}
+
+.table-of-content h2 {
+  margin-bottom: 1.8rem; /* 增加20%间距，从1.5rem增加到1.8rem */
 }
 
 .table-of-content .content-grid {
