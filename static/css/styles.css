@@ -648,6 +648,12 @@ p,
   transition: transform 0.3s ease;
 }
 
+/* Specific styling for xiaohongshu logo to match other logos */
+.company-logo img[alt="Xiaohongshu Logo"] {
+  height: 3rem;
+  width: auto;
+}
+
 .company-logo img:hover {
   transform: translateY(-5px);
 }
