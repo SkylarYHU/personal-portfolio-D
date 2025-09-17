@@ -677,16 +677,14 @@ p,
 .content-container {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
-  border-radius: 15px;
+  border-radius: 10px;
   padding: 2rem;
-  margin-top: 1.5rem;
+  margin-top: 3rem;
   min-height: 120px;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 1.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.2);
   color: white;
 }
 
