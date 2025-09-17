@@ -134,14 +134,18 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Add click event for navigation - entire accordion item is clickable
     item.addEventListener('click', (e) => {
-      // Always navigate when clicking anywhere on the accordion item
-      if (targetId) {
+      // Check if clicked element is a link
+      const isLink = e.target.closest('a');
+      
+      if (!isLink && targetId) {
+        // Only prevent default and navigate if not clicking on a link
         e.preventDefault();
         const targetElement = document.querySelector(targetId);
         if (targetElement) {
           targetElement.scrollIntoView({ behavior: 'smooth' });
         }
       }
+      // If clicking on a link, let the default behavior happen
     });
   })
 });
