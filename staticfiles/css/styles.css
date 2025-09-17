@@ -524,13 +524,14 @@ p,
 }
 
 #branding .portfolio-item {
-  height: 450px;
+  height: auto !important;
+  min-height: 350px !important;
   display: flex;
   flex-direction: column;
 }
 
 #branding .image-container {
-  height: 200px;
+  height: 180px !important;
   overflow: hidden;
   flex-shrink: 0;
 }
@@ -545,8 +546,9 @@ p,
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 25px 25px 10px 25px;
-  justify-content: flex-start;
+  padding: 15px 15px 5px 15px !important;
+  justify-content: flex-start !important;
+  height: auto !important;
 }
 
 #branding .portfolio-text h3 {
@@ -572,6 +574,7 @@ p,
 
 #branding .tag-list {
   margin-top: 0px !important;
+  margin-bottom: 0px !important;
   padding-top: 0;
   min-height: 25px;
   list-style: none;
@@ -580,6 +583,11 @@ p,
   flex-wrap: wrap;
   gap: 2px !important;
   align-items: flex-start;
+}
+
+#branding .branding-link {
+  text-decoration: none !important;
+  color: inherit !important;
 }
 
 /* Social Media Post section styles */
