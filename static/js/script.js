@@ -129,20 +129,30 @@ document.addEventListener('DOMContentLoaded', function() {
   // Accordion functionality for Table of Content
   const accordionItems = document.querySelectorAll('.accordion-item');
   
+  console.log('Found accordion items:', accordionItems.length);
+  
   accordionItems.forEach(item => {
     const targetId = item.getAttribute('data-target');
+    console.log('Accordion item target:', targetId);
     
     // Add click event for navigation - entire accordion item is clickable
     item.addEventListener('click', (e) => {
+      console.log('Accordion item clicked, target:', targetId);
+      
       // Check if clicked element is a link (Learn more button)
       const isLink = e.target.closest('a');
+      console.log('Is link clicked:', !!isLink);
       
       if (!isLink && targetId) {
         // Only navigate if not clicking on the Learn more link
         e.preventDefault();
+        console.log('Attempting to scroll to:', targetId);
         const targetElement = document.querySelector(targetId);
         if (targetElement) {
-          targetElement.scrollIntoView({ behavior: 'smooth' });
+          console.log('Target element found, scrolling...');
+          targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else {
+          console.error('Target element not found:', targetId);
         }
       }
       // If clicking on Learn more link, let the default behavior happen (scroll to anchor)
