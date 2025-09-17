@@ -587,22 +587,13 @@ p,
 .social-media-grid {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 3rem;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-.social-media-item {
-  background-color: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(5px);
-  color: white;
-  border-radius: 15px;
-  padding: 2.5rem;
-  transition: filter 0.3s ease;
-}
-
-.social-media-item:hover {
-  filter: brightness(1.1);
+.social-media-category {
+  margin-bottom: 3rem;
 }
 
 .category-title {
@@ -612,40 +603,102 @@ p,
   color: white;
 }
 
-.mockup-images {
+.polaroid-gallery {
   display: flex;
   justify-content: center;
   gap: 2rem;
-  margin-bottom: 2.5rem;
   flex-wrap: wrap;
 }
 
-.mockup-image {
-  flex: 0 0 300px;
-  max-width: 300px;
+.polaroid-card {
+  background-color: white;
+  padding: 15px 15px 20px 15px;
+  border-radius: 3px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 2px 4px rgba(0, 0, 0, 0.1);
+  transform: rotate(-2deg);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 280px;
   min-width: 250px;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
-.info-sections {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  margin-top: 2rem;
+.polaroid-card:nth-child(2) {
+  transform: rotate(1deg);
 }
 
-.info-section {
-  flex: 0 0 300px;
-  text-align: left;
+.polaroid-card:nth-child(3) {
+  transform: rotate(-1deg);
 }
 
-.mockup-image img {
+.polaroid-card:hover {
+  transform: rotate(0deg) scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3), 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}
+
+.polaroid-image {
   width: 100%;
-  height: auto;
-  display: block;
+  height: 200px;
+  overflow: hidden;
+  margin-bottom: 15px;
+  background-color: #f8f9fa;
+}
+
+.polaroid-image img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
+  display: block;
+}
+
+.polaroid-text {
+  color: #333;
+  text-align: center;
+  min-height: 80px;
+}
+
+.polaroid-text h4 {
+  font-size: 1rem;
+  margin-bottom: 8px;
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.polaroid-text p {
+  font-size: 0.85rem;
+  line-height: 1.4;
+  color: #555;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Responsive design for polaroid cards */
+@media (max-width: 768px) {
+  .polaroid-gallery {
+    gap: 1.5rem;
+  }
+  
+  .polaroid-card {
+    max-width: 250px;
+    min-width: 220px;
+    transform: rotate(0deg);
+  }
+  
+  .polaroid-card:nth-child(2),
+  .polaroid-card:nth-child(3) {
+    transform: rotate(0deg);
+  }
+  
+  .polaroid-card:hover {
+    transform: scale(1.02);
+  }
+  
+  .polaroid-image {
+    height: 180px;
+  }
 }
 
 .info-section {
