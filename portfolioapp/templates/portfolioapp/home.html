@@ -168,8 +168,8 @@
                 />
               </div>
               <div class="portfolio-text" style="padding: 15px 15px 5px 15px; justify-content: flex-start; height: auto;">
-                <h3 style="margin-bottom: 0px !important;">{{ branding_project.title }}</h3>
-                <p style="margin-top: 8px !important; margin-bottom: 8px !important; line-height: 1.2;">{{ branding_project.description }}</p>
+                <h3 style="margin-bottom: 1px !important;">{{ branding_project.title }}</h3>
+                <p style="margin-top: 8px !important; margin-bottom: 8px !important; line-height: 1.2; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; line-clamp: 3; overflow: hidden; text-overflow: ellipsis;">{{ branding_project.description }}</p>
                 <ul class="tag-list" style="margin-top: 0px !important; margin-bottom: 0px !important;">
                   {% for tag in branding_project.tags.all %}
                   <li class="tag-item">{{ tag.name }}</li>
