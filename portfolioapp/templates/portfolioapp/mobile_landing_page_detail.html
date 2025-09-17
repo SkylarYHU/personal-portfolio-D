@@ -70,71 +70,22 @@
 
 
           <div style="display: grid; gap: 3rem">
-            <!-- About Brand Section -->
-            {% if mobile_landing_page.about_brand %}
-            <div
-              style="
-                padding: 2rem 2.5rem;
-
-                border-radius: 10px;
-              "
-            >
-              <h2
-                style="
-                  color: white;
-                  font-size: 1.8rem;
-                  margin-bottom: 1rem;
-                  text-align: left;
-                "
-              >
-                About Brand
-              </h2>
-              <p
-                style="
-                  color: rgba(255, 255, 255, 0.85);
-                  font-size: 1.012rem;
-                  line-height: 1.92;
-                  text-align: left;
-                  max-width: 100%;
-                  padding: 0;
-                "
-              >
-                {{ mobile_landing_page.about_brand }}
-              </p>
-            </div>
-            {% endif %}
-
-            <!-- Goals Section -->
-            {% if mobile_landing_page.goals %}
-            <div
-              style="
-                padding: 2rem 2.5rem;
-
-                border-radius: 10px;
-              "
-            >
-              <h2
-                style="
-                  color: white;
-                  font-size: 1.8rem;
-                  margin-bottom: 1rem;
-                  text-align: left;
-                "
-              >
-                Goals
-              </h2>
-              <p
-                style="
-                  color: rgba(255, 255, 255, 0.85);
-                  font-size: 1.012rem;
-                  line-height: 1.92;
-                  text-align: left;
-                  max-width: 100%;
-                  padding: 0;
-                "
-              >
-                {{ mobile_landing_page.goals }}
-              </p>
+            <!-- Brand Information Container -->
+            {% if mobile_landing_page.about_brand or mobile_landing_page.goals %}
+            <div class="content-container">
+              {% if mobile_landing_page.about_brand %}
+              <div class="content-row">
+                <h4>About Brand</h4>
+                <p>{{ mobile_landing_page.about_brand }}</p>
+              </div>
+              {% endif %}
+              
+              {% if mobile_landing_page.goals %}
+              <div class="content-row">
+                <h4>Goals</h4>
+                <p>{{ mobile_landing_page.goals }}</p>
+              </div>
+              {% endif %}
             </div>
             {% endif %}
 

@@ -69,106 +69,29 @@
         >
 
 
-          <!-- About Brand Section -->
-          {% if branding_project.about_brand %}
-          <div
-            style="
-              margin-bottom: 3rem;
-              padding: 2rem 2.5rem;
-              border-radius: 10px;
-            "
-          >
-            <h2
-              style="
-                color: white;
-                font-size: 1.8rem;
-                margin-bottom: 1rem;
-                text-align: left;
-              "
-            >
-              About Brand
-            </h2>
-            <p
-              style="
-                color: rgba(255, 255, 255, 0.85);
-                font-size: 1.012rem;
-                line-height: 1.92;
-                text-align: left;
-                max-width: 100%;
-                padding: 0;
-              "
-            >
-              {{ branding_project.about_brand }}
-            </p>
-          </div>
-          {% endif %}
-
-          <!-- Goals Section -->
-          {% if branding_project.goals %}
-          <div
-            style="
-              margin-bottom: 3rem;
-              padding: 2rem 2.5rem;
-              border-radius: 10px;
-            "
-          >
-            <h2
-              style="
-                color: white;
-                font-size: 1.8rem;
-                margin-bottom: 1rem;
-                text-align: left;
-              "
-            >
-              Goals
-            </h2>
-            <p
-              style="
-                color: rgba(255, 255, 255, 0.85);
-                font-size: 1.012rem;
-                line-height: 1.92;
-                text-align: left;
-                max-width: 100%;
-                padding: 0;
-              "
-            >
-              {{ branding_project.goals }}
-            </p>
-          </div>
-          {% endif %}
-
-          <!-- Tools & Apps Section -->
-          {% if branding_project.tools_apps %}
-          <div
-            style="
-              margin-bottom: 3rem;
-              padding: 2rem 2.5rem;
-
-              border-radius: 10px;
-            "
-          >
-            <h2
-              style="
-                color: white;
-                font-size: 1.8rem;
-                margin-bottom: 1rem;
-                text-align: left;
-              "
-            >
-              Tools & Apps
-            </h2>
-            <p
-              style="
-                color: rgba(255, 255, 255, 0.85);
-                font-size: 1.012rem;
-                line-height: 1.92;
-                text-align: left;
-                max-width: 100%;
-                padding: 0;
-              "
-            >
-              {{ branding_project.tools_apps }}
-            </p>
+          <!-- Brand Information Container -->
+          {% if branding_project.about_brand or branding_project.goals or branding_project.tools_apps %}
+          <div class="content-container" style="margin-bottom: 3rem;">
+            {% if branding_project.about_brand %}
+            <div class="content-row">
+              <h4>About Brand</h4>
+              <p>{{ branding_project.about_brand }}</p>
+            </div>
+            {% endif %}
+            
+            {% if branding_project.goals %}
+            <div class="content-row">
+              <h4>Goals</h4>
+              <p>{{ branding_project.goals }}</p>
+            </div>
+            {% endif %}
+            
+            {% if branding_project.tools_apps %}
+            <div class="content-row">
+              <h4>Tools & Apps</h4>
+              <p>{{ branding_project.tools_apps }}</p>
+            </div>
+            {% endif %}
           </div>
           {% endif %}
 
