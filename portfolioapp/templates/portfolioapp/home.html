@@ -167,9 +167,9 @@
                   alt="Screenshot of {{ branding_project.title }}"
                 />
               </div>
-              <div class="portfolio-text" style="padding: 25px 25px 2px 25px; justify-content: flex-start;">
+              <div class="portfolio-text" style="padding: 25px 25px 0px 25px; justify-content: flex-start;">
                 <h3 style="margin-bottom: 0px !important;">{{ branding_project.title }}</h3>
-                <p style="margin-top: 2px !important; margin-bottom: 2px !important; line-height: 1.2;">{{ branding_project.description }}</p>
+                <p style="margin-top: 8px !important; margin-bottom: 8px !important; line-height: 1.2;">{{ branding_project.description }}</p>
                 <ul class="tag-list" style="margin-top: 0px !important; margin-bottom: 0px !important;">
                   {% for tag in branding_project.tags.all %}
                   <li class="tag-item">{{ tag.name }}</li>
