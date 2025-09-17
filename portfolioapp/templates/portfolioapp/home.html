@@ -12,7 +12,7 @@
     <link
       rel="stylesheet"
       type="text/css"
-      href="{% static 'css/styles.css' %}?v=2025-01-27-v9"
+      href="{% static 'css/styles.css' %}?v=2025-01-27-v10"
     />
     <link
       rel="stylesheet"
@@ -220,18 +220,22 @@
                 </div>
               </div>
             </div>
-            <div class="category-info">
-              <div class="info-item">
-                <h4>About</h4>
-                <p>{{ post.about }}</p>
+            <div class="file-folder-container">
+              <div class="folder-tabs">
+                <div class="folder-tab active" data-tab="about-{{ forloop.counter }}">ABOUT</div>
+                <div class="folder-tab" data-tab="goals-{{ forloop.counter }}">GOALS</div>
+                <div class="folder-tab" data-tab="tools-{{ forloop.counter }}">TOOLS & APPS</div>
               </div>
-              <div class="info-item">
-                <h4>Goals</h4>
-                <p>{{ post.goals }}</p>
-              </div>
-              <div class="info-item">
-                <h4>Tools & Apps</h4>
-                <p>{{ post.tools }}</p>
+              <div class="folder-content">
+                <div class="tab-content active" id="about-{{ forloop.counter }}">
+                  <p>{{ post.about }}</p>
+                </div>
+                <div class="tab-content" id="goals-{{ forloop.counter }}">
+                  <p>{{ post.goals }}</p>
+                </div>
+                <div class="tab-content" id="tools-{{ forloop.counter }}">
+                  <p>{{ post.tools }}</p>
+                </div>
               </div>
             </div>
           </div>

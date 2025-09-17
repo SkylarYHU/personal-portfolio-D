@@ -658,49 +658,135 @@ p,
 
 .polaroid-text p {
   font-size: 0.9rem;
-  color: #333;
+  color: #414141;
   text-align: center;
   font-family: 'Poppins', sans-serif;
   font-weight: 500;
   line-height: 1.2;
 }
 
-/* Category info section below polaroid gallery */
-.category-info {
+/* File folder container styling */
+.file-folder-container {
+  max-width: 600px;
+  margin: 2.5rem auto 0;
+  position: relative;
+}
+
+/* Folder tabs styling */
+.folder-tabs {
   display: flex;
-  justify-content: center;
-  gap: 2rem;
-  margin-top: 2.5rem;
-  flex-wrap: wrap;
+  position: relative;
+  z-index: 2;
 }
 
-.info-item {
-  flex: 0 0 300px;
-  text-align: left;
-  background-color: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(5px);
+.folder-tab {
+  background: linear-gradient(135deg, #8B7355 0%, #A0956B 100%);
   color: white;
-  border-radius: 10px;
-  padding: 1.5rem;
-  transition: transform 0.3s ease;
-}
-
-.info-item:hover {
-  transform: translateY(-5px);
-}
-
-.info-item h4 {
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
-  color: white;
+  padding: 12px 24px;
+  margin-right: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
   font-weight: 600;
+  letter-spacing: 0.5px;
+  border-radius: 8px 8px 0 0;
+  position: relative;
+  transition: all 0.3s ease;
+  border: 2px solid #6B5B47;
+  border-bottom: none;
+  transform: perspective(100px) rotateX(-5deg);
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.2);
 }
 
-.info-item p {
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.9);
+.folder-tab:hover {
+  background: linear-gradient(135deg, #9A8461 0%, #B5A677 100%);
+  transform: perspective(100px) rotateX(-2deg) translateY(-2px);
+}
+
+.folder-tab.active {
+  background: linear-gradient(135deg, #D4C4A8 0%, #E8DCC0 100%);
+  color: #4A4A4A;
+  border-color: #B8A082;
+  transform: perspective(100px) rotateX(0deg) translateY(-3px);
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 3;
+}
+
+/* Folder content styling */
+.folder-content {
+  background: linear-gradient(135deg, #F5F1E8 0%, #E8DCC0 100%);
+  border: 2px solid #B8A082;
+  border-radius: 0 12px 12px 12px;
+  padding: 2rem;
+  min-height: 150px;
+  position: relative;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  transform: perspective(200px) rotateX(2deg);
+}
+
+.folder-content::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  height: 20px;
+  background: linear-gradient(135deg, #D4C4A8 0%, #E8DCC0 100%);
+  border-radius: 12px 12px 0 0;
+  border: 2px solid #B8A082;
+  border-bottom: none;
+}
+
+/* Tab content styling */
+.tab-content {
+  display: none;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.tab-content p {
+  color: #4A4A4A;
+  font-size: 1rem;
+  line-height: 1.7;
   margin: 0;
+  text-align: left;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive design for file folder */
+@media (max-width: 768px) {
+  .file-folder-container {
+    max-width: 90%;
+    margin: 2rem auto 0;
+  }
+  
+  .folder-tab {
+    padding: 10px 16px;
+    font-size: 0.8rem;
+    margin-right: 2px;
+  }
+  
+  .folder-content {
+    padding: 1.5rem;
+    min-height: 120px;
+  }
+  
+  .tab-content p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
 }
 
 /* Responsive design for polaroid cards and category info */
