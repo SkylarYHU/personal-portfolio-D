@@ -1,0 +1,176 @@
+/* Accordion Styles */
+.accordion-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.accordion-item {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.accordion-header {
+  display: flex;
+  align-items: center;
+  padding: 2rem 0;
+  gap: 2rem;
+}
+
+.accordion-number {
+  font-size: 1.32rem;
+  font-weight: 300;
+  color: #c5c5c5;
+  min-width: 40px;
+  flex-shrink: 0;
+  font-family: "Poppins", sans-serif;
+  font-style: italic;
+}
+
+.accordion-content {
+  flex: 1;
+}
+
+.accordion-title {
+  font-size: 2rem;
+  font-weight: 400;
+  color: #c5c5c5;
+  margin: 0;
+  transition: all 0.3s ease;
+  font-family: "Poppins", sans-serif;
+}
+
+.accordion-details {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease;
+}
+
+.accordion-description {
+  color: #ccc;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0 0 2.97rem 0;
+}
+
+.learn-more {
+  color: #333;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: "Poppins", sans-serif;
+  background-color: white;
+  padding: 6px 12px;
+  border-radius: 5px;
+}
+
+.learn-more:hover {
+  transform: translateX(5px);
+}
+
+.accordion-toggle {
+  font-size: 1.2rem;
+  color: #c5c5c5;
+  transition: all 0.3s ease;
+  transform: rotate(-90deg);
+  min-width: 30px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.accordion-separator {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  margin: 0;
+}
+
+/* Hover and Active States */
+.accordion-item:hover .accordion-details {
+  max-height: 200px;
+  opacity: 1;
+  margin-top: 1rem;
+}
+
+.accordion-item:hover .accordion-toggle {
+  transform: rotate(0deg);
+  color: white;
+}
+
+.accordion-item:hover .accordion-title {
+  color: white;
+}
+
+.accordion-item:hover .accordion-number {
+  color: white;
+}
+
+/* Ensure only hovered item expands */
+.accordion-container:hover .accordion-item:not(:hover) .accordion-details {
+  max-height: 0;
+  opacity: 0;
+  margin-top: 0;
+}
+
+.accordion-container:hover .accordion-item:not(:hover) .accordion-toggle {
+  transform: rotate(-90deg);
+  color: #c5c5c5;
+}
+
+.accordion-container:hover .accordion-item:not(:hover) .accordion-title {
+  color: #c5c5c5;
+}
+
+.accordion-container:hover .accordion-item:not(:hover) .accordion-number {
+  color: #c5c5c5;
+}
+
+@media (max-width: 768px) {
+  .table-of-content {
+    padding: 2rem 1rem;
+    margin: 1rem;
+  }
+
+  .table-of-content h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .accordion-header {
+    padding: 1.5rem 0;
+    gap: 1rem;
+  }
+
+  .accordion-number {
+    font-size: 1rem;
+    min-width: 30px;
+  }
+
+  .accordion-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .accordion-description {
+    font-size: 0.9rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .learn-more {
+    font-size: 0.9rem;
+  }
+
+  .accordion-toggle {
+    font-size: 1rem;
+    min-width: 25px;
+  }
+}
