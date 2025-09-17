@@ -12,7 +12,7 @@
     <link
       rel="stylesheet"
       type="text/css"
-      href="{% static 'css/styles.css' %}?v=2025-01-27-v5"
+      href="{% static 'css/styles.css' %}?v=2025-01-27-v6"
     />
     <link
       rel="stylesheet"
@@ -199,15 +199,24 @@
                 <div class="polaroid-image">
                   <img src="{{ post.mockup_image_1.url }}" alt="{{ post.title }} mockup 1" />
                 </div>
+                <div class="polaroid-text">
+                  <p>{{ post.title }}</p>
+                </div>
               </div>
               <div class="polaroid-card">
                 <div class="polaroid-image">
                   <img src="{{ post.mockup_image_2.url }}" alt="{{ post.title }} mockup 2" />
                 </div>
+                <div class="polaroid-text">
+                  <p>{{ post.title }}</p>
+                </div>
               </div>
               <div class="polaroid-card">
                 <div class="polaroid-image">
                   <img src="{{ post.mockup_image_3.url }}" alt="{{ post.title }} mockup 3" />
+                </div>
+                <div class="polaroid-text">
+                  <p>{{ post.title }}</p>
                 </div>
               </div>
             </div>

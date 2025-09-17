@@ -614,6 +614,7 @@ p,
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   max-width: 339px;
   min-width: 302px;
+  position: relative;
 }
 
 .polaroid-card:nth-child(2) {
@@ -642,6 +643,27 @@ p,
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+.polaroid-text {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  right: 12px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.polaroid-text p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #333;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  line-height: 1.2;
 }
 
 /* Category info section below polaroid gallery */
