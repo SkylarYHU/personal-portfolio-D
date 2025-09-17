@@ -649,18 +649,7 @@ p,
   display: block;
 }
 
-.polaroid-text {
-  color: #333;
-  text-align: center;
-  min-height: 80px;
-}
 
-.polaroid-text h4 {
-  font-size: 1rem;
-  margin-bottom: 8px;
-  color: #2c3e50;
-  font-weight: 600;
-}
 
 /* Category info section below polaroid gallery */
 .category-info {
