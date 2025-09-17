@@ -697,7 +697,7 @@ p,
 }
 
 .folder-tab:hover {
-  background:black;
+  background:#0F172A;
   color:white;
 }
 
@@ -705,12 +705,11 @@ p,
 /* Folder content styling */
 .folder-content {
   background: white;
-  border: 2px solid #000000;
-  border-radius: 0 12px 12px 12px;
+  border-top: 2px solid #000000;
+  border-radius: 0 8px 8px 8px;
   padding: 2rem;
   min-height: 150px;
   position: relative;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
 }
 
 
