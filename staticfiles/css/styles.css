@@ -695,15 +695,19 @@ p,
 
 .content-left {
   flex: 0 0 120px;
-  min-width: 120px;
+  min-width: 150px;
 }
 
 .content-left h4 {
   color: white;
   font-size: 1.2rem;
   font-weight: 600;
-  margin: 0;
+  margin: 0 0 1.5rem 0;
   font-family: 'Poppins', sans-serif;
+}
+
+.content-left h4:last-child {
+  margin-bottom: 0;
 }
 
 .content-right {
@@ -714,8 +718,12 @@ p,
   color: white;
   font-size: 1rem;
   line-height: 1.7;
-  margin: 0;
+  margin: 0 0 1.5rem 0;
   text-align: left;
+}
+
+.content-right p:last-child {
+  margin-bottom: 0;
 }
 
 @keyframes fadeIn {
