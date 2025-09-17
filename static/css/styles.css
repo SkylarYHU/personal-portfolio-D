@@ -555,7 +555,6 @@ p,
 }
 
 #branding .portfolio-item p {
-  flex: 1;
   margin-top: 0px !important;
   margin-bottom: 0px !important;
   font-size: 0.9rem;
@@ -566,8 +565,8 @@ p,
   line-clamp: 3;
   overflow: hidden;
   text-overflow: ellipsis;
-  line-height: 1.5;
-  max-height: calc(1.5em * 3);
+  line-height: 1.2;
+  max-height: calc(1.2em * 3);
   text-align: left;
 }
 
