@@ -125,4 +125,56 @@ document.addEventListener('DOMContentLoaded', function() {
   } else {
     console.error('Portfolio grid not found.');
   }
+
+  // Accordion functionality for Table of Content
+  const accordionItems = document.querySelectorAll('.accordion-item');
+  
+  console.log('Found accordion items:', accordionItems.length);
+  
+  accordionItems.forEach((item, index) => {
+    const targetId = item.getAttribute('data-target');
+    console.log(`Accordion item ${index + 1} target:`, targetId);
+    
+    // Add click event for navigation - entire accordion item is clickable
+    item.addEventListener('click', function(e) {
+      console.log('=== ACCORDION CLICKED ===' );
+      console.log('Target ID:', targetId);
+      console.log('Clicked element:', e.target.tagName, e.target.className);
+      
+      // Check if clicked element is a link (Learn more button)
+      const clickedLink = e.target.closest('a');
+      console.log('Clicked on link:', !!clickedLink);
+      
+      if (!clickedLink && targetId) {
+        console.log('Processing navigation to:', targetId);
+        
+        // 阻止任何可能的默认行为
+        e.preventDefault();
+        e.stopPropagation();
+        
+        // 查找目标元素
+        const targetElement = document.querySelector(targetId);
+        console.log('Target element found:', !!targetElement);
+        
+        if (targetElement) {
+          console.log('Scrolling to target element...');
+          
+          // 简单直接的滚动方法
+          const elementPosition = targetElement.offsetTop;
+          const offsetPosition = elementPosition - 80; // 导航栏高度补偿
+          
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+          
+          console.log('Scroll command executed');
+        } else {
+          console.error('Target element not found for:', targetId);
+        }
+      } else if (clickedLink) {
+        console.log('Learn more link clicked, allowing default behavior');
+      }
+    });
+  })
 });

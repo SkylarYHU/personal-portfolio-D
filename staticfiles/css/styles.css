@@ -4,12 +4,17 @@
   box-sizing: border-box;
 }
 
+html,
 body {
   background-color: #0f172a;
-  display: flex;
+  min-height: 100%;
   /* 添加图片优化 */
   image-rendering: -webkit-optimize-contrast;
   image-rendering: crisp-edges;
+}
+
+body {
+  overflow-x: hidden;
 }
 
 /* 图片优化 */
@@ -164,7 +169,7 @@ p,
   color: white;
   text-align: center;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 }
 
 /* Glass Card Styles */
@@ -250,7 +255,7 @@ p,
   padding: 8px 16px;
   position: absolute;
   bottom: 0;
-  left: 2%;
+  left: 0;
   transform: translateY(17%);
   animation: slideInFromLeft 1s ease-out;
 }
@@ -311,6 +316,46 @@ p,
   transform: rotate(25deg);
 }
 
+.shape-bubble1 {
+  width: 900px;
+  height: auto;
+  top: 5%;
+  left: -50%;
+  animation-delay: 1s;
+  transform: rotate(-5deg);
+  transition: all 0.3s ease;
+  pointer-events: auto;
+  cursor: pointer;
+  z-index: 3;
+  opacity: 0.6;
+}
+
+.shape-bubble2 {
+  width: 1080px;
+  height: auto;
+  top: 80%;
+  right: -50%;
+  animation-delay: 3s;
+  transform: rotate(10deg);
+  transition: all 0.3s ease;
+  pointer-events: auto;
+  cursor: pointer;
+  z-index: 3;
+  opacity: 0.6;
+}
+
+.shape-bubble1:hover {
+  transform: rotate(-5deg) scale(1.2);
+  opacity: 1;
+  animation-play-state: paused;
+}
+
+.shape-bubble2:hover {
+  transform: rotate(10deg) scale(1.15);
+  opacity: 1;
+  animation-play-state: paused;
+}
+
 @keyframes float {
   0%,
   100% {
@@ -331,6 +376,14 @@ p,
 
 .shape-sphere {
   --rotation: 25deg;
+}
+
+.shape-bubble1 {
+  --rotation: -5deg;
+}
+
+.shape-bubble2 {
+  --rotation: 10deg;
 }
 
 /* Responsive adjustments */
@@ -358,6 +411,20 @@ p,
     height: auto;
     top: 20%;
     right: 15%;
+  }
+
+  .shape-bubble1 {
+    width: 630px;
+    height: auto;
+    top: 8%;
+    left: -60%;
+  }
+
+  .shape-bubble2 {
+    width: 720px;
+    height: auto;
+    top: 85%;
+    right: -60%;
   }
 
   .glass-card {
@@ -408,6 +475,8 @@ p,
 .table-of-content h2 {
   color: white;
   font-size: 2rem;
+  text-align: left;
+  font-weight: bold;
 }
 
 .portfolio p,
@@ -481,13 +550,14 @@ p,
 }
 
 #branding .portfolio-text h3 {
-  margin-bottom: 2.11px;
+  margin-bottom: 4px;
   font-size: 1.725rem;
 }
 
 #branding .portfolio-item p {
   flex: 1;
-  margin-top: 2.11px;
+  margin-top: 4px;
+  margin-bottom: 6px;
   font-size: 0.9rem;
   color: #ced4da;
   display: -webkit-box;
@@ -502,14 +572,14 @@ p,
 }
 
 #branding .tag-list {
-  margin-top: 10px;
-  padding-top: 2px;
+  margin-top: 6px;
+  padding-top: 0;
   min-height: 25px;
   list-style: none;
   padding: 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 5.4px;
+  gap: 2px;
   align-items: flex-start;
 }
 
@@ -689,7 +759,7 @@ p,
   padding: 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 9px;
+  gap: 7.2px;
 }
 
 .tag-item {
@@ -998,82 +1068,16 @@ html {
 .table-of-content {
   scroll-margin-top: 100px;
   margin-bottom: 6rem;
+  max-width: 1000px;
 }
 
 .table-of-content h2 {
-  margin-bottom: 1.8rem; /* 增加20%间距，从1.5rem增加到1.8rem */
-}
-
-.table-of-content .content-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  width: 100%;
-}
-
-.content-item {
-  padding: 1rem 0;
-  transition: all 0.3s ease;
-}
-
-.content-item:hover {
-  transform: translateY(-3px);
-}
-
-.content-item h3 {
-  margin: 0;
-}
-
-.content-item h3 a {
+  margin-bottom: 1.5rem;
+  text-align: left;
+  font-size: 2rem;
+  font-weight: bold;
   color: white;
-  text-decoration: none;
-  font-family: "Poppins", sans-serif;
-  font-size: 1.2rem;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  display: inline-block;
-  position: relative;
+  font-family: "Libre Baskerville", serif;
 }
 
-.content-item h3 a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -6px;
-  width: 100%;
-  height: 2px;
-  background-color: white;
-  transform: scaleX(0);
-  transition: transform 0.2s ease;
-}
-
-.content-item h3 a:hover::after {
-  transform: scaleX(1);
-}
-
-.content-item h3 a:hover {
-  color: white;
-}
-
-.content-item h3 a:visited {
-  color: white;
-}
-
-.content-item h3 a:active {
-  color: white;
-}
-
-@media (max-width: 768px) {
-  .table-of-content {
-    padding: 2rem 1rem;
-    margin: 1rem;
-  }
-
-  .table-of-content h2 {
-    font-size: 1.8rem;
-  }
-
-  .content-item h3 a {
-    font-size: 1.1rem;
-  }
-}
+/* Accordion styles moved to accordion.css */
