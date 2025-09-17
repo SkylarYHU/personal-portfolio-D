@@ -138,6 +138,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add click event for navigation - entire accordion item is clickable
     item.addEventListener('click', (e) => {
       console.log('Accordion item clicked, target:', targetId);
+      console.log('Clicked element:', e.target);
       
       // Check if clicked element is a link (Learn more button)
       const isLink = e.target.closest('a');
@@ -145,12 +146,25 @@ document.addEventListener('DOMContentLoaded', function() {
       
       if (!isLink && targetId) {
         // Only navigate if not clicking on the Learn more link
-        e.preventDefault();
         console.log('Attempting to scroll to:', targetId);
         const targetElement = document.querySelector(targetId);
+        console.log('Target element:', targetElement);
         if (targetElement) {
           console.log('Target element found, scrolling...');
-          targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          // 使用更强制的滚动方法
+          targetElement.scrollIntoView({ 
+            behavior: 'smooth', 
+            block: 'start',
+            inline: 'nearest'
+          });
+          // 备用方法：直接滚动到元素位置
+          setTimeout(() => {
+            const elementTop = targetElement.offsetTop;
+            window.scrollTo({
+              top: elementTop - 100, // 留一些顶部空间
+              behavior: 'smooth'
+            });
+          }, 100);
         } else {
           console.error('Target element not found:', targetId);
         }
