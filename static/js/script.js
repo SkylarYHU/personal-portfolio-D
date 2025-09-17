@@ -9,28 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // reset: true // 如果希望动画重复播放，取消注释这行
   });
 
-  // File folder tab switching functionality
-  const folderTabs = document.querySelectorAll('.folder-tab');
-  const tabContents = document.querySelectorAll('.tab-content');
-
-  folderTabs.forEach(tab => {
-    tab.addEventListener('click', function() {
-      const targetTab = this.getAttribute('data-tab');
-      
-      // Remove active class from all tabs and contents
-      folderTabs.forEach(t => t.classList.remove('active'));
-      tabContents.forEach(content => content.classList.remove('active'));
-      
-      // Add active class to clicked tab
-      this.classList.add('active');
-      
-      // Show corresponding content
-      const targetContent = document.getElementById(targetTab);
-      if (targetContent) {
-        targetContent.classList.add('active');
-      }
-    });
-  });
+  // Folder tab functionality removed - using simple content display
 
   // Hero section now uses Animate.css fadeInDown animation
   // Removed ScrollReveal animation to avoid conflicts

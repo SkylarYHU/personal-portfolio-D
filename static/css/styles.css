@@ -673,63 +673,16 @@ p,
 }
 
 /* Folder tabs styling */
-.folder-tabs {
-  display: flex;
-  position: relative;
-  z-index: 2;
-}
-
-.folder-tab {
+/* Simple content container styling */
+.content-container {
   background: white;
-  color: #333;
-  padding: 12px 24px 10px 24px;
-  margin-right: 2px;
-  cursor: pointer;
-  font-size: 0.9rem;
-  font-weight: 600;
-  font-family: 'Poppins', sans-serif;
-  letter-spacing: 0.5px;
-  border-radius: 12px 12px 0 0;
-  position: relative;
-  transition: all 0.3s ease;
-  border-bottom: none;
-  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.2);
-}
-
-.folder-tab:hover {
-  background:#0F172A;
-  color:white;
-}
-
-.folder-tab.active {
-  background: #0F172A;
-  color: white;
-  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.3);
-}
-
-
-/* Folder content styling */
-.folder-content {
-  background: white;
-  border-top: 2px solid #000000;
-  border-radius: 0 8px 8px 8px;
+  border-radius: 8px;
   padding: 2rem;
   min-height: 150px;
   position: relative;
 }
 
-
-/* Tab content styling */
-.tab-content {
-  display: none;
-  animation: fadeIn 0.3s ease-in-out;
-}
-
-.tab-content.active {
-  display: block;
-}
-
-.tab-content p {
+.content-container p {
   color: #4A4A4A;
   font-size: 1rem;
   line-height: 1.7;
@@ -748,25 +701,14 @@ p,
   }
 }
 
-/* Responsive design for file folder */
+/* Responsive design for content container */
 @media (max-width: 768px) {
-  .file-folder-container {
-    max-width: 90%;
-    margin: 2rem auto 0;
-  }
-  
-  .folder-tab {
-    padding: 10px 16px;
-    font-size: 0.8rem;
-    margin-right: 2px;
-  }
-  
-  .folder-content {
+  .content-container {
     padding: 1.5rem;
     min-height: 120px;
   }
   
-  .tab-content p {
+  .content-container p {
     font-size: 0.9rem;
     line-height: 1.6;
   }

@@ -220,23 +220,8 @@
                 </div>
               </div>
             </div>
-            <div class="file-folder-container">
-              <div class="folder-tabs">
-                <div class="folder-tab active" data-tab="about-{{ forloop.counter }}">ABOUT</div>
-                <div class="folder-tab" data-tab="goals-{{ forloop.counter }}">GOALS</div>
-                <div class="folder-tab" data-tab="tools-{{ forloop.counter }}">TOOLS & APPS</div>
-              </div>
-              <div class="folder-content">
-                <div class="tab-content active" id="about-{{ forloop.counter }}">
-                  <p>{{ post.about }}</p>
-                </div>
-                <div class="tab-content" id="goals-{{ forloop.counter }}">
-                  <p>{{ post.goals }}</p>
-                </div>
-                <div class="tab-content" id="tools-{{ forloop.counter }}">
-                  <p>{{ post.tools }}</p>
-                </div>
-              </div>
+            <div class="content-container">
+              <p>{{ post.about }}</p>
             </div>
           </div>
           {% endfor %}
