@@ -647,7 +647,7 @@ p,
 
 .polaroid-text {
   position: absolute;
-  bottom: 12px;
+  bottom: 7px;
   left: 12px;
   right: 12px;
   height: 48px;
@@ -657,7 +657,6 @@ p,
 }
 
 .polaroid-text p {
-  margin: 0;
   font-size: 0.9rem;
   color: #333;
   text-align: center;
