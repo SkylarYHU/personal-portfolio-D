@@ -41,9 +41,9 @@
 }
 
 .accordion-details {
-  max-height: none;
-  overflow: visible;
-  opacity: 1;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
   transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease;
   display: flex;
   flex-direction: column;
@@ -100,6 +100,12 @@
 }
 
 /* Hover and Active States */
+.accordion-item:hover .accordion-details {
+  max-height: 200px;
+  opacity: 1;
+  margin-top: 1rem;
+}
+
 .accordion-item:hover .accordion-toggle {
   transform: rotate(0deg);
   color: white;
