@@ -62,8 +62,11 @@ class BrandingProject(models.Model):
 class SocialMediaPost(models.Model):
     title = models.CharField(max_length=128)  # 品类标题，如 "Food & Beverage"
     mockup_image_1 = models.ImageField(upload_to='images/social_media/')
+    mockup_image_1_text = models.CharField(max_length=50, default='Design 01', help_text="拍立得相纸1的文本")
     mockup_image_2 = models.ImageField(upload_to='images/social_media/')
+    mockup_image_2_text = models.CharField(max_length=50, default='Design 02', help_text="拍立得相纸2的文本")
     mockup_image_3 = models.ImageField(upload_to='images/social_media/')
+    mockup_image_3_text = models.CharField(max_length=50, default='Design 03', help_text="拍立得相纸3的文本")
     about = models.TextField()  # About 部分的文字介绍
     tools = models.TextField()  # Tools & Apps 部分的文字介绍
     goals = models.TextField()  # Goals 部分的文字介绍
