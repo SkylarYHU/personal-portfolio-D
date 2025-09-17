@@ -673,17 +673,39 @@ p,
 }
 
 /* Folder tabs styling */
-/* Simple content container styling */
+/* Content container with semi-transparent background and flex layout */
 .content-container {
-  background: white;
-  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
   padding: 2rem;
-  min-height: 150px;
+  margin-top: 3rem;
+  min-height: 120px;
   position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
 }
 
-.content-container p {
-  color: #4A4A4A;
+.content-left {
+  flex: 0 0 120px;
+  min-width: 120px;
+}
+
+.content-left h4 {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.content-right {
+  flex: 1;
+}
+
+.content-right p {
+  color: white;
   font-size: 1rem;
   line-height: 1.7;
   margin: 0;
@@ -705,10 +727,21 @@ p,
 @media (max-width: 768px) {
   .content-container {
     padding: 1.5rem;
-    min-height: 120px;
+    margin-top: 2rem;
+    flex-direction: column;
+    gap: 1rem;
   }
   
-  .content-container p {
+  .content-left {
+    flex: none;
+    min-width: auto;
+  }
+  
+  .content-left h4 {
+    font-size: 1.1rem;
+  }
+  
+  .content-right p {
     font-size: 0.9rem;
     line-height: 1.6;
   }
