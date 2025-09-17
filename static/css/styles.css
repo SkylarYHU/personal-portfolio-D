@@ -667,7 +667,7 @@ p,
 
 /* File folder container styling */
 .file-folder-container {
-  max-width: 600px;
+  max-width: 900px;
   margin: 2.5rem auto 0;
   position: relative;
 }
@@ -680,8 +680,8 @@ p,
 }
 
 .folder-tab {
-  background: linear-gradient(135deg, #8B7355 0%, #A0956B 100%);
-  color: white;
+  background: white;
+  color: #333;
   padding: 12px 24px;
   margin-right: 4px;
   cursor: pointer;
@@ -693,48 +693,25 @@ p,
   transition: all 0.3s ease;
   border: 2px solid #6B5B47;
   border-bottom: none;
-  transform: perspective(100px) rotateX(-5deg);
   box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .folder-tab:hover {
-  background: linear-gradient(135deg, #9A8461 0%, #B5A677 100%);
-  transform: perspective(100px) rotateX(-2deg) translateY(-2px);
+  background: white;
 }
 
-.folder-tab.active {
-  background: linear-gradient(135deg, #D4C4A8 0%, #E8DCC0 100%);
-  color: #4A4A4A;
-  border-color: #B8A082;
-  transform: perspective(100px) rotateX(0deg) translateY(-3px);
-  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.3);
-  z-index: 3;
-}
 
 /* Folder content styling */
 .folder-content {
-  background: linear-gradient(135deg, #F5F1E8 0%, #E8DCC0 100%);
+  background: white;
   border: 2px solid #B8A082;
   border-radius: 0 12px 12px 12px;
   padding: 2rem;
   min-height: 150px;
   position: relative;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-  transform: perspective(200px) rotateX(2deg);
 }
 
-.folder-content::before {
-  content: '';
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  height: 20px;
-  background: linear-gradient(135deg, #D4C4A8 0%, #E8DCC0 100%);
-  border-radius: 12px 12px 0 0;
-  border: 2px solid #B8A082;
-  border-bottom: none;
-}
 
 /* Tab content styling */
 .tab-content {
