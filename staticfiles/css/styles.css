@@ -712,7 +712,7 @@ p,
   .polaroid-card {
     max-width: 302px;
     min-width: 266px;
-    padding: 15px 15px 18px 15px;
+    padding: 15px 15px 60px 15px;
     transform: rotate(0deg);
   }
 
