@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug Folder Tabs</title>
+    <style>
+        .tab-content {
+            display: none;
+            padding: 20px;
+            border: 1px solid #ccc;
+            margin: 10px 0;
+        }
+        .tab-content.active {
+            display: block;
+            background-color: #f0f0f0;
+        }
+        .folder-tab {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 5px;
+            background-color: #ddd;
+            cursor: pointer;
+            border: 1px solid #ccc;
+        }
+        .folder-tab.active {
+            background-color: #007cba;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Debug Folder Tabs</h1>
+    
+    <!-- Test folder tabs -->
+    <div class="file-folder-container">
+        <div class="folder-tabs">
+            <div class="folder-tab active" data-tab="about-1">ABOUT</div>
+            <div class="folder-tab" data-tab="goals-1">GOALS</div>
+            <div class="folder-tab" data-tab="tools-1">TOOLS & APPS</div>
+        </div>
+        <div class="folder-content">
+            <div class="tab-content active" id="about-1">
+                <p>This is the About content - should be visible by default</p>
+            </div>
+            <div class="tab-content" id="goals-1">
+                <p>This is the Goals content - should show when Goals tab is clicked</p>
+            </div>
+            <div class="tab-content" id="tools-1">
+                <p>This is the Tools content - should show when Tools tab is clicked</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        console.log('Debug script loaded');
+        
+        // Check if elements exist
+        const folderTabs = document.querySelectorAll('.folder-tab');
+        const tabContents = document.querySelectorAll('.tab-content');
+        
+        console.log('Found folder tabs:', folderTabs.length);
+        console.log('Found tab contents:', tabContents.length);
+        
+        folderTabs.forEach((tab, index) => {
+            console.log(`Tab ${index}:`, tab.getAttribute('data-tab'), tab.classList.contains('active'));
+        });
+        
+        tabContents.forEach((content, index) => {
+            console.log(`Content ${index}:`, content.id, content.classList.contains('active'));
+        });
+
+        // Add click event listeners
+        folderTabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                console.log('Tab clicked:', this.getAttribute('data-tab'));
+                const targetTab = this.getAttribute('data-tab');
+                
+                // Remove active class from all tabs and contents
+                folderTabs.forEach(t => {
+                    t.classList.remove('active');
+                    console.log('Removed active from tab:', t.getAttribute('data-tab'));
+                });
+                tabContents.forEach(content => {
+                    content.classList.remove('active');
+                    console.log('Removed active from content:', content.id);
+                });
+                
+                // Add active class to clicked tab
+                this.classList.add('active');
+                console.log('Added active to tab:', targetTab);
+                
+                // Show corresponding content
+                const targetContent = document.getElementById(targetTab);
+                if (targetContent) {
+                    targetContent.classList.add('active');
+                    console.log('Added active to content:', targetTab);
+                } else {
+                    console.error('Target content not found:', targetTab);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

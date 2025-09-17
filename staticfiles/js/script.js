@@ -13,9 +13,13 @@ document.addEventListener('DOMContentLoaded', function() {
   const folderTabs = document.querySelectorAll('.folder-tab');
   const tabContents = document.querySelectorAll('.tab-content');
 
+  console.log('Folder tabs found:', folderTabs.length);
+  console.log('Tab contents found:', tabContents.length);
+
   folderTabs.forEach(tab => {
     tab.addEventListener('click', function() {
       const targetTab = this.getAttribute('data-tab');
+      console.log('Tab clicked:', targetTab);
       
       // Remove active class from all tabs and contents
       folderTabs.forEach(t => t.classList.remove('active'));
@@ -28,6 +32,9 @@ document.addEventListener('DOMContentLoaded', function() {
       const targetContent = document.getElementById(targetTab);
       if (targetContent) {
         targetContent.classList.add('active');
+        console.log('Content shown:', targetTab);
+      } else {
+        console.error('Target content not found:', targetTab);
       }
     });
   });
