@@ -550,13 +550,13 @@ p,
 }
 
 #branding .portfolio-text h3 {
-  margin-bottom: 0px !important;
+  margin-bottom: 1px !important;
   font-size: 1.725rem;
 }
 
 #branding .portfolio-item p {
-  margin-top: 0px !important;
-  margin-bottom: 0px !important;
+  margin-top: 8px !important;
+  margin-bottom: 6px !important;
   font-size: 0.9rem;
   color: #ced4da;
   display: -webkit-box;
