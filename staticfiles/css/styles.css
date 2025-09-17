@@ -612,13 +612,13 @@ p,
 
 .polaroid-card {
   background-color: white;
-  padding: 15px;
+  padding: 15px 15px 18px 15px;
   border-radius: 3px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 2px 4px rgba(0, 0, 0, 0.1);
   transform: rotate(-2deg);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  max-width: 280px;
-  min-width: 250px;
+  max-width: 339px;
+  min-width: 302px;
 }
 
 .polaroid-card:nth-child(2) {
@@ -637,7 +637,7 @@ p,
 
 .polaroid-image {
   width: 100%;
-  height: 250px;
+  height: 422px;
   overflow: hidden;
   background-color: #f8f9fa;
 }
@@ -696,8 +696,9 @@ p,
   }
   
   .polaroid-card {
-    max-width: 250px;
-    min-width: 220px;
+    max-width: 302px;
+    min-width: 266px;
+    padding: 15px 15px 18px 15px;
     transform: rotate(0deg);
   }
   
@@ -711,7 +712,7 @@ p,
   }
   
   .polaroid-image {
-    height: 200px;
+    height: 338px;
   }
   
   .category-info {
