@@ -531,7 +531,7 @@ p,
 #branding .image-container {
   overflow: hidden;
   flex-shrink: 0;
-  height: 200px;
+  height: 300px;
 }
 
 #branding .image-container img {
@@ -544,12 +544,10 @@ p,
   flex: 1;
   display: flex;
   flex-direction: column;
+  gap: 0.4rem;
 
 }
 
-#branding .portfolio-text h3 {
-
-}
 
 #branding .portfolio-item p {
   font-size: 0.9rem;
@@ -560,8 +558,7 @@ p,
   line-clamp: 3;
   overflow: hidden;
   text-overflow: ellipsis;
-  line-height: 1.2;
-  max-height: calc(1.2em * 3);
+  line-height: 1.4;
   text-align: left;
 }
 
@@ -804,7 +801,7 @@ p,
 }
 
 .portfolio-text {
-  padding: 25px;
+  padding: 28px 26px 22px 31px;
 }
 
 .portfolio-text h3,
