@@ -545,9 +545,7 @@ p,
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
-
 }
-
 
 #branding .portfolio-item p {
   font-size: 0.9rem;
@@ -609,8 +607,8 @@ p,
 
 .polaroid-card {
   background-color: white;
-  padding: 15px 15px 18px 15px;
-  border-radius: 3px;
+  padding: 12px 12px 60px 12px;
+  border-radius: 5px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 2px 4px rgba(0, 0, 0, 0.1);
   transform: rotate(-2deg);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -645,8 +643,6 @@ p,
   object-fit: cover;
   display: block;
 }
-
-
 
 /* Category info section below polaroid gallery */
 .category-info {
@@ -691,32 +687,32 @@ p,
   .polaroid-gallery {
     gap: 1.5rem;
   }
-  
+
   .polaroid-card {
     max-width: 302px;
     min-width: 266px;
     padding: 15px 15px 18px 15px;
     transform: rotate(0deg);
   }
-  
+
   .polaroid-card:nth-child(2),
   .polaroid-card:nth-child(3) {
     transform: rotate(0deg);
   }
-  
+
   .polaroid-card:hover {
     transform: scale(1.02);
   }
-  
+
   .polaroid-image {
     height: 338px;
   }
-  
+
   .category-info {
     gap: 1rem;
     margin-top: 2rem;
   }
-  
+
   .info-item {
     flex: 1 1 280px;
     min-width: 280px;
@@ -1141,8 +1137,7 @@ html {
 /* Table of Content Styles */
 .table-of-content {
   scroll-margin-top: 100px;
-  margin-bottom: 6rem;
-  max-width: 1000px;
+  margin-bottom: 8rem 0;
 }
 
 .table-of-content h2 {
