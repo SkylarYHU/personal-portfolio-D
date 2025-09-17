@@ -682,29 +682,30 @@ p,
 .folder-tab {
   background: white;
   color: #333;
-  padding: 12px 24px;
-  margin-right: 4px;
+  padding: 12px 24px 10px 24px;
+  margin-right: 2px;
   cursor: pointer;
   font-size: 0.9rem;
   font-weight: 600;
+  font-family: 'Poppins', sans-serif;
   letter-spacing: 0.5px;
-  border-radius: 8px 8px 0 0;
+  border-radius: 12px 12px 0 0;
   position: relative;
   transition: all 0.3s ease;
-  border: 2px solid #6B5B47;
   border-bottom: none;
   box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .folder-tab:hover {
-  background: white;
+  background:black;
+  color:white;
 }
 
 
 /* Folder content styling */
 .folder-content {
   background: white;
-  border: 2px solid #B8A082;
+  border: 2px solid #000000;
   border-radius: 0 12px 12px 12px;
   padding: 2rem;
   min-height: 150px;
