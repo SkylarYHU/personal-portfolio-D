@@ -131,45 +131,50 @@ document.addEventListener('DOMContentLoaded', function() {
   
   console.log('Found accordion items:', accordionItems.length);
   
-  accordionItems.forEach(item => {
+  accordionItems.forEach((item, index) => {
     const targetId = item.getAttribute('data-target');
-    console.log('Accordion item target:', targetId);
+    console.log(`Accordion item ${index + 1} target:`, targetId);
     
     // Add click event for navigation - entire accordion item is clickable
-    item.addEventListener('click', (e) => {
-      console.log('Accordion item clicked, target:', targetId);
-      console.log('Clicked element:', e.target);
+    item.addEventListener('click', function(e) {
+      console.log('=== ACCORDION CLICKED ===' );
+      console.log('Target ID:', targetId);
+      console.log('Clicked element:', e.target.tagName, e.target.className);
       
       // Check if clicked element is a link (Learn more button)
-      const isLink = e.target.closest('a');
-      console.log('Is link clicked:', !!isLink);
+      const clickedLink = e.target.closest('a');
+      console.log('Clicked on link:', !!clickedLink);
       
-      if (!isLink && targetId) {
-        // Only navigate if not clicking on the Learn more link
-        console.log('Attempting to scroll to:', targetId);
+      if (!clickedLink && targetId) {
+        console.log('Processing navigation to:', targetId);
+        
+        // 阻止任何可能的默认行为
+        e.preventDefault();
+        e.stopPropagation();
+        
+        // 查找目标元素
         const targetElement = document.querySelector(targetId);
-        console.log('Target element:', targetElement);
+        console.log('Target element found:', !!targetElement);
+        
         if (targetElement) {
-          console.log('Target element found, scrolling...');
-          // 使用更强制的滚动方法
-          targetElement.scrollIntoView({ 
-            behavior: 'smooth', 
-            block: 'start',
-            inline: 'nearest'
+          console.log('Scrolling to target element...');
+          
+          // 简单直接的滚动方法
+          const elementPosition = targetElement.offsetTop;
+          const offsetPosition = elementPosition - 80; // 导航栏高度补偿
+          
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
           });
-          // 备用方法：直接滚动到元素位置
-          setTimeout(() => {
-            const elementTop = targetElement.offsetTop;
-            window.scrollTo({
-              top: elementTop - 100, // 留一些顶部空间
-              behavior: 'smooth'
-            });
-          }, 100);
+          
+          console.log('Scroll command executed');
         } else {
-          console.error('Target element not found:', targetId);
+          console.error('Target element not found for:', targetId);
         }
+      } else if (clickedLink) {
+        console.log('Learn more link clicked, allowing default behavior');
       }
-      // If clicking on Learn more link, let the default behavior happen (scroll to anchor)
     });
   })
 });
