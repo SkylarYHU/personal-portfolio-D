@@ -100,12 +100,6 @@
 }
 
 /* Hover and Active States */
-.accordion-item:hover .accordion-details {
-  max-height: 200px;
-  opacity: 1;
-  margin-top: 1rem;
-}
-
 .accordion-item:hover .accordion-toggle {
   transform: rotate(0deg);
   color: white;
@@ -117,26 +111,6 @@
 
 .accordion-item:hover .accordion-number {
   color: white;
-}
-
-/* Ensure only hovered item expands */
-.accordion-container:hover .accordion-item:not(:hover) .accordion-details {
-  max-height: 0;
-  opacity: 0;
-  margin-top: 0;
-}
-
-.accordion-container:hover .accordion-item:not(:hover) .accordion-toggle {
-  transform: rotate(-90deg);
-  color: #c5c5c5;
-}
-
-.accordion-container:hover .accordion-item:not(:hover) .accordion-title {
-  color: #c5c5c5;
-}
-
-.accordion-container:hover .accordion-item:not(:hover) .accordion-number {
-  color: #c5c5c5;
 }
 
 @media (max-width: 768px) {
