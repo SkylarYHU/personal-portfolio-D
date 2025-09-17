@@ -701,6 +701,12 @@ p,
   color:white;
 }
 
+.folder-tab.active {
+  background: #0F172A;
+  color: white;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.3);
+}
+
 
 /* Folder content styling */
 .folder-content {
