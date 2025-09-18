@@ -131,9 +131,6 @@
 
           {% if mobile_landing_page.tags.all %}
           <div style="text-align: left; margin-top: 2rem">
-            <h2 style="color: white; font-size: 1.8rem; margin-bottom: 1rem; text-align: left;">
-              Tags
-            </h2>
             <ul class="tag-list" style="justify-content: flex-start">
               {% for tag in mobile_landing_page.tags.all %}
               <li class="tag-item">{{ tag.name }}</li>
