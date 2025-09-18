@@ -989,7 +989,7 @@ p,
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr);
   list-style: none;
-  gap: 1.5rem;
+  gap: 2rem;
   margin-top: 6rem;
   justify-items: start;
   align-items: center;
