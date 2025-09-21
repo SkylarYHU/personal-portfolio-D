@@ -516,8 +516,13 @@ p,
 
 .portfolio-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.2rem;
+}
+
+/* Override for sections that need single column */
+#ecommerce-design .portfolio-grid {
+  grid-template-columns: 1fr !important;
 }
 
 /* Branding section specific styles */
@@ -583,8 +588,8 @@ p,
 
 /* E-commerce section specific styles */
 #ecommerce-design .portfolio-grid {
-  grid-template-columns: repeat(2, 1fr);
-  max-width: 800px;
+  grid-template-columns: 1fr;
+  max-width: 100%;
   gap: 2rem;
 }
 
