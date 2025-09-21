@@ -520,17 +520,6 @@ p,
   gap: 1.2rem;
 }
 
-/* Override for sections that need single column */
-/* #ecommerce-design .portfolio-grid {
-  grid-template-columns: 1fr !important;
-} */
-
-/* Branding section specific styles */
-/* #branding .portfolio-grid {
-  grid-template-columns: repeat(2, 1fr);
-  max-width: 800px;
-  gap: 2rem;
-} */
 
 #branding .portfolio-item {
   display: flex;
