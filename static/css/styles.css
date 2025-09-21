@@ -775,17 +775,8 @@ p,
   padding-bottom: 1.5rem;
   width: 100%;
   position: relative;
-}
-
-.content-row::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: rgba(255, 255, 255, 0.2);
-  width: 100%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  box-sizing: border-box;
 }
 
 .content-row:last-child {
