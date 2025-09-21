@@ -66,6 +66,16 @@
           class="portfolio-detail"
           style="max-width: 1200px; margin: 0 auto; padding: 0 1rem"
         >
+          <!-- Project Link -->
+          {% if ecommerce_project.link %}
+          <div class="content-container" style="margin-bottom: 3rem;">
+            <div class="content-row">
+              <h4>Project Link</h4>
+              <p><a href="{{ ecommerce_project.link }}" target="_blank" rel="noopener noreferrer" style="color: #4a90e2; text-decoration: none;">{{ ecommerce_project.link }}</a></p>
+            </div>
+          </div>
+          {% endif %}
+          
           <!-- Project Information Container -->
           {% if ecommerce_project.about_project or ecommerce_project.goals or ecommerce_project.tools_apps %}
           <div class="content-container" style="margin-bottom: 3rem;">
