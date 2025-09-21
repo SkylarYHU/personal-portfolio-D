@@ -574,6 +574,8 @@ p,
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
+}
+
 #branding .branding-link {
   text-decoration: none !important;
   color: inherit;
@@ -638,6 +640,23 @@ p,
 #ecommerce-design .ecommerce-link {
   text-decoration: none !important;
   color: inherit;
+}
+
+#ecommerce-design .ecommerce-link:hover,
+#ecommerce-design .ecommerce-link:visited,
+#ecommerce-design .ecommerce-link:active {
+  text-decoration: none !important;
+  color: inherit;
+}
+
+#ecommerce-design .portfolio-item h3 {
+  color: inherit;
+  text-decoration: none;
+}
+
+#ecommerce-design .portfolio-item h3 a {
+  color: inherit;
+  text-decoration: none !important;
 }
 
 /* Social Media Post section styles */
