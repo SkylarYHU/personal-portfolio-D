@@ -574,11 +574,70 @@ p,
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
-}
-
 #branding .branding-link {
   text-decoration: none !important;
-  color: inherit !important;
+  color: inherit;
+}
+
+/* E-commerce section specific styles */
+#ecommerce-design .portfolio-grid {
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 800px;
+  gap: 2rem;
+}
+
+#ecommerce-design .portfolio-item {
+  display: flex;
+  flex-direction: column;
+}
+
+#ecommerce-design .image-container {
+  overflow: hidden;
+  flex-shrink: 0;
+  height: 300px;
+}
+
+#ecommerce-design .image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#ecommerce-design .portfolio-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+#ecommerce-design .portfolio-item p {
+  font-size: 0.9rem;
+  color: #ced4da;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.4;
+  text-align: left;
+}
+
+#ecommerce-design .tag-list {
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+  padding-top: 0;
+  min-height: 25px;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+#ecommerce-design .ecommerce-link {
+  text-decoration: none !important;
+  color: inherit;
 }
 
 /* Social Media Post section styles */
@@ -1165,6 +1224,21 @@ p,
   }
 
   #branding .image-container {
+    height: 160px;
+  }
+
+  /* E-commerce responsive styles */
+  #ecommerce-design .portfolio-grid {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+    gap: 1.5rem;
+  }
+
+  #ecommerce-design .portfolio-item {
+    height: 380px;
+  }
+
+  #ecommerce-design .image-container {
     height: 160px;
   }
 

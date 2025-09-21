@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Project, BrandingProject, SocialMediaPost, MobileLandingPage
+from .models import Project, BrandingProject, SocialMediaPost, MobileLandingPage, EcommerceProject
 
 # Create your views here.
 
@@ -9,11 +9,13 @@ def home(request):
     branding_projects = BrandingProject.objects.all()
     social_media_posts = SocialMediaPost.objects.all()
     mobile_landing_pages = MobileLandingPage.objects.all()
+    ecommerce_projects = EcommerceProject.objects.all()
     return render(request, 'portfolioapp/home.html', {
         'projects': projects,
         'branding_projects': branding_projects,
         'social_media_posts': social_media_posts,
-        'mobile_landing_pages': mobile_landing_pages
+        'mobile_landing_pages': mobile_landing_pages,
+        'ecommerce_projects': ecommerce_projects
     })
 
 
@@ -31,3 +33,8 @@ def branding_detail(request, branding_id):
 def mobile_landing_page_detail(request, mobile_landing_page_id):
     mobile_landing_page = get_object_or_404(MobileLandingPage, id=mobile_landing_page_id)
     return render(request, 'portfolioapp/mobile_landing_page_detail.html', {"mobile_landing_page": mobile_landing_page})
+
+
+def ecommerce_detail(request, ecommerce_id):
+    ecommerce_project = get_object_or_404(EcommerceProject, id=ecommerce_id)
+    return render(request, 'portfolioapp/ecommerce_detail.html', {"ecommerce_project": ecommerce_project})

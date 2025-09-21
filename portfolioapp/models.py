@@ -105,3 +105,32 @@ class MobileLandingPage(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class EcommerceProject(models.Model):
+    title = models.CharField(max_length=128)
+    description = models.TextField()
+    image = models.ImageField(upload_to='images/ecommerce/')
+    link = models.URLField(blank=True)
+    date_posted = models.DateTimeField(auto_now_add=True, null=True)
+    order = models.IntegerField(default=0)
+    tags = models.ManyToManyField(Tag, blank=True)
+    
+    # E-commerce Design详情页面的可选部分
+    about_project = models.TextField(blank=True, help_text="About project section content")
+    goals = models.TextField(blank=True, help_text="Goals section content")
+    tools_apps = models.TextField(blank=True, help_text="Tools & Apps section content")
+    design_process_image = models.ImageField(upload_to='images/ecommerce/process/', blank=True, help_text="Design process section image")
+    user_interface_image = models.ImageField(upload_to='images/ecommerce/ui/', blank=True, help_text="User interface section image")
+    mobile_design_image = models.ImageField(upload_to='images/ecommerce/mobile/', blank=True, help_text="Mobile design section image")
+    product_pages_image = models.ImageField(upload_to='images/ecommerce/products/', blank=True, help_text="Product pages section image")
+    checkout_flow_image = models.ImageField(upload_to='images/ecommerce/checkout/', blank=True, help_text="Checkout flow section image")
+    others_image = models.ImageField(upload_to='images/ecommerce/others/', blank=True, help_text="Others section image")
+
+    class Meta:
+        ordering = ['order']
+        verbose_name = 'E-commerce Design'
+        verbose_name_plural = 'E-commerce Design'
+
+    def __str__(self):
+        return self.title

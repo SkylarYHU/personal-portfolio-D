@@ -103,9 +103,24 @@
           </div>
           <div class="accordion-separator"></div>
           
-          <div class="accordion-item" data-target="#social-media-post">
+          <div class="accordion-item" data-target="#ecommerce-design">
             <div class="accordion-header">
               <div class="accordion-number">02</div>
+              <div class="accordion-content">
+                <h3 class="accordion-title">E-commerce Design</h3>
+                <div class="accordion-details">
+                  <p class="accordion-description">I design user-friendly and conversion-focused e-commerce experiences that drive sales and enhance customer satisfaction through intuitive interfaces and seamless shopping flows.</p>
+                  <a href="#ecommerce-design" class="learn-more">→ Learn more</a>
+                </div>
+              </div>
+              <div class="accordion-toggle">▼</div>
+            </div>
+          </div>
+          <div class="accordion-separator"></div>
+          
+          <div class="accordion-item" data-target="#social-media-post">
+            <div class="accordion-header">
+              <div class="accordion-number">03</div>
               <div class="accordion-content">
                 <h3 class="accordion-title">Social Media Design</h3>
                 <div class="accordion-details">
@@ -120,7 +135,7 @@
           
           <div class="accordion-item" data-target="#mobile-landing-page">
             <div class="accordion-header">
-              <div class="accordion-number">03</div>
+              <div class="accordion-number">04</div>
               <div class="accordion-content">
                 <h3 class="accordion-title">Mobile Landing Pages</h3>
                 <div class="accordion-details">
@@ -135,7 +150,7 @@
           
           <div class="accordion-item" data-target="#portfolio">
             <div class="accordion-header">
-              <div class="accordion-number">04</div>
+              <div class="accordion-number">05</div>
               <div class="accordion-content">
                 <h3 class="accordion-title">Websites</h3>
                 <div class="accordion-details">
@@ -172,6 +187,39 @@
                 <p>{{ branding_project.description }}</p>
                 <ul class="tag-list">
                   {% for tag in branding_project.tags.all %}
+                  <li class="tag-item">{{ tag.name }}</li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+          </a>
+          {% endfor %}
+        </div>
+      </section>
+
+      <!-- E-commerce Design -->
+      <section id="ecommerce-design" class="portfolio">
+        <h2>E-commerce Design</h2>
+        <p>
+          Here are some e-commerce design projects I've worked on, showcasing my skills in
+          creating user-friendly online shopping experiences that drive conversions and enhance customer satisfaction.
+        </p>
+        <div class="dashed-line"></div>
+        <div class="portfolio-grid">
+          {% for ecommerce_project in ecommerce_projects %}
+          <a href="{% url 'ecommerce_detail' ecommerce_project.id %}" class="ecommerce-link">
+            <div class="portfolio-item" data-link="{{ ecommerce_project.link }}">
+              <div class="image-container">
+                <img
+                  src="{{ ecommerce_project.image.url }}"
+                  alt="Screenshot of {{ ecommerce_project.title }}"
+                />
+              </div>
+              <div class="portfolio-text">
+                <h3>{{ ecommerce_project.title }}</h3>
+                <p>{{ ecommerce_project.description }}</p>
+                <ul class="tag-list">
+                  {% for tag in ecommerce_project.tags.all %}
                   <li class="tag-item">{{ tag.name }}</li>
                   {% endfor %}
                 </ul>
