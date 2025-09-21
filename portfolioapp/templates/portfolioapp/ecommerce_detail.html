@@ -191,7 +191,7 @@
           {% endif %} 
           
           {% if ecommerce_project.link %}
-          <div style="text-align: center; margin-bottom: 3rem">
+          <div style="text-align: center; margin-bottom: 3rem; display: flex; gap: 1rem; justify-content: center; align-items: center;">
             <a
               href="{{ ecommerce_project.link }}"
               target="_blank"
@@ -210,6 +210,23 @@
                 transition: background-color 0.3s ease;
               "
               >Visit Project</a
+            >
+            <a
+              href="javascript:history.back()"
+              style="
+                display: inline-block;
+                padding: 12px 24px;
+                background-color: white;
+                color: #2c3e50;
+                font-family: 'Poppins', sans-serif;
+                border-radius: 25px;
+                text-decoration: none;
+                border-radius: 5px;
+                font-weight: 600;
+                font-size: 1.1rem;
+                transition: background-color 0.3s ease;
+              "
+              >< Go back</a
             >
           </div>
           {% endif %}
