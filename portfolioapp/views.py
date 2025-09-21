@@ -31,7 +31,8 @@ def branding_detail(request, branding_id):
 
 
 def mobile_landing_page_detail(request, mobile_landing_page_id):
-    mobile_landing_page = get_object_or_404(MobileLandingPage, id=mobile_landing_page_id)
+    mobile_landing_page = get_object_or_404(
+        MobileLandingPage, id=mobile_landing_page_id)
     return render(request, 'portfolioapp/mobile_landing_page_detail.html', {"mobile_landing_page": mobile_landing_page})
 
 

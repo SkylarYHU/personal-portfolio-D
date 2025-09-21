@@ -520,17 +520,6 @@ p,
   gap: 1.2rem;
 }
 
-/* Override for sections that need single column */
-#ecommerce-design .portfolio-grid {
-  grid-template-columns: 1fr !important;
-}
-
-/* Branding section specific styles */
-#branding .portfolio-grid {
-  grid-template-columns: repeat(2, 1fr);
-  max-width: 800px;
-  gap: 2rem;
-}
 
 #branding .portfolio-item {
   display: flex;
@@ -784,7 +773,14 @@ p,
   align-items: flex-start;
   margin-bottom: 1.5rem;
   padding-bottom: 1.5rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  width: calc(100% + 4rem);
+  margin-left: -2rem;
+  margin-right: -2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  position: relative;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  box-sizing: border-box;
 }
 
 .content-row:last-child {
@@ -945,6 +941,10 @@ p,
   height: 100%;
   object-fit: cover;
   aspect-ratio: 16/9;
+}
+
+#mobile-landing-page .portfolio-grid {
+  grid-template-columns: 1fr;
 }
 
 /* Brand Design specific styling - wider cards for fewer items */
@@ -1146,6 +1146,33 @@ p,
 
 .contact span {
   color: #e5e7eb;
+}
+
+/* Project Link Hover Animation */
+.project-link {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.project-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background-color: white;
+  transition: width 0.3s ease;
+}
+
+.project-link:hover::after {
+  width: 100%;
+}
+
+.project-link:hover {
+  color: white;
 }
 
 @media (max-width: 1024px) {

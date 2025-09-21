@@ -37,18 +37,27 @@ class BrandingProject(models.Model):
     date_posted = models.DateTimeField(auto_now_add=True, null=True)
     order = models.IntegerField(default=0)
     tags = models.ManyToManyField(Tag, blank=True)
-    
+
     # Brand Design详情页面的可选部分
-    about_brand = models.TextField(blank=True, help_text="About brand section content")
+    about_brand = models.TextField(
+        blank=True, help_text="About brand section content")
     goals = models.TextField(blank=True, help_text="Goals section content")
-    tools_apps = models.TextField(blank=True, help_text="Tools & Apps section content")
-    logos_image = models.ImageField(upload_to='images/branding/logos/', blank=True, help_text="Logos section image")
-    typefaces_image = models.ImageField(upload_to='images/branding/typefaces/', blank=True, help_text="Typefaces section image")
-    color_palette_image = models.ImageField(upload_to='images/branding/colors/', blank=True, help_text="Color palette section image")
-    packaging_image = models.ImageField(upload_to='images/branding/packaging/', blank=True, help_text="Packaging section image")
-    social_media_image = models.ImageField(upload_to='images/branding/social/', blank=True, help_text="Social media section image")
-    posters_banners_image = models.ImageField(upload_to='images/branding/posters/', blank=True, help_text="Posters & banners section image")
-    others_image = models.ImageField(upload_to='images/branding/others/', blank=True, help_text="Others section image")
+    tools_apps = models.TextField(
+        blank=True, help_text="Tools & Apps section content")
+    logos_image = models.ImageField(
+        upload_to='images/branding/logos/', blank=True, help_text="Logos section image")
+    typefaces_image = models.ImageField(
+        upload_to='images/branding/typefaces/', blank=True, help_text="Typefaces section image")
+    color_palette_image = models.ImageField(
+        upload_to='images/branding/colors/', blank=True, help_text="Color palette section image")
+    packaging_image = models.ImageField(
+        upload_to='images/branding/packaging/', blank=True, help_text="Packaging section image")
+    social_media_image = models.ImageField(
+        upload_to='images/branding/social/', blank=True, help_text="Social media section image")
+    posters_banners_image = models.ImageField(
+        upload_to='images/branding/posters/', blank=True, help_text="Posters & banners section image")
+    others_image = models.ImageField(
+        upload_to='images/branding/others/', blank=True, help_text="Others section image")
 
     class Meta:
         ordering = ['order']
@@ -62,11 +71,14 @@ class BrandingProject(models.Model):
 class SocialMediaPost(models.Model):
     title = models.CharField(max_length=128)  # 品类标题，如 "Food & Beverage"
     mockup_image_1 = models.ImageField(upload_to='images/social_media/')
-    mockup_image_1_text = models.CharField(max_length=50, default='Design 01', help_text="拍立得相纸1的文本")
+    mockup_image_1_text = models.CharField(
+        max_length=50, default='Design 01', help_text="拍立得相纸1的文本")
     mockup_image_2 = models.ImageField(upload_to='images/social_media/')
-    mockup_image_2_text = models.CharField(max_length=50, default='Design 02', help_text="拍立得相纸2的文本")
+    mockup_image_2_text = models.CharField(
+        max_length=50, default='Design 02', help_text="拍立得相纸2的文本")
     mockup_image_3 = models.ImageField(upload_to='images/social_media/')
-    mockup_image_3_text = models.CharField(max_length=50, default='Design 03', help_text="拍立得相纸3的文本")
+    mockup_image_3_text = models.CharField(
+        max_length=50, default='Design 03', help_text="拍立得相纸3的文本")
     about = models.TextField()  # About 部分的文字介绍
     tools = models.TextField()  # Tools & Apps 部分的文字介绍
     goals = models.TextField()  # Goals 部分的文字介绍
@@ -90,13 +102,17 @@ class MobileLandingPage(models.Model):
     tags = models.ManyToManyField(Tag, blank=True)
     date_posted = models.DateTimeField(auto_now_add=True, null=True)
     order = models.IntegerField(default=0)
-    
+
     # Mobile Landing Pages详情页面的可选部分
-    about_brand = models.TextField(blank=True, help_text="About brand section content")
+    about_brand = models.TextField(
+        blank=True, help_text="About brand section content")
     goals = models.TextField(blank=True, help_text="Goals section content")
-    typefaces_image = models.ImageField(upload_to='images/mobile_landing/typefaces/', blank=True, help_text="Typefaces section image")
-    color_palette_image = models.ImageField(upload_to='images/mobile_landing/colors/', blank=True, help_text="Color palette section image")
-    landing_pages_image = models.ImageField(upload_to='images/mobile_landing/pages/', blank=True, help_text="Landing Pages section image")
+    typefaces_image = models.ImageField(
+        upload_to='images/mobile_landing/typefaces/', blank=True, help_text="Typefaces section image")
+    color_palette_image = models.ImageField(
+        upload_to='images/mobile_landing/colors/', blank=True, help_text="Color palette section image")
+    landing_pages_image = models.ImageField(
+        upload_to='images/mobile_landing/pages/', blank=True, help_text="Landing Pages section image")
 
     class Meta:
         ordering = ['order']
@@ -115,17 +131,25 @@ class EcommerceProject(models.Model):
     date_posted = models.DateTimeField(auto_now_add=True, null=True)
     order = models.IntegerField(default=0)
     tags = models.ManyToManyField(Tag, blank=True)
-    
+
     # E-commerce Design详情页面的可选部分
-    about_project = models.TextField(blank=True, help_text="About project section content")
+    about_project = models.TextField(
+        blank=True, help_text="About project section content")
     goals = models.TextField(blank=True, help_text="Goals section content")
-    tools_apps = models.TextField(blank=True, help_text="Tools & Apps section content")
-    design_process_image = models.ImageField(upload_to='images/ecommerce/process/', blank=True, help_text="Design process section image")
-    user_interface_image = models.ImageField(upload_to='images/ecommerce/ui/', blank=True, help_text="User interface section image")
-    mobile_design_image = models.ImageField(upload_to='images/ecommerce/mobile/', blank=True, help_text="Mobile design section image")
-    product_pages_image = models.ImageField(upload_to='images/ecommerce/products/', blank=True, help_text="Product pages section image")
-    checkout_flow_image = models.ImageField(upload_to='images/ecommerce/checkout/', blank=True, help_text="Checkout flow section image")
-    others_image = models.ImageField(upload_to='images/ecommerce/others/', blank=True, help_text="Others section image")
+    tools_apps = models.TextField(
+        blank=True, help_text="Tools & Apps section content")
+    design_process_image = models.ImageField(
+        upload_to='images/ecommerce/process/', blank=True, help_text="Design process section image")
+    user_interface_image = models.ImageField(
+        upload_to='images/ecommerce/ui/', blank=True, help_text="User interface section image")
+    mobile_design_image = models.ImageField(
+        upload_to='images/ecommerce/mobile/', blank=True, help_text="Mobile design section image")
+    product_pages_image = models.ImageField(
+        upload_to='images/ecommerce/products/', blank=True, help_text="Product pages section image")
+    checkout_flow_image = models.ImageField(
+        upload_to='images/ecommerce/checkout/', blank=True, help_text="Checkout flow section image")
+    others_image = models.ImageField(
+        upload_to='images/ecommerce/others/', blank=True, help_text="Others section image")
 
     class Meta:
         ordering = ['order']

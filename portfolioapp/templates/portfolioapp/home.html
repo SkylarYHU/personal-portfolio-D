@@ -35,6 +35,24 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
+    
+    <!-- Favicon and PWA Meta Tags -->
+    <link rel="icon" type="image/x-icon" href="{% static 'images/favicon/favicon.ico' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicon/favicon-16x16.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/favicon/favicon-32x32.png' %}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/favicon/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="192x192" href="{% static 'images/favicon/android-chrome-192x192.png' %}">
+    <link rel="icon" type="image/png" sizes="512x512" href="{% static 'images/favicon/android-chrome-512x512.png' %}">
+    <link rel="manifest" href="{% static 'images/favicon/site.webmanifest' %}">
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#000000">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Skylar's Portfolio">
+    <meta name="msapplication-TileColor" content="#000000">
+    <meta name="msapplication-config" content="{% static 'images/favicon/browserconfig.xml' %}">
+    
     <title>Skylar's Portfolio</title>
   </head>
   <body>
@@ -62,10 +80,21 @@
       <!-- Hero Section -->
       <section id="home" class="hero">
         <div class="hero-shapes">
-          <img src="{% static 'images/cube.png' %}" alt="Cube" class="shape shape-cube">
-          <img src="{% static 'images/cylinder.png' %}" alt="Cylinder" class="shape shape-cylinder">
-          <img src="{% static 'images/sphere.png' %}" alt="Sphere" class="shape shape-sphere">
-
+          <img
+            src="{% static 'images/cube.png' %}"
+            alt="Cube"
+            class="shape shape-cube"
+          />
+          <img
+            src="{% static 'images/cylinder.png' %}"
+            alt="Cylinder"
+            class="shape shape-cylinder"
+          />
+          <img
+            src="{% static 'images/sphere.png' %}"
+            alt="Sphere"
+            class="shape shape-sphere"
+          />
         </div>
         <div class="glass-card">
           <div class="card-header">
@@ -74,11 +103,14 @@
           </div>
           <div class="card-main">
             <h1 class="main-title animate__animated animate__fadeInDown">
-              Graphic<br>Designer
+              Graphic<br />Designer
             </h1>
           </div>
           <div class="card-footer">
-            <p class="description">I'm Skylar Hu, blending design, marketing, and development across digital and physical platforms.</p>
+            <p class="description">
+              I'm Skylar Hu, blending design, marketing, and development across
+              digital and physical platforms.
+            </p>
             <div class="developer-label">Developer</div>
           </div>
         </div>
@@ -94,7 +126,10 @@
               <div class="accordion-content">
                 <h3 class="accordion-title">Brand Design</h3>
                 <div class="accordion-details">
-                  <p class="accordion-description">I create distinctive and professional brand identities that help businesses stand out and make a lasting impression.</p>
+                  <p class="accordion-description">
+                    I create distinctive and professional brand identities that
+                    help businesses stand out and make a lasting impression.
+                  </p>
                   <a href="#branding" class="learn-more">→ Learn more</a>
                 </div>
               </div>
@@ -102,59 +137,86 @@
             </div>
           </div>
           <div class="accordion-separator"></div>
-          
+
           <div class="accordion-item" data-target="#ecommerce-design">
             <div class="accordion-header">
               <div class="accordion-number">02</div>
               <div class="accordion-content">
                 <h3 class="accordion-title">E-commerce Design</h3>
                 <div class="accordion-details">
-                  <p class="accordion-description">I design user-friendly and conversion-focused e-commerce experiences that drive sales and enhance customer satisfaction through intuitive interfaces and seamless shopping flows.</p>
-                  <a href="#ecommerce-design" class="learn-more">→ Learn more</a>
+                  <p class="accordion-description">
+                    I design user-friendly and conversion-focused e-commerce
+                    experiences that drive sales and enhance customer
+                    satisfaction through intuitive interfaces and seamless
+                    shopping flows.
+                  </p>
+                  <a href="#ecommerce-design" class="learn-more"
+                    >→ Learn more</a
+                  >
                 </div>
               </div>
               <div class="accordion-toggle">▼</div>
             </div>
           </div>
           <div class="accordion-separator"></div>
-          
+
           <div class="accordion-item" data-target="#social-media-post">
             <div class="accordion-header">
               <div class="accordion-number">03</div>
               <div class="accordion-content">
                 <h3 class="accordion-title">Social Media Design</h3>
                 <div class="accordion-details">
-                  <p class="accordion-description">I create engaging, on-brand social media graphics that capture attention and drive results. From custom post designs to complete visual templates, I ensure your brand looks consistent and professional across all platforms.</p>
-                  <a href="#social-media-post" class="learn-more">→ Learn more</a>
+                  <p class="accordion-description">
+                    I create engaging, on-brand social media graphics that
+                    capture attention and drive results. From custom post
+                    designs to complete visual templates, I ensure your brand
+                    looks consistent and professional across all platforms.
+                  </p>
+                  <a href="#social-media-post" class="learn-more"
+                    >→ Learn more</a
+                  >
                 </div>
               </div>
               <div class="accordion-toggle">▼</div>
             </div>
           </div>
           <div class="accordion-separator"></div>
-          
+
           <div class="accordion-item" data-target="#mobile-landing-page">
             <div class="accordion-header">
               <div class="accordion-number">04</div>
               <div class="accordion-content">
                 <h3 class="accordion-title">Mobile Landing Pages</h3>
                 <div class="accordion-details">
-                  <p class="accordion-description">I design and develop high-converting mobile landing pages that are fast, intuitive, and visually compelling. My goal is to create a seamless user experience that turns visitors into customers.</p>
-                  <a href="#mobile-landing-page" class="learn-more">→ Learn more</a>
+                  <p class="accordion-description">
+                    I design and develop high-converting mobile landing pages
+                    that are fast, intuitive, and visually compelling. My goal
+                    is to create a seamless user experience that turns visitors
+                    into customers.
+                  </p>
+                  <a href="#mobile-landing-page" class="learn-more"
+                    >→ Learn more</a
+                  >
                 </div>
               </div>
               <div class="accordion-toggle">▼</div>
             </div>
           </div>
           <div class="accordion-separator"></div>
-          
+
           <div class="accordion-item" data-target="#portfolio">
             <div class="accordion-header">
               <div class="accordion-number">05</div>
               <div class="accordion-content">
                 <h3 class="accordion-title">Websites</h3>
                 <div class="accordion-details">
-                  <p class="accordion-description">I design and build custom websites that are user-friendly, visually stunning, and optimized for performance. My goal is to create a powerful online presence that effectively communicates your brand and helps you achieve your business objectives.</p>
+                  <p class="accordion-description">
+                    I design and build custom websites that are user-friendly,
+                    visually stunning, and optimized for performance. My goal is
+                    to create a powerful online presence that effectively
+                    communicates your brand and helps you achieve your business
+                    objectives.
+                  </p>
                   <a href="#portfolio" class="learn-more">→ Learn more</a>
                 </div>
               </div>
@@ -168,13 +230,16 @@
       <section id="branding" class="portfolio">
         <h2>Brand Design</h2>
         <p>
-          Here are some branding projects I've worked on, showcasing my skills in
-          visual identity design, logo creation, and brand development.
+          Here are some branding projects I've worked on, showcasing my skills
+          in visual identity design, logo creation, and brand development.
         </p>
         <div class="dashed-line"></div>
         <div class="portfolio-grid">
           {% for branding_project in branding_projects %}
-          <a href="{% url 'branding_detail' branding_project.id %}" class="branding-link">
+          <a
+            href="{% url 'branding_detail' branding_project.id %}"
+            class="branding-link"
+          >
             <div class="portfolio-item" data-link="{{ branding_project.link }}">
               <div class="image-container">
                 <img
@@ -201,14 +266,21 @@
       <section id="ecommerce-design" class="portfolio">
         <h2>E-commerce Design</h2>
         <p>
-          Here are some e-commerce design projects I've worked on, showcasing my skills in
-          creating user-friendly online shopping experiences that drive conversions and enhance customer satisfaction.
+          Here are some e-commerce design projects I've worked on, showcasing my
+          skills in creating user-friendly online shopping experiences that
+          drive conversions and enhance customer satisfaction.
         </p>
         <div class="dashed-line"></div>
         <div class="portfolio-grid">
           {% for ecommerce_project in ecommerce_projects %}
-          <a href="{% url 'ecommerce_detail' ecommerce_project.id %}" class="ecommerce-link">
-            <div class="portfolio-item" data-link="{{ ecommerce_project.link }}">
+          <a
+            href="{% url 'ecommerce_detail' ecommerce_project.id %}"
+            class="ecommerce-link"
+          >
+            <div
+              class="portfolio-item"
+              data-link="{{ ecommerce_project.link }}"
+            >
               <div class="image-container">
                 <img
                   src="{{ ecommerce_project.image.url }}"
@@ -234,8 +306,9 @@
       <section id="social-media-post" class="portfolio">
         <h2>Social Media Design</h2>
         <p>
-          Here are some social media post designs I've created, showcasing creative
-          visual storytelling and brand engagement across different categories.
+          Here are some social media post designs I've created, showcasing
+          creative visual storytelling and brand engagement across different
+          categories.
         </p>
         <div class="dashed-line"></div>
         <div class="social-media-grid">
@@ -245,7 +318,10 @@
             <div class="polaroid-gallery">
               <div class="polaroid-card">
                 <div class="polaroid-image">
-                  <img src="{{ post.mockup_image_1.url }}" alt="{{ post.title }} mockup 1" />
+                  <img
+                    src="{{ post.mockup_image_1.url }}"
+                    alt="{{ post.title }} mockup 1"
+                  />
                 </div>
                 <div class="polaroid-text">
                   <p>{{ post.mockup_image_1_text }}</p>
@@ -253,7 +329,10 @@
               </div>
               <div class="polaroid-card">
                 <div class="polaroid-image">
-                  <img src="{{ post.mockup_image_2.url }}" alt="{{ post.title }} mockup 2" />
+                  <img
+                    src="{{ post.mockup_image_2.url }}"
+                    alt="{{ post.title }} mockup 2"
+                  />
                 </div>
                 <div class="polaroid-text">
                   <p>{{ post.mockup_image_2_text }}</p>
@@ -261,7 +340,10 @@
               </div>
               <div class="polaroid-card">
                 <div class="polaroid-image">
-                  <img src="{{ post.mockup_image_3.url }}" alt="{{ post.title }} mockup 3" />
+                  <img
+                    src="{{ post.mockup_image_3.url }}"
+                    alt="{{ post.title }} mockup 3"
+                  />
                 </div>
                 <div class="polaroid-text">
                   <p>{{ post.mockup_image_3_text }}</p>
@@ -297,7 +379,10 @@
         <div class="dashed-line"></div>
         <div class="portfolio-grid">
           {% for page in mobile_landing_pages %}
-          <a href="{% url 'mobile_landing_page_detail' page.id %}" style="text-decoration: none; color: inherit;">
+          <a
+            href="{% url 'mobile_landing_page_detail' page.id %}"
+            style="text-decoration: none; color: inherit"
+          >
             <div class="portfolio-item" data-link="{{ page.link }}">
               <div class="image-container">
                 <img
@@ -331,7 +416,12 @@
         <div class="dashed-line"></div>
         <div class="portfolio-grid">
           {% for project in projects %}
-          <a href="{{ project.link }}" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
+          <a
+            href="{{ project.link }}"
+            target="_blank"
+            rel="noopener noreferrer"
+            style="text-decoration: none; color: inherit"
+          >
             <div class="portfolio-item" data-link="{{ project.link }}">
               <div class="image-container">
                 <img
@@ -408,11 +498,19 @@
               Shanghai Chuangji Advertising & Media | 2019 - 2020
             </p>
             <p>
-              I have worked on creating packaging solutions such as shopping bags, food boxes, and wraps that strengthen brand recognition and enhance consumer engagement. In addition, I have developed brand identity systems—including logos and style guides—that ensure consistent visual communication across both digital and print platforms.
+              I have worked on creating packaging solutions such as shopping
+              bags, food boxes, and wraps that strengthen brand recognition and
+              enhance consumer engagement. In addition, I have developed brand
+              identity systems—including logos and style guides—that ensure
+              consistent visual communication across both digital and print
+              platforms.
             </p>
           </div>
           <div class="role-img">
-            <img src="{% static 'images/role3.png' %}" alt="Junior Graphic Designer Role" />
+            <img
+              src="{% static 'images/role3.png' %}"
+              alt="Junior Graphic Designer Role"
+            />
           </div>
         </div>
       </section>
@@ -501,9 +599,7 @@
               href="https://www.zhihu.com/"
               target="_blank"
               rel="noopener noreferrer"
-              ><img
-                src="{% static 'images/zhihu-logo.png' %}"
-                alt="Zhihu Logo"
+              ><img src="{% static 'images/zhihu-logo.png' %}" alt="Zhihu Logo"
             /></a>
           </li>
         </ul>

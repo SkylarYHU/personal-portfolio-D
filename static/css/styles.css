@@ -943,6 +943,10 @@ p,
   aspect-ratio: 16/9;
 }
 
+#mobile-landing-page .portfolio-grid {
+  grid-template-columns: 1fr;
+}
+
 /* Brand Design specific styling - wider cards for fewer items */
 #branding .portfolio-grid {
   display: grid;
@@ -1142,6 +1146,33 @@ p,
 
 .contact span {
   color: #e5e7eb;
+}
+
+/* Project Link Hover Animation */
+.project-link {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.project-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background-color: white;
+  transition: width 0.3s ease;
+}
+
+.project-link:hover::after {
+  width: 100%;
+}
+
+.project-link:hover {
+  color: white;
 }
 
 @media (max-width: 1024px) {
