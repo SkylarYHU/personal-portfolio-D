@@ -1,0 +1,98 @@
+.circular-text-container {
+  position: absolute !important;
+  top: -78px;
+  left: -78px;
+  width: 156px;
+  height: 156px;
+  z-index: 15;
+  pointer-events: none;
+}
+
+.circular-text {
+  margin: 0;
+  border-radius: 50%;
+  width: 187px;
+  position: relative;
+  height: 187px;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  transform-origin: 50% 50%;
+  -webkit-transform-origin: 50% 50%;
+  animation: rotate 20s linear infinite;
+
+}
+
+.circular-text span {
+  position: absolute;
+  display: inline-block;
+  left: 50%;
+  top: 50%;
+  font-size: 14px;
+  transition: all 0.5s cubic-bezier(0, 0, 0, 1);
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  transform-origin: 0 0;
+}
+
+.circular-text:hover {
+  animation: rotate-fast 5s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate-fast {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* 响应式调整 - 已放大30% */
+@media (max-width: 768px) {
+  .circular-text-container {
+    top: -65px !important;
+    left: -65px !important;
+    width: 130px;
+    height: 130px;
+  }
+  
+  .circular-text {
+    width: 146px;
+    height: 146px;
+  }
+  
+  .circular-text span {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .circular-text-container {
+    top: -52px !important;
+    left: -52px !important;
+    width: 104px;
+    height: 104px;
+  }
+  
+  .circular-text {
+    width: 114px;
+    height: 114px;
+  }
+  
+  .circular-text span {
+    font-size: 10px;
+  }
+}

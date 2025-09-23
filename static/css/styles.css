@@ -190,6 +190,7 @@ p,
   flex-direction: column;
   justify-content: space-between;
   min-height: 400px;
+  overflow: visible;
 }
 
 .glass-card:hover {
@@ -202,6 +203,7 @@ p,
   flex-direction: column;
   align-items: flex-start;
   margin-bottom: 2rem;
+  position: relative;
 }
 
 .role-title {
