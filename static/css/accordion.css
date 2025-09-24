@@ -162,4 +162,24 @@
     font-size: 1rem;
     min-width: 25px;
   }
+
+  /* Mobile: Show accordion details by default since there's no hover */
+  .accordion-details {
+    max-height: 200px;
+    opacity: 1;
+    margin-top: 1rem;
+  }
+
+  .accordion-toggle {
+    transform: rotate(0deg);
+    color: white;
+  }
+
+  .accordion-title {
+    color: white;
+  }
+
+  .accordion-number {
+    color: white;
+  }
 }
