@@ -25,9 +25,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Smooth animation loop
   function animateCursor() {
-    // Smooth following effect
-    cursorX += (mouseX - cursorX) * 0.1;
-    cursorY += (mouseY - cursorY) * 0.1;
+    // Smooth following effect with higher responsiveness
+    cursorX += (mouseX - cursorX) * 0.2;
+    cursorY += (mouseY - cursorY) * 0.2;
     
     cursorFollow.style.left = cursorX + 'px';
     cursorFollow.style.top = cursorY + 'px';
