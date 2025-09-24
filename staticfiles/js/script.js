@@ -137,20 +137,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const targetId = item.getAttribute('data-target');
     console.log(`Accordion item ${index + 1} target:`, targetId);
     
-    // Add click event for navigation - entire accordion item is clickable
-    item.addEventListener('click', function(e) {
-      console.log('=== ACCORDION CLICKED ===' );
-      console.log('Target ID:', targetId);
-      console.log('Clicked element:', e.target.tagName, e.target.className);
-      
-      // Check if clicked element is a link (Learn more button)
-      const clickedLink = e.target.closest('a');
-      console.log('Clicked on link:', !!clickedLink);
-      
-      if (!clickedLink && targetId) {
-        console.log('Processing navigation to:', targetId);
+    // Add click event only for EXPLORE buttons
+    const exploreButton = item.querySelector('.learn-more');
+    if (exploreButton && targetId) {
+      exploreButton.addEventListener('click', function(e) {
+        console.log('=== EXPLORE BUTTON CLICKED ===');
+        console.log('Target ID:', targetId);
         
-        // 阻止任何可能的默认行为
+        // 阻止默认的链接行为
         e.preventDefault();
         e.stopPropagation();
         
@@ -174,9 +168,7 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
           console.error('Target element not found for:', targetId);
         }
-      } else if (clickedLink) {
-        console.log('Learn more link clicked, allowing default behavior');
-      }
-    });
+      });
+    }
   })
 });
