@@ -683,7 +683,7 @@ p,
 }
 
 .polaroid-card {
-  background-color: white;
+  background-color: #272f40;
   padding: 12px 12px 60px 12px;
   border-radius: 5px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -735,7 +735,7 @@ p,
 
 .polaroid-text p {
   font-size: 0.9rem;
-  color: #414141;
+  color: #ffffff;
   text-align: center;
   font-family: "Poppins", sans-serif;
   font-weight: 500;
