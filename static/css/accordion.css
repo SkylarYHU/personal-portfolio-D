@@ -63,7 +63,7 @@
 .learn-more {
   color: #333;
   text-decoration: none;
-  font-size: 0.9rem;
+  font-size: 1.1rem;
   font-weight: 500;
   transition: all 0.3s ease;
   display: inline-flex;
@@ -71,8 +71,8 @@
   gap: 0.5rem;
   font-family: "Poppins", sans-serif;
   background-color: white;
-  padding: 6px 12px;
-  border-radius: 5px;
+  padding: 10px 20px;
+  border-radius: 25px;
   align-self: flex-start;
   margin: 1rem 0;
 }
