@@ -133,6 +133,11 @@ document.addEventListener('DOMContentLoaded', function() {
   
   console.log('Found accordion items:', accordionItems.length);
   
+  // On mobile devices, expand the first accordion item by default
+  if (window.innerWidth <= 768 && accordionItems.length > 0) {
+    accordionItems[0].classList.add('active');
+  }
+  
   accordionItems.forEach((item, index) => {
     const targetId = item.getAttribute('data-target');
     console.log(`Accordion item ${index + 1} target:`, targetId);

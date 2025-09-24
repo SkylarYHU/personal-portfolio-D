@@ -170,7 +170,7 @@
 
   /* Mobile: Show active state when accordion is expanded */
   .accordion-item.active .accordion-details {
-    max-height: 200px;
+    max-height: 300px;
     opacity: 1;
     margin-top: 1rem;
   }

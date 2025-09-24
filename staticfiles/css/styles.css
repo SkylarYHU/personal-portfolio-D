@@ -219,7 +219,7 @@ p,
   display: flex;
   align-items: center;
   justify-content: center;
-  transform: translateY(-20%);
+  transform: translateY(-16%);
 }
 
 .main-title {
@@ -235,7 +235,7 @@ p,
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
-  margin-top: 2rem;
+  margin-top: 1.8rem;
   position: relative;
 }
 
@@ -247,11 +247,11 @@ p,
   margin: 0;
   text-align: left;
   margin-left: auto;
-  transform: translateX(30px);
+  transform: translateX(20px);
 }
 
 .developer-label {
-  font-size: clamp(2.7rem, 6.75vw, 4.35rem);
+  font-size: clamp(2.7rem, 6.75vw, 4.25rem);
   font-weight: 700;
   color: #000000;
   background: #ffeb56;
