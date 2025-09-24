@@ -1,0 +1,43 @@
+/* Mouse Follow Effect */
+.cursor-follow {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  background: #FFD700; /* 黄色 */
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  transition: transform 0.1s ease-out;
+  transform: translate(-50%, -50%);
+  opacity: 0.8;
+}
+
+.cursor-follow.active {
+  transform: translate(-50%, -50%) scale(1.5);
+}
+
+/* Hide default cursor on interactive elements */
+body {
+  cursor: none;
+}
+
+a, button, .clickable {
+  cursor: none;
+}
+
+/* Show default cursor on form inputs */
+input, textarea, select {
+  cursor: text !important;
+}
+
+/* Responsive: Hide on mobile devices */
+@media (max-width: 768px) {
+  .cursor-follow {
+    display: none;
+  }
+  
+  body, a, button, .clickable {
+    cursor: auto !important;
+  }
+}
