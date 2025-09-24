@@ -163,23 +163,28 @@
     min-width: 25px;
   }
 
-  /* Mobile: Show accordion details by default since there's no hover */
-  .accordion-details {
+  /* Mobile: Enable touch interaction for accordion */
+  .accordion-item {
+    cursor: pointer;
+  }
+
+  /* Mobile: Show active state when accordion is expanded */
+  .accordion-item.active .accordion-details {
     max-height: 200px;
     opacity: 1;
     margin-top: 1rem;
   }
 
-  .accordion-toggle {
+  .accordion-item.active .accordion-toggle {
     transform: rotate(0deg);
     color: white;
   }
 
-  .accordion-title {
+  .accordion-item.active .accordion-title {
     color: white;
   }
 
-  .accordion-number {
+  .accordion-item.active .accordion-number {
     color: white;
   }
 }
