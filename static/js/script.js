@@ -137,18 +137,27 @@ document.addEventListener('DOMContentLoaded', function() {
     const targetId = item.getAttribute('data-target');
     console.log(`Accordion item ${index + 1} target:`, targetId);
     
-    // Mobile: Add click event for accordion toggle
-    if (window.innerWidth <= 768) {
-      item.addEventListener('click', function(e) {
-        // Check if clicked element is the EXPLORE button
-        if (e.target.classList.contains('learn-more') || e.target.closest('.learn-more')) {
-          return; // Let the EXPLORE button handle its own click
-        }
-        
-        // Toggle accordion
-        item.classList.toggle('active');
-      });
-    }
+    // Add click event for accordion toggle (works on all devices)
+    item.addEventListener('click', function(e) {
+      // Check if clicked element is the EXPLORE button
+      if (e.target.classList.contains('learn-more') || e.target.closest('.learn-more')) {
+        return; // Let the EXPLORE button handle its own click
+      }
+      
+      // Toggle accordion
+      item.classList.toggle('active');
+    });
+    
+    // On mobile, also ensure accordion can be toggled by touch
+    item.addEventListener('touchstart', function(e) {
+      // Check if clicked element is the EXPLORE button
+      if (e.target.classList.contains('learn-more') || e.target.closest('.learn-more')) {
+        return; // Let the EXPLORE button handle its own click
+      }
+      
+      // Toggle accordion
+      item.classList.toggle('active');
+    });
     
     // Add click event only for EXPLORE buttons
     const exploreButton = item.querySelector('.learn-more');
