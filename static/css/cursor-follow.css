@@ -1,9 +1,9 @@
 /* Mouse Follow Effect */
 .cursor-follow {
   position: fixed;
-  width: 10px;
-  height: 10px;
-  background: #ffeb56;
+  width: 12px;
+  height: 12px;
+  background-color: #ffeb56;
   border-radius: 50%;
   pointer-events: none;
   z-index: 9999;

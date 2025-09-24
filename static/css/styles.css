@@ -242,15 +242,16 @@ p,
 .description {
   font-size: 0.9rem;
   color: rgba(255, 255, 255, 0.7);
-  line-height: 1.6;
-  max-width: 45%;
+  line-height: 1.5;
+  max-width: 55%;
   margin: 0;
   text-align: left;
   margin-left: auto;
+  transform: translateX(30px);
 }
 
 .developer-label {
-  font-size: clamp(2.7rem, 6.75vw, 4.725rem);
+  font-size: clamp(2.7rem, 6.75vw, 4.35rem);
   font-weight: 700;
   color: #000000;
   background: #ffeb56;
@@ -521,7 +522,6 @@ p,
   grid-template-columns: repeat(2, 1fr);
   gap: 1.2rem;
 }
-
 
 #branding .portfolio-item {
   display: flex;
