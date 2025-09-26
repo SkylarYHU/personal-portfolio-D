@@ -196,8 +196,8 @@ class MediaStorage(S3Boto3Storage):
 
 # Production settings - force S3 usage when in production
 if IS_PRODUCTION or not DEBUG:
-    # Use S3 for media files in production
-    if AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY and AWS_STORAGE_BUCKET_NAME and (AWS_CLOUDFRONT_DOMAIN or AWS_S3_CUSTOM_DOMAIN):
+    # Production static files configuration
+    if AWS_ACCESS_KEY_ID and AWS_SECRET_KEY and AWS_STORAGE_BUCKET_NAME and (AWS_CLOUDFRONT_DOMAIN or AWS_S3_CUSTOM_DOMAIN):
         DEFAULT_FILE_STORAGE = 'portfolio.settings.MediaStorage'
         domain = AWS_CLOUDFRONT_DOMAIN or AWS_S3_CUSTOM_DOMAIN
         MEDIA_URL = f'https://{domain}/'
@@ -207,16 +207,20 @@ if IS_PRODUCTION or not DEBUG:
             print(f"[SETTINGS] Using S3 storage: {MEDIA_URL}")
     else:
         print(f"[SETTINGS] Missing AWS config - AWS_ACCESS_KEY_ID: {bool(AWS_ACCESS_KEY_ID)}, AWS_SECRET_ACCESS_KEY: {bool(AWS_SECRET_ACCESS_KEY)}, AWS_STORAGE_BUCKET_NAME: {AWS_STORAGE_BUCKET_NAME}, AWS_S3_CUSTOM_DOMAIN: {AWS_S3_CUSTOM_DOMAIN}")
-        # Fallback to local media serving
+        # Fallback to local media files in production if S3 is not configured
         STATICFILES_DIRS.append(os.path.join(BASE_DIR, 'media'))
+    
+    # WhiteNoise configuration for static files - use simple storage to avoid compression issues
+    STATICFILES_STORAGE = 'whitenoise.storage.StaticFilesStorage'
+    WHITENOISE_USE_FINDERS = True
 else:
     print(f"[SETTINGS] Development mode - using local storage")
     
-    # Keep WhiteNoise for static files
+    # WhiteNoise configuration for static files
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
     WHITENOISE_USE_FINDERS = True
     WHITENOISE_AUTOREFRESH = True
-    # 设置较短的缓存时间以避免图片更新问题
+    # Reduce cache time for development
     WHITENOISE_MAX_AGE = 300  # 5分钟缓存
     WHITENOISE_SKIP_COMPRESS_EXTENSIONS = ['jpg', 'jpeg', 'png', 'gif', 'webp', 'zip', 'gz', 'tgz', 'bz2', 'tbz', 'xz', 'br']
 
