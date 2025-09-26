@@ -586,6 +586,7 @@ p,
 #powerpoint-presentations .portfolio-grid {
   grid-template-columns: 1fr;
 }
+
 #powerpoint-presentations .powerpoint-link {
   text-decoration: none !important;
   color: inherit;
