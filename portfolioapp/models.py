@@ -218,16 +218,7 @@ class PowerPointPresentation(models.Model):
         blank=True,
         help_text="Preview image for the presentation"
     )
-    preview_image_caption = models.TextField(
-        default="Sample slides showcasing design consistency and professional layout",
-        help_text="Preview image caption"
-    )
-    
-    # Design Approach section
-    design_approach_content = models.TextField(
-        default="The presentation follows a clean, modern design aesthetic with consistent typography, color schemes, and visual elements. Each slide is carefully crafted to maintain audience engagement while effectively communicating complex information through visual storytelling.",
-        help_text="Design Approach section content"
-    )
+
     
     # Target Audience section
     target_audience_content = models.TextField(
