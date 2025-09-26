@@ -9,5 +9,6 @@ urlpatterns = [
     path('mobile-landing-page/<int:mobile_landing_page_id>',
          views.mobile_landing_page_detail, name="mobile_landing_page_detail"),
     path('ecommerce/<int:ecommerce_id>',
-         views.ecommerce_detail, name="ecommerce_detail")
+         views.ecommerce_detail, name="ecommerce_detail"),
+    path('powerpoint/', views.powerpoint_detail, name="powerpoint_detail")
 ]

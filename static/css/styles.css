@@ -575,6 +575,33 @@ p,
 #branding .branding-link {
   text-decoration: none !important;
   color: inherit;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+#branding .branding-link:hover {
+  transform: translateY(-5px);
+}
+
+#powerpoint-presentations .portfolio-grid {
+  grid-template-columns: 1fr;
+}
+#powerpoint-presentations .powerpoint-link {
+  text-decoration: none !important;
+  color: inherit;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+#powerpoint-presentations .powerpoint-link:hover {
+  transform: translateY(-5px);
+}
+
+/* PowerPoint Detail Page Canvas Link */
+.canvas-link:hover {
+  background-color: #e55a2b !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3) !important;
 }
 
 /* E-commerce section specific styles */
@@ -1091,6 +1118,8 @@ p,
 .company-logo img:hover {
   transform: translateY(-5px);
 }
+
+
 
 .contact {
   min-height: 100vh;

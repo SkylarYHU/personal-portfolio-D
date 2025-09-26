@@ -39,3 +39,7 @@ def mobile_landing_page_detail(request, mobile_landing_page_id):
 def ecommerce_detail(request, ecommerce_id):
     ecommerce_project = get_object_or_404(EcommerceProject, id=ecommerce_id)
     return render(request, 'portfolioapp/ecommerce_detail.html', {"ecommerce_project": ecommerce_project})
+
+
+def powerpoint_detail(request):
+    return render(request, 'portfolioapp/powerpoint_detail.html')

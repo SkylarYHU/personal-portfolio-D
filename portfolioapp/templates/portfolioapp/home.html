@@ -232,9 +232,28 @@
           </div>
           <div class="accordion-separator"></div>
 
-          <div class="accordion-item" data-target="#mobile-landing-page">
+          <div class="accordion-item" data-target="#powerpoint-presentations">
             <div class="accordion-header">
               <div class="accordion-number">04</div>
+              <div class="accordion-content">
+                <h3 class="accordion-title">PowerPoint Presentations</h3>
+                <div class="accordion-details">
+                  <p class="accordion-description">
+                    I create compelling and professional presentations that effectively communicate ideas, showcase projects, and engage audiences through clear visual storytelling.
+                  </p>
+                  <a href="#powerpoint-presentations" class="learn-more"
+                    >EXPLORE →</a
+                  >
+                </div>
+              </div>
+              <div class="accordion-toggle">▼</div>
+            </div>
+          </div>
+          <div class="accordion-separator"></div>
+
+          <div class="accordion-item" data-target="#mobile-landing-page">
+            <div class="accordion-header">
+              <div class="accordion-number">05</div>
               <div class="accordion-content">
                 <h3 class="accordion-title">Mobile Landing Pages</h3>
                 <div class="accordion-details">
@@ -254,7 +273,7 @@
 
           <div class="accordion-item" data-target="#portfolio">
             <div class="accordion-header">
-              <div class="accordion-number">05</div>
+              <div class="accordion-number">06</div>
               <div class="accordion-content">
                 <h3 class="accordion-title">Websites</h3>
                 <div class="accordion-details">
@@ -411,6 +430,37 @@
             </div>
           </div>
           {% endfor %}
+        </div>
+      </section>
+
+      <!-- PowerPoint Presentations -->
+      <section id="powerpoint-presentations" class="portfolio">
+        <h2>PowerPoint Presentations</h2>
+        <p>
+          Here are some PowerPoint presentations I've created, showcasing professional design and effective visual communication for various business and creative projects.
+        </p>
+        <div class="dashed-line"></div>
+        <div class="portfolio-grid">
+          <a href="{% url 'powerpoint_detail' %}" class="powerpoint-link">
+            <div class="portfolio-item">
+              <div class="image-container">
+                <img
+                  src="{% static 'images/ppt-preview.jpg' %}"
+                  alt="PowerPoint Presentation Preview"
+                  onerror="this.style.display='none'"
+                />
+              </div>
+              <div class="portfolio-text">
+                <h3>Business Presentation</h3>
+                <p>Professional presentation showcasing brand design, user experience, and project planning with comprehensive visual storytelling.</p>
+                <ul class="tag-list">
+                  <li class="tag-item">PowerPoint</li>
+                  <li class="tag-item">Visual Design</li>
+                  <li class="tag-item">Business</li>
+                </ul>
+              </div>
+            </div>
+          </a>
         </div>
       </section>
 
