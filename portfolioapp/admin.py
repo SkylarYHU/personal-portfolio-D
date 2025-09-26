@@ -137,11 +137,11 @@ class PowerPointPresentationAdmin(admin.ModelAdmin):
             'classes': ('collapse',)
         }),
         ('预览图片部分', {
-            'fields': ('preview_title', 'preview_image', 'preview_image_caption'),
+            'fields': ('preview_title', 'preview_image'),
             'classes': ('collapse',)
         }),
         ('附加信息', {
-            'fields': ('design_approach_content', 'target_audience_content'),
+            'fields': ('target_audience_content',),
             'classes': ('collapse',)
         }),
     )
