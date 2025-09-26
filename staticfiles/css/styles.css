@@ -505,7 +505,7 @@ p,
 
 .dashed-line {
   border-top: 1.5px dashed #616b75;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1rem;
 }
 
 .portfolio-link,
@@ -575,6 +575,34 @@ p,
 #branding .branding-link {
   text-decoration: none !important;
   color: inherit;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+#branding .branding-link:hover {
+  transform: translateY(-5px);
+}
+
+#powerpoint-presentations .portfolio-grid {
+  grid-template-columns: 1fr;
+}
+
+#powerpoint-presentations .powerpoint-link {
+  text-decoration: none !important;
+  color: inherit;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+#powerpoint-presentations .powerpoint-link:hover {
+  transform: translateY(-5px);
+}
+
+/* PowerPoint Detail Page Canvas Link */
+.canvas-link:hover {
+  background-color: #e55a2b !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3) !important;
 }
 
 /* E-commerce section specific styles */
@@ -1092,6 +1120,8 @@ p,
   transform: translateY(-5px);
 }
 
+
+
 .contact {
   min-height: 100vh;
   position: relative;
@@ -1357,6 +1387,96 @@ html {
   font-weight: bold;
   color: white;
   font-family: "Libre Baskerville", serif;
+}
+
+/* PowerPoint Detail Page Styles */
+.powerpoint-detail .portfolio {
+  margin-top: 8rem;
+}
+
+.powerpoint-detail .portfolio-title {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.powerpoint-detail .portfolio-title h1 {
+  color: white;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.powerpoint-detail .portfolio-detail {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.powerpoint-detail .content-container {
+  margin-bottom: 3rem;
+}
+
+.powerpoint-detail .dashed-line {
+  margin: 2rem 0;
+}
+
+.powerpoint-detail .powerpoint-link {
+  color: #ff6b35;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.powerpoint-detail .preview-title {
+  color: white;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.powerpoint-detail .image-container {
+  margin-bottom: 2rem;
+}
+
+.powerpoint-detail .preview-image {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.powerpoint-detail .preview-caption {
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  font-style: italic;
+}
+
+.powerpoint-detail .tags-section {
+  text-align: left;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.powerpoint-detail .tag-list {
+  justify-content: flex-start;
+}
+
+.powerpoint-detail .go-back-container {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 5rem;
+}
+
+.powerpoint-detail .go-back-btn {
+  display: inline-block;
+  background-color: white;
+  color: #2c3e50;
+  padding: 12px 24px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Accordion styles moved to accordion.css */

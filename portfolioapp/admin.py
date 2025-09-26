@@ -122,10 +122,11 @@ class PowerPointPresentationAdmin(admin.ModelAdmin):
     list_display = ('title', 'is_active', 'date_posted')
     ordering = ('order',)
     list_filter = ('is_active', 'date_posted')
+    filter_horizontal = ('tags',)  # 允许在 admin 中选择标签
     
     fieldsets = (
         ('基本信息', {
-            'fields': ('title', 'order', 'is_active')
+            'fields': ('title', 'powerpoint_link_url', 'order', 'is_active', 'tags')
         }),
         ('内容部分', {
             'fields': ('about_content', 'key_features_content', 'tools_software_content'),

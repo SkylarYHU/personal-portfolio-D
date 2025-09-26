@@ -163,6 +163,12 @@ class EcommerceProject(models.Model):
 class PowerPointPresentation(models.Model):
     title = models.CharField(max_length=128, default="PowerPoint Presentations")
     
+    # PowerPoint Link section (above About)
+    powerpoint_link_url = models.URLField(
+        blank=True,
+        help_text="PowerPoint presentation link URL"
+    )
+    
     # About section
     about_content = models.TextField(
         default="This comprehensive business presentation demonstrates professional design principles, effective visual hierarchy, and compelling storytelling techniques. Created for business and creative projects, it showcases brand design concepts, user experience methodologies, and strategic project planning.",
@@ -233,6 +239,7 @@ class PowerPointPresentation(models.Model):
     date_posted = models.DateTimeField(auto_now_add=True, null=True)
     order = models.IntegerField(default=0)
     is_active = models.BooleanField(default=True, help_text="Whether this presentation is active")
+    tags = models.ManyToManyField(Tag, blank=True)
     
     class Meta:
         ordering = ['order']

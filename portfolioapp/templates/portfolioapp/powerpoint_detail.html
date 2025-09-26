@@ -1,7 +1,7 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="powerpoint-detail">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -87,7 +87,7 @@
 
     <title>PowerPoint Presentations - Skylar's Portfolio</title>
   </head>
-  <body>
+  <body class="powerpoint-detail">
     <!-- Navigation -->
     <header>
       <nav class="navbar">
@@ -110,19 +110,30 @@
 
     <div class="container">
       <!-- Project Detail Section -->
-      <section class="portfolio" style="margin-top: 8rem">
-        <div style="text-align: center; margin-bottom: 3rem">
-          <h1 style="color: white; font-size: 2.5rem; margin-bottom: 1rem">
+      <section class="portfolio">
+        <div class="portfolio-title">
+          <h1>
             {{ presentation.title }}
           </h1>
         </div>
 
-        <div
-          class="portfolio-detail"
-          style="max-width: 1200px; margin: 0 auto; padding: 0 1rem"
-        >
-          <!-- Presentation Information Container -->
-          <div class="content-container" style="margin-bottom: 3rem">
+        <div class="portfolio-detail">
+          <!-- Main Content Container -->
+            <div class="content-container" style="margin-bottom: 3rem;">
+            <!-- PowerPoint Link Section -->
+            {% if presentation.powerpoint_link_url %}
+            <div class="content-row">
+              <h4>PowerPoint Link</h4>
+              <p>
+                <a href="{{ presentation.powerpoint_link_url }}" target="_blank" 
+                   class="powerpoint-link">
+                  View PowerPoint Presentation ↗
+                </a>
+              </p>
+            </div>
+            {% endif %}
+            
+            <!-- About Section -->
             <div class="content-row">
               <h4>About</h4>
               <p>
@@ -130,6 +141,7 @@
               </p>
             </div>
 
+            <!-- Key Features Section -->
             <div class="content-row">
               <h4>Key Features</h4>
               <p>
@@ -137,169 +149,65 @@
               </p>
             </div>
 
-            <div class="content-row">
-              <h4>Tools & Software</h4>
-              <p>{{ presentation.tools_software_content }}</p>
-            </div>
-          </div>
-
-          <!-- Canvas Link Section -->
-          <div
-            class="content-container"
-            style="margin-bottom: 3rem; text-align: center"
-          >
-            <div
-              style="
-                background: rgba(255, 255, 255, 0.05);
-                border-radius: 15px;
-                padding: 3rem;
-                backdrop-filter: blur(10px);
-                border: 1px solid rgba(255, 255, 255, 0.1);
-              "
-            >
-              <h3 style="color: white; font-size: 1.8rem; margin-bottom: 1rem">
-                {{ presentation.canvas_link_title }}
-              </h3>
-              <p
-                style="
-                  color: rgba(255, 255, 255, 0.8);
-                  margin-bottom: 2rem;
-                  line-height: 1.6;
-                "
-              >
-                {{ presentation.canvas_link_description }}
-              </p>
-              {% if presentation.canvas_link_url %}
-              <a
-                href="{{ presentation.canvas_link_url }}"
-                target="_blank"
-                class="canvas-link"
-                style="
-                  display: inline-flex;
-                  align-items: center;
-                  gap: 0.5rem;
-                  background-color: #ff6b35;
-                  color: white;
-                  padding: 15px 30px;
-                  border-radius: 25px;
-                  text-decoration: none;
-                  font-weight: 600;
-                  transition: all 0.3s ease;
-                  font-family: 'Poppins', sans-serif;
-                  font-size: 1.1rem;
-                "
-              >
-                <span>{{ presentation.canvas_link_text }}</span>
-              {% else %}
-              <div
-                style="
-                  display: inline-flex;
-                  align-items: center;
-                  gap: 0.5rem;
-                  background-color: #666;
-                  color: white;
-                  padding: 15px 30px;
-                  border-radius: 25px;
-                  font-weight: 600;
-                  font-family: 'Poppins', sans-serif;
-                  font-size: 1.1rem;
-                  cursor: not-allowed;
-                "
-              >
-                <span>{{ presentation.canvas_link_text }}</span>
-              {% endif %}
-                <i style="font-size: 1.2rem; font-style: normal">↗</i>
-              </a>
-            </div>
-          </div>
-
-          <!-- Preview Images Section -->
-          <div class="content-container" style="margin-bottom: 3rem">
-            <h3
-              style="
-                color: white;
-                font-size: 1.5rem;
-                margin-bottom: 2rem;
-                text-align: center;
-              "
-            >
-              {{ presentation.preview_title }}
-            </h3>
-            {% if presentation.preview_image %}
-            <div class="image-container" style="margin-bottom: 2rem">
-              <img
-                src="{{ presentation.preview_image.url }}"
-                alt="PowerPoint Presentation Preview"
-                style="
-                  width: 100%;
-                  height: auto;
-                  object-fit: contain;
-                  border-radius: 10px;
-                "
-                onerror="this.style.display='none'"
-              />
-            </div>
-            {% else %}
-            <div class="image-container" style="margin-bottom: 2rem">
-              <img
-                src="{% static 'images/ppt-preview.jpg' %}"
-                alt="PowerPoint Presentation Preview"
-                style="
-                  width: 100%;
-                  height: auto;
-                  object-fit: contain;
-                  border-radius: 10px;
-                "
-                onerror="this.style.display='none'"
-              />
-            </div>
-            {% endif %}
-            <p
-              style="
-                color: rgba(255, 255, 255, 0.7);
-                text-align: center;
-                font-style: italic;
-              "
-            >
-              {{ presentation.preview_image_caption }}
-            </p>
-          </div>
-
-          <!-- Additional Information -->
-          <div class="content-container" style="margin-bottom: 3rem">
-            <div class="content-row">
-              <h4>Design Approach</h4>
-              <p>
-                {{ presentation.design_approach_content }}
-              </p>
-            </div>
-
+            <!-- Target Audience Section -->
             <div class="content-row">
               <h4>Target Audience</h4>
               <p>
                 {{ presentation.target_audience_content }}
               </p>
             </div>
+
+            <!-- Tools & Software Section -->
+            <div class="content-row">
+              <h4>Tools & Software</h4>
+              <p>{{ presentation.tools_software_content }}</p>
+            </div>
+          </div>
+
+          <!-- Images Container -->
+          <div class="content-container" style="margin-bottom: 3rem;">
+
+            {% if presentation.preview_image %}
+            <div class="image-container">
+              <img
+                src="{{ presentation.preview_image.url }}"
+                alt="PowerPoint Presentation Preview"
+                class="preview-image"
+                onerror="this.style.display='none'"
+              />
+            </div>
+            {% else %}
+            <div class="image-container">
+              <img
+                src="{% static 'images/ppt-preview.jpg' %}"
+                alt="PowerPoint Presentation Preview"
+                class="preview-image"
+                onerror="this.style.display='none'"
+              />
+            </div>
+            {% endif %}
           </div>
         </div>
       </section>
-    </div>
 
-    <!-- Footer -->
-    <footer
-      style="
-        margin-top: 5rem;
-        padding: 2rem 0;
-        text-align: center;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-      "
-    >
-      <p style="color: rgba(255, 255, 255, 0.6)">
-        <a href="{% url 'home' %}" style="color: #ff6b35; text-decoration: none"
-          >← Back to Portfolio</a
-        >
-      </p>
-    </footer>
+      <!-- Tags Section -->
+      {% if presentation.tags.all %}
+      <div class="tags-section">
+        <ul class="tag-list">
+          {% for tag in presentation.tags.all %}
+          <li class="tag-item">{{ tag.name }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endif %}
+
+      <!-- Go Back Button -->
+      <div class="go-back-container">
+        <a href="{% url 'home' %}#powerpoint" class="go-back-btn">
+          < Go Back
+        </a>
+      </div>
+    </div>
 
     <script src="{% static 'js/script.js' %}"></script>
   </body>
