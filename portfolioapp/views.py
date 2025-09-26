@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Project, BrandingProject, SocialMediaPost, MobileLandingPage, EcommerceProject
+from .models import Project, BrandingProject, SocialMediaPost, MobileLandingPage, EcommerceProject, PowerPointPresentation
 
 # Create your views here.
 
@@ -42,4 +42,14 @@ def ecommerce_detail(request, ecommerce_id):
 
 
 def powerpoint_detail(request):
-    return render(request, 'portfolioapp/powerpoint_detail.html')
+    # 获取第一个激活的 PowerPoint 演示文稿，如果没有则创建默认的
+    try:
+        presentation = PowerPointPresentation.objects.filter(is_active=True).first()
+        if not presentation:
+            # 如果没有激活的演示文稿，创建一个默认的
+            presentation = PowerPointPresentation.objects.create()
+    except PowerPointPresentation.DoesNotExist:
+        # 如果表不存在或没有数据，创建一个默认的
+        presentation = PowerPointPresentation.objects.create()
+    
+    return render(request, 'portfolioapp/powerpoint_detail.html', {'presentation': presentation})

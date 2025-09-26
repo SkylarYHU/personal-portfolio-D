@@ -158,3 +158,86 @@ class EcommerceProject(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class PowerPointPresentation(models.Model):
+    title = models.CharField(max_length=128, default="PowerPoint Presentations")
+    
+    # About section
+    about_content = models.TextField(
+        default="This comprehensive business presentation demonstrates professional design principles, effective visual hierarchy, and compelling storytelling techniques. Created for business and creative projects, it showcases brand design concepts, user experience methodologies, and strategic project planning.",
+        help_text="About section content"
+    )
+    
+    # Key Features section
+    key_features_content = models.TextField(
+        default="• Professional visual design with consistent branding<br />• Clear information hierarchy and flow<br />• Interactive elements and engaging transitions<br />• Comprehensive project documentation<br />• Strategic planning and execution frameworks",
+        help_text="Key Features section content (HTML allowed)"
+    )
+    
+    # Tools & Software section
+    tools_software_content = models.TextField(
+        default="Microsoft PowerPoint, Adobe Creative Suite, Figma",
+        help_text="Tools & Software section content"
+    )
+    
+    # Canvas Link section
+    canvas_link_title = models.CharField(
+        max_length=128,
+        default="View Complete Presentation",
+        help_text="Canvas link section title"
+    )
+    canvas_link_description = models.TextField(
+        default="Access the full interactive presentation with all slides, animations, and detailed content on Canvas.",
+        help_text="Canvas link section description"
+    )
+    canvas_link_url = models.URLField(
+        blank=True,
+        help_text="Canvas presentation URL"
+    )
+    canvas_link_text = models.CharField(
+        max_length=50,
+        default="Open in Canvas",
+        help_text="Canvas link button text"
+    )
+    
+    # Preview Images section
+    preview_title = models.CharField(
+        max_length=128,
+        default="Presentation Preview",
+        help_text="Preview section title"
+    )
+    preview_image = models.ImageField(
+        upload_to='images/powerpoint/',
+        blank=True,
+        help_text="Preview image for the presentation"
+    )
+    preview_image_caption = models.TextField(
+        default="Sample slides showcasing design consistency and professional layout",
+        help_text="Preview image caption"
+    )
+    
+    # Design Approach section
+    design_approach_content = models.TextField(
+        default="The presentation follows a clean, modern design aesthetic with consistent typography, color schemes, and visual elements. Each slide is carefully crafted to maintain audience engagement while effectively communicating complex information through visual storytelling.",
+        help_text="Design Approach section content"
+    )
+    
+    # Target Audience section
+    target_audience_content = models.TextField(
+        default="Business professionals, stakeholders, and decision-makers seeking comprehensive project insights and strategic recommendations.",
+        help_text="Target Audience section content"
+    )
+    
+    # Meta fields
+    date_posted = models.DateTimeField(auto_now_add=True, null=True)
+    order = models.IntegerField(default=0)
+    is_active = models.BooleanField(default=True, help_text="Whether this presentation is active")
+    
+    class Meta:
+        ordering = ['order']
+        verbose_name = 'PowerPoint Presentation'
+        verbose_name_plural = 'PowerPoint Presentations'
+    
+    def __str__(self):
+        return self.title

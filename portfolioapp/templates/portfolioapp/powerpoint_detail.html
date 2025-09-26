@@ -30,24 +30,61 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
-    
+
     <!-- Favicon and PWA Meta Tags -->
-    <link rel="icon" type="image/x-icon" href="{% static 'images/favicon/favicon.ico' %}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicon/favicon-16x16.png' %}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/favicon/favicon-32x32.png' %}">
-    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/favicon/apple-touch-icon.png' %}">
-    <link rel="icon" type="image/png" sizes="192x192" href="{% static 'images/favicon/android-chrome-192x192.png' %}">
-    <link rel="icon" type="image/png" sizes="512x512" href="{% static 'images/favicon/android-chrome-512x512.png' %}">
-    <link rel="manifest" href="{% static 'images/favicon/site.webmanifest' %}">
-    
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="{% static 'images/favicon/favicon.ico' %}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="{% static 'images/favicon/favicon-16x16.png' %}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="{% static 'images/favicon/favicon-32x32.png' %}"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="{% static 'images/favicon/apple-touch-icon.png' %}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="{% static 'images/favicon/android-chrome-192x192.png' %}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="{% static 'images/favicon/android-chrome-512x512.png' %}"
+    />
+    <link
+      rel="manifest"
+      href="{% static 'images/favicon/site.webmanifest' %}"
+    />
+
     <!-- PWA Meta Tags -->
-    <meta name="theme-color" content="#000000">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="Skylar's Portfolio">
-    <meta name="msapplication-TileColor" content="#000000">
-    <meta name="msapplication-config" content="{% static 'images/favicon/browserconfig.xml' %}">
-    
+    <meta name="theme-color" content="#000000" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta name="apple-mobile-web-app-title" content="Skylar's Portfolio" />
+    <meta name="msapplication-TileColor" content="#000000" />
+    <meta
+      name="msapplication-config"
+      content="{% static 'images/favicon/browserconfig.xml' %}"
+    />
+
     <title>PowerPoint Presentations - Skylar's Portfolio</title>
   </head>
   <body>
@@ -76,11 +113,8 @@
       <section class="portfolio" style="margin-top: 8rem">
         <div style="text-align: center; margin-bottom: 3rem">
           <h1 style="color: white; font-size: 2.5rem; margin-bottom: 1rem">
-            PowerPoint Presentations
+            {{ presentation.title }}
           </h1>
-          <p style="color: rgba(255, 255, 255, 0.8); font-size: 1.2rem; max-width: 600px; margin: 0 auto;">
-            Professional presentation design showcasing effective visual communication and storytelling
-          </p>
         </div>
 
         <div
@@ -88,63 +122,163 @@
           style="max-width: 1200px; margin: 0 auto; padding: 0 1rem"
         >
           <!-- Presentation Information Container -->
-          <div class="content-container" style="margin-bottom: 3rem;">
+          <div class="content-container" style="margin-bottom: 3rem">
             <div class="content-row">
-              <h4>About This Presentation</h4>
-              <p>This comprehensive business presentation demonstrates professional design principles, effective visual hierarchy, and compelling storytelling techniques. Created for business and creative projects, it showcases brand design concepts, user experience methodologies, and strategic project planning.</p>
+              <h4>About</h4>
+              <p>
+                {{ presentation.about_content }}
+              </p>
             </div>
-            
+
             <div class="content-row">
               <h4>Key Features</h4>
-              <p>• Professional visual design with consistent branding<br>
-                 • Clear information hierarchy and flow<br>
-                 • Interactive elements and engaging transitions<br>
-                 • Comprehensive project documentation<br>
-                 • Strategic planning and execution frameworks</p>
+              <p>
+                {{ presentation.key_features_content|safe }}
+              </p>
             </div>
-            
+
             <div class="content-row">
               <h4>Tools & Software</h4>
-              <p>Microsoft PowerPoint, Adobe Creative Suite, Figma</p>
+              <p>{{ presentation.tools_software_content }}</p>
             </div>
           </div>
 
           <!-- Canvas Link Section -->
-          <div class="content-container" style="margin-bottom: 3rem; text-align: center;">
-            <div style="background: rgba(255, 255, 255, 0.05); border-radius: 15px; padding: 3rem; backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1);">
-              <h3 style="color: white; font-size: 1.8rem; margin-bottom: 1rem;">View Complete Presentation</h3>
-              <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 2rem; line-height: 1.6;">Access the full interactive presentation with all slides, animations, and detailed content on Canvas.</p>
-              <a href="#" target="_blank" class="canvas-link" style="display: inline-flex; align-items: center; gap: 0.5rem; background-color: #ff6b35; color: white; padding: 15px 30px; border-radius: 25px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; font-family: 'Poppins', sans-serif; font-size: 1.1rem;">
-                <span>Open in Canvas</span>
-                <i style="font-size: 1.2rem; font-style: normal;">↗</i>
+          <div
+            class="content-container"
+            style="margin-bottom: 3rem; text-align: center"
+          >
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.05);
+                border-radius: 15px;
+                padding: 3rem;
+                backdrop-filter: blur(10px);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+              "
+            >
+              <h3 style="color: white; font-size: 1.8rem; margin-bottom: 1rem">
+                {{ presentation.canvas_link_title }}
+              </h3>
+              <p
+                style="
+                  color: rgba(255, 255, 255, 0.8);
+                  margin-bottom: 2rem;
+                  line-height: 1.6;
+                "
+              >
+                {{ presentation.canvas_link_description }}
+              </p>
+              {% if presentation.canvas_link_url %}
+              <a
+                href="{{ presentation.canvas_link_url }}"
+                target="_blank"
+                class="canvas-link"
+                style="
+                  display: inline-flex;
+                  align-items: center;
+                  gap: 0.5rem;
+                  background-color: #ff6b35;
+                  color: white;
+                  padding: 15px 30px;
+                  border-radius: 25px;
+                  text-decoration: none;
+                  font-weight: 600;
+                  transition: all 0.3s ease;
+                  font-family: 'Poppins', sans-serif;
+                  font-size: 1.1rem;
+                "
+              >
+                <span>{{ presentation.canvas_link_text }}</span>
+              {% else %}
+              <div
+                style="
+                  display: inline-flex;
+                  align-items: center;
+                  gap: 0.5rem;
+                  background-color: #666;
+                  color: white;
+                  padding: 15px 30px;
+                  border-radius: 25px;
+                  font-weight: 600;
+                  font-family: 'Poppins', sans-serif;
+                  font-size: 1.1rem;
+                  cursor: not-allowed;
+                "
+              >
+                <span>{{ presentation.canvas_link_text }}</span>
+              {% endif %}
+                <i style="font-size: 1.2rem; font-style: normal">↗</i>
               </a>
             </div>
           </div>
 
           <!-- Preview Images Section -->
-          <div class="content-container" style="margin-bottom: 3rem;">
-            <h3 style="color: white; font-size: 1.5rem; margin-bottom: 2rem; text-align: center;">Presentation Preview</h3>
-            <div class="image-container" style="margin-bottom: 2rem;">
+          <div class="content-container" style="margin-bottom: 3rem">
+            <h3
+              style="
+                color: white;
+                font-size: 1.5rem;
+                margin-bottom: 2rem;
+                text-align: center;
+              "
+            >
+              {{ presentation.preview_title }}
+            </h3>
+            {% if presentation.preview_image %}
+            <div class="image-container" style="margin-bottom: 2rem">
               <img
-                src="{% static 'images/ppt-preview.jpg' %}"
+                src="{{ presentation.preview_image.url }}"
                 alt="PowerPoint Presentation Preview"
-                style="width: 100%; height: auto; object-fit: contain; border-radius: 10px;"
+                style="
+                  width: 100%;
+                  height: auto;
+                  object-fit: contain;
+                  border-radius: 10px;
+                "
                 onerror="this.style.display='none'"
               />
             </div>
-            <p style="color: rgba(255, 255, 255, 0.7); text-align: center; font-style: italic;">Sample slides showcasing design consistency and professional layout</p>
+            {% else %}
+            <div class="image-container" style="margin-bottom: 2rem">
+              <img
+                src="{% static 'images/ppt-preview.jpg' %}"
+                alt="PowerPoint Presentation Preview"
+                style="
+                  width: 100%;
+                  height: auto;
+                  object-fit: contain;
+                  border-radius: 10px;
+                "
+                onerror="this.style.display='none'"
+              />
+            </div>
+            {% endif %}
+            <p
+              style="
+                color: rgba(255, 255, 255, 0.7);
+                text-align: center;
+                font-style: italic;
+              "
+            >
+              {{ presentation.preview_image_caption }}
+            </p>
           </div>
 
           <!-- Additional Information -->
-          <div class="content-container" style="margin-bottom: 3rem;">
+          <div class="content-container" style="margin-bottom: 3rem">
             <div class="content-row">
               <h4>Design Approach</h4>
-              <p>The presentation follows a clean, modern design aesthetic with consistent typography, color schemes, and visual elements. Each slide is carefully crafted to maintain audience engagement while effectively communicating complex information through visual storytelling.</p>
+              <p>
+                {{ presentation.design_approach_content }}
+              </p>
             </div>
-            
+
             <div class="content-row">
               <h4>Target Audience</h4>
-              <p>Business professionals, stakeholders, and decision-makers seeking comprehensive project insights and strategic recommendations.</p>
+              <p>
+                {{ presentation.target_audience_content }}
+              </p>
             </div>
           </div>
         </div>
@@ -152,9 +286,18 @@
     </div>
 
     <!-- Footer -->
-    <footer style="margin-top: 5rem; padding: 2rem 0; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1);">
-      <p style="color: rgba(255, 255, 255, 0.6);">
-        <a href="{% url 'home' %}" style="color: #ff6b35; text-decoration: none;">← Back to Portfolio</a>
+    <footer
+      style="
+        margin-top: 5rem;
+        padding: 2rem 0;
+        text-align: center;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      "
+    >
+      <p style="color: rgba(255, 255, 255, 0.6)">
+        <a href="{% url 'home' %}" style="color: #ff6b35; text-decoration: none"
+          >← Back to Portfolio</a
+        >
       </p>
     </footer>
 

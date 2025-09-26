@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Project, BrandingProject, Tag, SocialMediaPost, MobileLandingPage, EcommerceProject
+from .models import Project, BrandingProject, Tag, SocialMediaPost, MobileLandingPage, EcommerceProject, PowerPointPresentation
 from adminsortable2.admin import SortableAdminMixin
 
 
@@ -109,6 +109,42 @@ class EcommerceProjectAdmin(admin.ModelAdmin):
     )
 
     # 添加保存时的错误处理提示
+    def save_model(self, request, obj, form, change):
+        try:
+            super().save_model(request, obj, form, change)
+        except Exception as e:
+            from django.contrib import messages
+            messages.error(request, f'保存失败: {str(e)}。请检查图片文件大小是否超过10MB限制。')
+
+
+@admin.register(PowerPointPresentation)
+class PowerPointPresentationAdmin(admin.ModelAdmin):
+    list_display = ('title', 'is_active', 'date_posted')
+    ordering = ('order',)
+    list_filter = ('is_active', 'date_posted')
+    
+    fieldsets = (
+        ('基本信息', {
+            'fields': ('title', 'order', 'is_active')
+        }),
+        ('内容部分', {
+            'fields': ('about_content', 'key_features_content', 'tools_software_content'),
+            'classes': ('collapse',)
+        }),
+        ('Canvas 链接部分', {
+            'fields': ('canvas_link_title', 'canvas_link_description', 'canvas_link_url', 'canvas_link_text'),
+            'classes': ('collapse',)
+        }),
+        ('预览图片部分', {
+            'fields': ('preview_title', 'preview_image', 'preview_image_caption'),
+            'classes': ('collapse',)
+        }),
+        ('附加信息', {
+            'fields': ('design_approach_content', 'target_audience_content'),
+            'classes': ('collapse',)
+        }),
+    )
+    
     def save_model(self, request, obj, form, change):
         try:
             super().save_model(request, obj, form, change)
