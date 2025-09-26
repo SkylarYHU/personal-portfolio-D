@@ -197,7 +197,7 @@ class MediaStorage(S3Boto3Storage):
 # Production settings - force S3 usage when in production
 if IS_PRODUCTION or not DEBUG:
     # Production static files configuration
-    if AWS_ACCESS_KEY_ID and AWS_SECRET_KEY and AWS_STORAGE_BUCKET_NAME and (AWS_CLOUDFRONT_DOMAIN or AWS_S3_CUSTOM_DOMAIN):
+    if AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY and AWS_STORAGE_BUCKET_NAME and (AWS_CLOUDFRONT_DOMAIN or AWS_S3_CUSTOM_DOMAIN):
         DEFAULT_FILE_STORAGE = 'portfolio.settings.MediaStorage'
         domain = AWS_CLOUDFRONT_DOMAIN or AWS_S3_CUSTOM_DOMAIN
         MEDIA_URL = f'https://{domain}/'
