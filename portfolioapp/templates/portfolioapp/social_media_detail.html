@@ -30,24 +30,61 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
-    
+
     <!-- Favicon and PWA Meta Tags -->
-    <link rel="icon" type="image/x-icon" href="{% static 'images/favicon/favicon.ico' %}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicon/favicon-16x16.png' %}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/favicon/favicon-32x32.png' %}">
-    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/favicon/apple-touch-icon.png' %}">
-    <link rel="icon" type="image/png" sizes="192x192" href="{% static 'images/favicon/android-chrome-192x192.png' %}">
-    <link rel="icon" type="image/png" sizes="512x512" href="{% static 'images/favicon/android-chrome-512x512.png' %}">
-    <link rel="manifest" href="{% static 'images/favicon/site.webmanifest' %}">
-    
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="{% static 'images/favicon/favicon.ico' %}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="{% static 'images/favicon/favicon-16x16.png' %}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="{% static 'images/favicon/favicon-32x32.png' %}"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="{% static 'images/favicon/apple-touch-icon.png' %}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="{% static 'images/favicon/android-chrome-192x192.png' %}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="{% static 'images/favicon/android-chrome-512x512.png' %}"
+    />
+    <link
+      rel="manifest"
+      href="{% static 'images/favicon/site.webmanifest' %}"
+    />
+
     <!-- PWA Meta Tags -->
-    <meta name="theme-color" content="#000000">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="Skylar's Portfolio">
-    <meta name="msapplication-TileColor" content="#000000">
-    <meta name="msapplication-config" content="{% static 'images/favicon/browserconfig.xml' %}">
-    
+    <meta name="theme-color" content="#000000" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta name="apple-mobile-web-app-title" content="Skylar's Portfolio" />
+    <meta name="msapplication-TileColor" content="#000000" />
+    <meta
+      name="msapplication-config"
+      content="{% static 'images/favicon/browserconfig.xml' %}"
+    />
+
     <title>Social Media Design - Skylar's Portfolio</title>
   </head>
   <body>
@@ -75,69 +112,174 @@
       <!-- Project Detail Section -->
       <section class="portfolio" style="margin-top: 8rem">
         <!-- Page Title -->
-        <h1 style="text-align: center; margin: 2rem 0 4rem 0; color: white; font-size: 3rem; font-weight: 700;">Social Media Design</h1>
-        
+        <h1
+          style="
+            text-align: center;
+            margin: 2rem 0 4rem 0;
+            color: white;
+            font-size: 3rem;
+            font-weight: 700;
+          "
+        >
+          Social Media Design
+        </h1>
+
         <div
           class="portfolio-detail"
           style="max-width: 1200px; margin: 0 auto; padding: 0 1rem"
         >
           <!-- Social Media Posts Grid -->
           {% if all_social_media_posts %}
-          <div class="social-media-projects" style="display: grid; gap: 4rem; max-width: 1200px; margin: 0 auto;">
+          <div
+            class="social-media-projects"
+            style="display: grid; gap: 4rem; max-width: 1200px; margin: 0 auto"
+          >
             {% for post in all_social_media_posts %}
-            <div class="project-container" style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(15px); border-radius: 25px; padding: 3rem; border: 1px solid rgba(255, 255, 255, 0.2); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);">
-              
+            <div
+              class="project-container"
+              style="
+                background: rgba(255, 255, 255, 0.1);
+                backdrop-filter: blur(15px);
+                border-radius: 25px;
+                padding: 3rem;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+              "
+            >
               <!-- Project Title -->
-              <h2 style="color: white; margin-bottom: 2rem; font-size: 2.2rem; font-weight: 600; text-align: center;">{{ post.title }}</h2>
-              
-              <div class="dashed-line" style="margin: 2rem 0; border-top: 2px dashed rgba(255, 255, 255, 0.3);"></div>
-              
+              <h2
+                style="
+                  color: white;
+                  margin-bottom: 2rem;
+                  font-size: 2.2rem;
+                  font-weight: 600;
+                  text-align: center;
+                "
+              >
+                {{ post.title }}
+              </h2>
+
+              <div class="dashed-line"></div>
+
               <!-- About Section -->
               {% if post.about %}
-              <div class="info-section" style="margin-bottom: 2.5rem;">
-                <h3 style="color: #4ECDC4; font-size: 1.4rem; margin-bottom: 1rem; font-weight: 600;">About</h3>
-                <p style="color: rgba(255, 255, 255, 0.9); line-height: 1.7; font-size: 1rem;">{{ post.about }}</p>
+              <div class="info-section" style="margin-bottom: 2.5rem">
+                <h3
+                  style="
+                    color: white;
+                    font-size: 1.4rem;
+                    margin-bottom: 1rem;
+                    font-weight: 600;
+                  "
+                >
+                  About
+                </h3>
+                <p
+                  style="
+                    color: white;
+                    line-height: 1.7;
+                    font-size: 1rem;
+                  "
+                >
+                  {{ post.about }}
+                </p>
               </div>
-              
-              <div class="dashed-line" style="margin: 2rem 0; border-top: 1px dashed rgba(255, 255, 255, 0.2);"></div>
+
+              <div class="dashed-line"></div>
               {% endif %}
-              
+
               <!-- Goals Section -->
               {% if post.goals %}
-              <div class="info-section" style="margin-bottom: 2.5rem;">
-                <h3 style="color: #4ECDC4; font-size: 1.4rem; margin-bottom: 1rem; font-weight: 600;">Goals</h3>
-                <p style="color: rgba(255, 255, 255, 0.9); line-height: 1.7; font-size: 1rem;">{{ post.goals }}</p>
+              <div class="info-section" style="margin-bottom: 2.5rem">
+                <h3
+                  style="
+                    color:white;
+                    font-size: 1.4rem;
+                    margin-bottom: 1rem;
+                    font-weight: 600;
+                  "
+                >
+                  Goals
+                </h3>
+                <p
+                  style="
+                    color: white;
+                    line-height: 1.7;
+                    font-size: 1rem;
+                  "
+                >
+                  {{ post.goals }}
+                </p>
               </div>
-              
-              <div class="dashed-line" style="margin: 2rem 0; border-top: 1px dashed rgba(255, 255, 255, 0.2);"></div>
+
+              <div class="dashed-line"></div>
               {% endif %}
-              
+
               <!-- Tools & Software Section -->
               {% if post.tools %}
-              <div class="info-section" style="margin-bottom: 2.5rem;">
-                <h3 style="color: #4ECDC4; font-size: 1.4rem; margin-bottom: 1rem; font-weight: 600;">Tools & Software</h3>
-                <p style="color: rgba(255, 255, 255, 0.9); line-height: 1.7; font-size: 1rem;">{{ post.tools }}</p>
+              <div class="info-section" style="margin-bottom: 2.5rem">
+                <h3
+                  style="
+                    color:white;
+                    font-size: 1.4rem;
+                    margin-bottom: 1rem;
+                    font-weight: 600;
+                  "
+                >
+                  Tools & Software
+                </h3>
+                <p
+                  style="
+                    color: white;
+                    line-height: 1.7;
+                    font-size: 1rem;
+                  "
+                >
+                  {{ post.tools }}
+                </p>
               </div>
-              
-              <div class="dashed-line" style="margin: 2rem 0; border-top: 1px dashed rgba(255, 255, 255, 0.2);"></div>
+
+              <div class="dashed-line"></div>
               {% endif %}
-              
+
               <!-- Images Section -->
-               {% if post.image %}
-               <div class="images-section">
-                 <h3 style="color: #4ECDC4; font-size: 1.4rem; margin-bottom: 2rem; font-weight: 600; text-align: center;">Design Showcase</h3>
-                 <div class="project-image" style="text-align: center;">
-                   <img src="{{ post.image.url }}" alt="{{ post.title }}" style="max-width: 100%; height: auto; border-radius: 15px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);" />
-                 </div>
-               </div>
-               {% endif %}
+              {% if post.image %}
+              <div class="images-section">
+                <h3
+                  style="
+                    color: white;
+                    font-size: 1.4rem;
+                    margin-bottom: 2rem;
+                    font-weight: 600;
+                    text-align: center;
+                  "
+                >
+                  Design Showcase
+                </h3>
+                <div class="project-image" style="text-align: center">
+                  <img
+                    src="{{ post.image.url }}"
+                    alt="{{ post.title }}"
+                    style="
+                      max-width: 100%;
+                      height: auto;
+                      border-radius: 15px;
+                      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+                    "
+                  />
+                </div>
+              </div>
+              {% endif %}
             </div>
             {% endfor %}
           </div>
           {% endif %}
 
           <!-- Go Back Button -->
-          <div class="go-back-container" style="text-align: center; margin-top: 3rem">
+          <div
+            class="go-back-container"
+            style="text-align: center; margin-top: 3rem"
+          >
             <a
               href="{% url 'home' %}#social-media"
               class="go-back-btn"

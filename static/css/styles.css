@@ -506,6 +506,8 @@ p,
 .dashed-line {
   border-top: 1.5px dashed #616b75;
   margin-bottom: 1rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .portfolio-link,
@@ -886,6 +888,15 @@ p,
   .content-row p {
     font-size: 0.9rem;
     line-height: 1.6;
+  }
+
+  /* Fix dashed-line overflow on mobile */
+  .dashed-line {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
   }
 }
 
