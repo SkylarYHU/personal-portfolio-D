@@ -211,7 +211,7 @@
           </div>
           <div class="accordion-separator"></div>
 
-          <div class="accordion-item" data-target="#social-media-post">
+          <div class="accordion-item" data-target="#social-media">
             <div class="accordion-header">
               <div class="accordion-number">03</div>
               <div class="accordion-content">
@@ -222,7 +222,7 @@
                     capture attention and keep your brand consistent across all
                     platforms.
                   </p>
-                  <a href="#social-media-post" class="learn-more"
+                  <a href="#social-media" class="learn-more"
                     >EXPLORE →</a
                   >
                 </div>
@@ -367,7 +367,7 @@
       </section>
 
       <!-- Social Media Design -->
-      <section id="social-media-post" class="portfolio">
+      <section id="social-media" class="portfolio">
         <h2>Social Media Design</h2>
         <p>
           Here are some social media post designs I've created, showcasing
@@ -375,61 +375,59 @@
           categories.
         </p>
         <div class="dashed-line"></div>
-        <div class="social-media-grid">
-          {% for post in social_media_posts %}
-          <div class="social-media-category">
-            <h3 class="category-title">{{ post.title }}</h3>
-            <div class="polaroid-gallery">
-              <div class="polaroid-card">
-                <div class="polaroid-image">
-                  <img
-                    src="{{ post.mockup_image_1.url }}"
-                    alt="{{ post.title }} mockup 1"
-                  />
-                </div>
-                <div class="polaroid-text">
-                  <p>{{ post.mockup_image_1_text }}</p>
-                </div>
+        <div class="portfolio-grid">
+          {% if social_media_posts %}
+          {% with social_media_posts|first as first_post %}
+          <a href="{% url 'social_media_detail' first_post.id %}" class="social-media-link">
+            <div class="portfolio-item">
+              <div class="image-container">
+                {% if first_post.image %}
+                <img
+                  src="{{ first_post.image.url }}"
+                  alt="{{ first_post.title }} Preview"
+                />
+                {% else %}
+                <img
+                  src="{% static 'images/social-media-preview.jpg' %}"
+                  alt="Social Media Design Preview"
+                  onerror="this.style.display='none'"
+                />
+                {% endif %}
               </div>
-              <div class="polaroid-card">
-                <div class="polaroid-image">
-                  <img
-                    src="{{ post.mockup_image_2.url }}"
-                    alt="{{ post.title }} mockup 2"
-                  />
-                </div>
-                <div class="polaroid-text">
-                  <p>{{ post.mockup_image_2_text }}</p>
-                </div>
-              </div>
-              <div class="polaroid-card">
-                <div class="polaroid-image">
-                  <img
-                    src="{{ post.mockup_image_3.url }}"
-                    alt="{{ post.title }} mockup 3"
-                  />
-                </div>
-                <div class="polaroid-text">
-                  <p>{{ post.mockup_image_3_text }}</p>
-                </div>
+              <div class="portfolio-text">
+                <h3>Social Media Design</h3>
+                <p>Creative social media posts for travel, cosmetics, clothes, and food brands showcasing visual storytelling and brand engagement.</p>
+                <ul class="tag-list">
+                  <li class="tag-item">Social Media</li>
+                  <li class="tag-item">Brand Design</li>
+                  <li class="tag-item">Visual Content</li>
+                </ul>
               </div>
             </div>
-            <div class="content-container">
-              <div class="content-row">
-                <h4>About</h4>
-                <p>{{ post.about }}</p>
+          </a>
+          {% endwith %}
+          {% else %}
+          <a href="#" class="social-media-link">
+            <div class="portfolio-item">
+              <div class="image-container">
+                <img
+                  src="{% static 'images/social-media-preview.jpg' %}"
+                  alt="Social Media Design Preview"
+                  onerror="this.style.display='none'"
+                />
               </div>
-              <div class="content-row">
-                <h4>Goals</h4>
-                <p>{{ post.goals }}</p>
-              </div>
-              <div class="content-row">
-                <h4>Tools & Apps</h4>
-                <p>{{ post.tools }}</p>
+              <div class="portfolio-text">
+                <h3>Social Media Design</h3>
+                <p>Creative social media posts for travel, cosmetics, clothes, and food brands showcasing visual storytelling and brand engagement.</p>
+                <ul class="tag-list">
+                  <li class="tag-item">Social Media</li>
+                  <li class="tag-item">Brand Design</li>
+                  <li class="tag-item">Visual Content</li>
+                </ul>
               </div>
             </div>
-          </div>
-          {% endfor %}
+          </a>
+          {% endif %}
         </div>
       </section>
 

@@ -55,3 +55,13 @@ def powerpoint_detail(request):
         presentation = PowerPointPresentation.objects.create()
     
     return render(request, 'portfolioapp/powerpoint_detail.html', {'presentation': presentation})
+
+
+def social_media_detail(request, social_media_id):
+    social_media_post = get_object_or_404(SocialMediaPost, id=social_media_id)
+    # 获取所有 social media posts 用于详情页展示
+    all_social_media_posts = SocialMediaPost.objects.all()
+    return render(request, 'portfolioapp/social_media_detail.html', {
+        'social_media_post': social_media_post,
+        'all_social_media_posts': all_social_media_posts
+    })

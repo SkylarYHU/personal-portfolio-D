@@ -10,5 +10,7 @@ urlpatterns = [
          views.mobile_landing_page_detail, name="mobile_landing_page_detail"),
     path('ecommerce/<int:ecommerce_id>',
          views.ecommerce_detail, name="ecommerce_detail"),
-    path('powerpoint/', views.powerpoint_detail, name="powerpoint_detail")
+    path('powerpoint/', views.powerpoint_detail, name="powerpoint_detail"),
+    path('social-media/<int:social_media_id>',
+         views.social_media_detail, name="social_media_detail")
 ]
