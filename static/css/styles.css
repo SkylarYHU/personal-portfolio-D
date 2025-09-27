@@ -582,7 +582,7 @@ p,
 }
 
 #branding .branding-link:hover {
-  filter: brightness(1.2);
+  filter: brightness(1.1);
 }
 
 #branding .branding-link:hover .image-container img {
@@ -601,7 +601,7 @@ p,
 }
 
 #powerpoint-presentations .powerpoint-link:hover {
-  filter: brightness(1.2);
+  filter: brightness(1.1);
 }
 
 #powerpoint-presentations .powerpoint-link:hover .image-container img {
@@ -620,7 +620,7 @@ p,
 }
 
 #social-media .social-media-link:hover {
-  filter: brightness(1.2);
+  filter: brightness(1.1);
 }
 
 #social-media .social-media-link:hover .image-container img {
@@ -697,7 +697,7 @@ p,
 
 #ecommerce-design .ecommerce-link:hover .image-container img {
   transform: scale(1.05);
-  filter: brightness(1.2);
+  filter: brightness(1.1);
 }
 
 #ecommerce-design .ecommerce-link:hover,
@@ -720,13 +720,13 @@ p,
 /* Mobile Landing Page hover effects */
 #mobile-landing-page a:hover .image-container img {
   transform: scale(1.05);
-  filter: brightness(1.2);
+  filter: brightness(1.1);
 }
 
 /* Websites section hover effects */
 #portfolio a:hover .image-container img {
   transform: scale(1.05);
-  filter: brightness(1.2);
+  filter: brightness(1.1);
 }
 
 /* Social Media Post section styles */
@@ -998,7 +998,7 @@ p,
 }
 
 .portfolio-item:hover {
-  filter: brightness(1.2);
+  filter: brightness(1.1);
 }
 
 .image-container {
@@ -1124,7 +1124,7 @@ p,
 }
 
 .role-item:hover {
-  filter: brightness(1.2);
+  filter: brightness(1.1);
 }
 
 .role-item .position {
