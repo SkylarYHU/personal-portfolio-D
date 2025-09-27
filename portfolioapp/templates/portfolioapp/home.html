@@ -441,6 +441,35 @@
         </p>
         <div class="dashed-line"></div>
         <div class="portfolio-grid">
+          {% for presentation in powerpoint_presentations %}
+          <a href="{% url 'powerpoint_detail' %}" class="powerpoint-link">
+            <div class="portfolio-item">
+              <div class="image-container">
+                {% if presentation.preview_image %}
+                <img
+                  src="{{ presentation.preview_image.url }}"
+                  alt="{{ presentation.title }} Preview"
+                />
+                {% else %}
+                <img
+                  src="{% static 'images/ppt-preview.jpg' %}"
+                  alt="PowerPoint Presentation Preview"
+                  onerror="this.style.display='none'"
+                />
+                {% endif %}
+              </div>
+              <div class="portfolio-text">
+                <h3>{{ presentation.title }}</h3>
+                <p>{{ presentation.about_content|truncatewords:20 }}</p>
+                <ul class="tag-list">
+                  {% for tag in presentation.tags.all %}
+                  <li class="tag-item">{{ tag.name }}</li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+          </a>
+          {% empty %}
           <a href="{% url 'powerpoint_detail' %}" class="powerpoint-link">
             <div class="portfolio-item">
               <div class="image-container">
@@ -461,6 +490,7 @@
               </div>
             </div>
           </a>
+          {% endfor %}
         </div>
       </section>
 

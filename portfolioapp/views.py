@@ -10,12 +10,14 @@ def home(request):
     social_media_posts = SocialMediaPost.objects.all()
     mobile_landing_pages = MobileLandingPage.objects.all()
     ecommerce_projects = EcommerceProject.objects.all()
+    powerpoint_presentations = PowerPointPresentation.objects.filter(is_active=True)
     return render(request, 'portfolioapp/home.html', {
         'projects': projects,
         'branding_projects': branding_projects,
         'social_media_posts': social_media_posts,
         'mobile_landing_pages': mobile_landing_pages,
-        'ecommerce_projects': ecommerce_projects
+        'ecommerce_projects': ecommerce_projects,
+        'powerpoint_presentations': powerpoint_presentations
     })
 
 
