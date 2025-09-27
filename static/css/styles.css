@@ -1120,8 +1120,6 @@ p,
   transform: translateY(-5px);
 }
 
-
-
 .contact {
   min-height: 100vh;
   position: relative;
@@ -1420,9 +1418,28 @@ html {
 }
 
 .powerpoint-detail .powerpoint-link {
-  color: #ff6b35;
+  color: #ffffff;
   text-decoration: none;
   font-weight: 600;
+  position: relative;
+  display: inline-block;
+}
+
+.powerpoint-detail .powerpoint-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #ffffff;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease-in-out;
+}
+
+.powerpoint-detail .powerpoint-link:hover::after {
+  transform: scaleX(1);
 }
 
 .powerpoint-detail .preview-title {
@@ -1474,7 +1491,7 @@ html {
   text-decoration: none;
   font-weight: 600;
   font-size: 1.1rem;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   transition: all 0.3s ease;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
