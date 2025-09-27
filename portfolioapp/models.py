@@ -216,7 +216,12 @@ class PowerPointPresentation(models.Model):
     preview_image = models.ImageField(
         upload_to='images/powerpoint/',
         blank=True,
-        help_text="Preview image for the presentation"
+        help_text="Full preview image for the presentation detail page"
+    )
+    home_preview_image = models.ImageField(
+        upload_to='images/powerpoint/home_preview/',
+        blank=True,
+        help_text="Home page preview image (recommended size: 1136×300px)"
     )
 
     
