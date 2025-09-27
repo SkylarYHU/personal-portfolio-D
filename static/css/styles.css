@@ -1426,7 +1426,7 @@ html {
 }
 
 .powerpoint-detail .powerpoint-link::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -2px;
   left: 0;
@@ -1449,10 +1449,6 @@ html {
   text-align: center;
 }
 
-.powerpoint-detail .image-container {
-  margin-bottom: 2rem;
-}
-
 .powerpoint-detail .preview-image {
   width: 100%;
   height: auto;
@@ -1469,7 +1465,7 @@ html {
 .powerpoint-detail .tags-section {
   text-align: left;
   margin-top: 3rem;
-  margin-bottom: 3rem;
+  margin-bottom: -5rem;
 }
 
 .powerpoint-detail .tag-list {
