@@ -240,7 +240,7 @@ p,
 }
 
 .description {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   color: rgba(255, 255, 255, 0.7);
   line-height: 1.5;
   max-width: 55%;
@@ -550,7 +550,7 @@ p,
 }
 
 #branding .portfolio-item p {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   color: #ced4da;
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -558,7 +558,7 @@ p,
   line-clamp: 3;
   overflow: hidden;
   text-overflow: ellipsis;
-  line-height: 1.4;
+  line-height: 1.5;
   text-align: left;
 }
 
@@ -666,7 +666,7 @@ p,
 }
 
 #ecommerce-design .portfolio-item p {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   color: #ced4da;
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -674,7 +674,6 @@ p,
   line-clamp: 3;
   overflow: hidden;
   text-overflow: ellipsis;
-  line-height: 1.4;
   text-align: left;
 }
 
@@ -808,7 +807,7 @@ p,
 }
 
 .polaroid-text p {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   color: #ffffff;
   text-align: center;
   font-family: "Poppins", sans-serif;
@@ -915,7 +914,7 @@ p,
   }
 
   .content-row p {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     line-height: 1.6;
   }
 
@@ -980,7 +979,7 @@ p,
 }
 
 .info-section p {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   color: white;
   line-height: 1.5;
   margin: 0;
@@ -1062,7 +1061,7 @@ p,
 }
 
 .portfolio-item p {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   color: #ced4da;
   width: auto;
   display: -webkit-box;
@@ -1134,7 +1133,7 @@ p,
 
 .role-item p {
   margin-top: 5px;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   color: #ced4da;
   width: 100%;
 }
@@ -1346,7 +1345,7 @@ p,
   .client-experience p,
   .contact p {
     width: 90%;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
   }
 
   /* Branding responsive styles */
