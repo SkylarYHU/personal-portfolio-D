@@ -598,6 +598,10 @@ p,
   transform: translateY(-5px);
 }
 
+#social-media .portfolio-grid {
+  grid-template-columns: 1fr;
+}
+
 #social-media .social-media-link {
   text-decoration: none !important;
   color: inherit;

@@ -381,9 +381,9 @@
           <a href="{% url 'social_media_detail' first_post.id %}" class="social-media-link">
             <div class="portfolio-item">
               <div class="image-container">
-                {% if first_post.image %}
+                {% if first_post.mockup_image_1 %}
                 <img
-                  src="{{ first_post.image.url }}"
+                  src="{{ first_post.mockup_image_1.url }}"
                   alt="{{ first_post.title }} Preview"
                 />
                 {% else %}

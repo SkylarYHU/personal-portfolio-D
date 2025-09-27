@@ -104,17 +104,29 @@
               </p>
               {% endif %}
               
-              {% if post.image %}
-              <div class="content-container">
-                <div class="image-container">
-                  <img
-                    src="{{ post.image.url }}"
-                    alt="{{ post.title }}"
-                    style="width: 100%; height: auto; object-fit: contain; border-radius: 10px;"
-                  />
+              <!-- Polaroid Images -->
+              <div class="social-media-grid">
+                {% if post.mockup_image_1 %}
+                <div class="social-media-post">
+                  <img src="{{ post.mockup_image_1.url }}" alt="{{ post.mockup_image_1_text }}" />
+                  <p>{{ post.mockup_image_1_text }}</p>
                 </div>
+                {% endif %}
+                
+                {% if post.mockup_image_2 %}
+                <div class="social-media-post">
+                  <img src="{{ post.mockup_image_2.url }}" alt="{{ post.mockup_image_2_text }}" />
+                  <p>{{ post.mockup_image_2_text }}</p>
+                </div>
+                {% endif %}
+                
+                {% if post.mockup_image_3 %}
+                <div class="social-media-post">
+                  <img src="{{ post.mockup_image_3.url }}" alt="{{ post.mockup_image_3_text }}" />
+                  <p>{{ post.mockup_image_3_text }}</p>
+                </div>
+                {% endif %}
               </div>
-              {% endif %}
               
               {% if post.tags.all %}
               <div style="text-align: center; margin-top: 2rem;">
