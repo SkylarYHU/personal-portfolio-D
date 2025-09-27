@@ -120,14 +120,14 @@
         <div class="portfolio-detail">
           <!-- Main Content Container -->
             <div class="content-container" style="margin-bottom: 3rem;">
-            <!-- PowerPoint Link Section -->
-            {% if presentation.powerpoint_link_url %}
+            <!-- Project Link Section -->
+            {% if presentation.canvas_link_url %}
             <div class="content-row">
-              <h4>PowerPoint Link</h4>
+              <h4>Project Link</h4>
               <p>
-                <a href="{{ presentation.powerpoint_link_url }}" target="_blank" 
+                <a href="{{ presentation.canvas_link_url }}" target="_blank" 
                    class="powerpoint-link">
-                  View PowerPoint Presentation ↗
+                  {{ presentation.canvas_link_text }} ↗
                 </a>
               </p>
             </div>
