@@ -108,6 +108,8 @@ class MobileLandingPage(models.Model):
     about_brand = models.TextField(
         blank=True, help_text="About brand section content")
     goals = models.TextField(blank=True, help_text="Goals section content")
+    tools_apps = models.TextField(
+        blank=True, help_text="Tools & Apps section content")
     typefaces_image = models.ImageField(
         upload_to='images/mobile_landing/typefaces/', blank=True, help_text="Typefaces section image")
     color_palette_image = models.ImageField(

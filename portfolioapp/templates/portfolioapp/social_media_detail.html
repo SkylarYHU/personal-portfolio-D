@@ -162,74 +162,41 @@
               <div class="dashed-line"></div>
               {% endcomment %}
 
-              <!-- About Section -->
-              {% if post.about %}
-              <div class="info-section" style="margin: 1.5rem 0">
-                <h3
-                  style="
-                    color: white;
-                    font-size: 1.4rem;
-                    margin-bottom: 1rem;
-                    font-weight: 600;
-                    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-                  "
-                >
-                  About
-                </h3>
-                <p style="color: white; line-height: 1.7; font-size: 1rem">
-                  {{ post.about }}
-                </p>
+              <!-- Content Grid Layout -->
+              <div class="content-wrapper" style="display: grid; grid-template-columns: 1fr 2fr; gap: 3rem; margin: 2rem 0;">
+                <!-- Left Column: About, Goals, Tools -->
+                <div class="left-content">
+                  {% if post.about %}
+                  <div class="content-row" style="margin-bottom: 2rem;">
+                    <h4 style="color: white; font-size: 1.2rem; margin-bottom: 1rem; font-weight: 600;">About</h4>
+                    <p style="color: white; line-height: 1.7; font-size: 0.95rem;">{{ post.about }}</p>
+                  </div>
+                  {% endif %}
+                  
+                  {% if post.goals %}
+                  <div class="content-row" style="margin-bottom: 2rem;">
+                    <h4 style="color: white; font-size: 1.2rem; margin-bottom: 1rem; font-weight: 600;">Goals</h4>
+                    <p style="color: white; line-height: 1.7; font-size: 0.95rem;">{{ post.goals }}</p>
+                  </div>
+                  {% endif %}
+                  
+                  {% if post.tools %}
+                  <div class="content-row" style="margin-bottom: 2rem;">
+                    <h4 style="color: white; font-size: 1.2rem; margin-bottom: 1rem; font-weight: 600;">Tools & Software</h4>
+                    <p style="color: white; line-height: 1.7; font-size: 0.95rem;">{{ post.tools }}</p>
+                  </div>
+                  {% endif %}
+                </div>
+                
+                <!-- Right Column: Description/Content -->
+                <div class="right-content">
+                  <div class="description-section">
+                    <p style="color: white; line-height: 1.8; font-size: 1.1rem; text-align: justify;">
+                      Creative social media posts for travel, cosmetics, clothes, and food brands showcasing visual storytelling and brand engagement. These designs focus on capturing audience attention through compelling visuals and strategic messaging that drives engagement and brand awareness.
+                    </p>
+                  </div>
+                </div>
               </div>
-
-              {% comment %}
-              <div class="dashed-line"></div>
-              {% endcomment %} {% endif %}
-
-              <!-- Goals Section -->
-              {% if post.goals %}
-              <div class="info-section" style="margin: 1.5rem 0">
-                <h3
-                  style="
-                    color: white;
-                    font-size: 1.4rem;
-                    margin-bottom: 1rem;
-                    font-weight: 600;
-                    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-                  "
-                >
-                  Goals
-                </h3>
-                <p style="color: white; line-height: 1.7; font-size: 1rem">
-                  {{ post.goals }}
-                </p>
-              </div>
-
-              {% comment %}
-              <div class="dashed-line"></div>
-              {% endcomment %} {% endif %}
-
-              <!-- Tools & Software Section -->
-              {% if post.tools %}
-              <div class="info-section" style="margin: 1.5rem 0">
-                <h3
-                  style="
-                    color: white;
-                    font-size: 1.4rem;
-                    margin-bottom: 1rem;
-                    font-weight: 600;
-                    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-                  "
-                >
-                  Tools & Software
-                </h3>
-                <p style="color: white; line-height: 1.7; font-size: 1rem">
-                  {{ post.tools }}
-                </p>
-              </div>
-
-              {% comment %}
-              <div class="dashed-line"></div>
-              {% endcomment %} {% endif %}
 
               <!-- Images Section -->
               {% if post.image %}

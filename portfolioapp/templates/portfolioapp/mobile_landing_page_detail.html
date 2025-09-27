@@ -86,7 +86,7 @@
 
           <div class="content-grid">
             <!-- Brand Information Container -->
-            {% if mobile_landing_page.about_brand or mobile_landing_page.goals %}
+            {% if mobile_landing_page.about_brand or mobile_landing_page.goals or mobile_landing_page.tools_apps %}
             <div class="content-container">
               {% if mobile_landing_page.about_brand %}
               <div class="content-row">
@@ -99,6 +99,13 @@
               <div class="content-row">
                 <h4>Goals</h4>
                 <p>{{ mobile_landing_page.goals }}</p>
+              </div>
+              {% endif %}
+              
+              {% if mobile_landing_page.tools_apps %}
+              <div class="content-row">
+                <h4>Tools & Apps</h4>
+                <p>{{ mobile_landing_page.tools_apps }}</p>
               </div>
               {% endif %}
             </div>
