@@ -135,7 +135,17 @@
             style="display: grid; gap: 4rem; max-width: 1200px; margin: 0 auto"
           >
             {% for post in all_social_media_posts %}
-            <div class="content-container" style="margin-bottom: 3rem;">
+            <div
+              class="project-container"
+              style="
+                background: rgba(255, 255, 255, 0.1);
+                backdrop-filter: blur(15px);
+                border-radius: 25px;
+                padding: 3rem;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+              "
+            >
               <!-- Project Title -->
               <h2
                 style="
