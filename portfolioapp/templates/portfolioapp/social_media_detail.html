@@ -123,31 +123,17 @@
               {% endif %}
               
               <!-- Images Section -->
-              <div class="images-section">
-                <h3 style="color: #4ECDC4; font-size: 1.4rem; margin-bottom: 2rem; font-weight: 600; text-align: center;">Design Showcase</h3>
-                <div class="social-media-grid">
-                  {% if post.mockup_image_1 %}
-                  <div class="social-media-post">
-                    <img src="{{ post.mockup_image_1.url }}" alt="{{ post.mockup_image_1_text }}" />
-                    <p>{{ post.mockup_image_1_text }}</p>
-                  </div>
-                  {% endif %}
-                  
-                  {% if post.mockup_image_2 %}
-                  <div class="social-media-post">
-                    <img src="{{ post.mockup_image_2.url }}" alt="{{ post.mockup_image_2_text }}" />
-                    <p>{{ post.mockup_image_2_text }}</p>
-                  </div>
-                  {% endif %}
-                  
-                  {% if post.mockup_image_3 %}
-                  <div class="social-media-post">
-                    <img src="{{ post.mockup_image_3.url }}" alt="{{ post.mockup_image_3_text }}" />
-                    <p>{{ post.mockup_image_3_text }}</p>
-                  </div>
-                  {% endif %}
-                </div>
-              </div>
+               <div class="images-section">
+                 <h3 style="color: #4ECDC4; font-size: 1.4rem; margin-bottom: 2rem; font-weight: 600; text-align: center;">Design Showcase</h3>
+                 <div class="single-image-showcase" style="display: flex; justify-content: center;">
+                   {% if post.mockup_image_1 %}
+                   <div class="social-media-post">
+                     <img src="{{ post.mockup_image_1.url }}" alt="{{ post.mockup_image_1_text }}" />
+                     <p>{{ post.mockup_image_1_text }}</p>
+                   </div>
+                   {% endif %}
+                 </div>
+               </div>
             </div>
             {% endfor %}
           </div>
