@@ -49,7 +49,7 @@ class SocialMediaPostAdmin(admin.ModelAdmin):
     # 添加字段分组，便于管理图片和对应文本
     fieldsets = (
         ('基本信息', {
-            'fields': ('title', 'order')
+            'fields': ('title', 'preview_image', 'order')
         }),
         ('拍立得相纸图片和文本', {
             'fields': ('mockup_image_1', 'mockup_image_1_text',
