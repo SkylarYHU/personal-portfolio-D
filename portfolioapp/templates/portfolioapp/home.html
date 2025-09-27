@@ -181,7 +181,7 @@
                     I create distinctive and professional brand identities that
                     help businesses stand out and make a lasting impression.
                   </p>
-                  <a href="#branding" class="learn-more">EXPLORE  →</a>
+                  <a href="#branding" class="learn-more">EXPLORE →</a>
                 </div>
               </div>
               <div class="accordion-toggle">▼</div>
@@ -201,9 +201,7 @@
                     satisfaction through intuitive interfaces and seamless
                     shopping flows.
                   </p>
-                  <a href="#ecommerce-design" class="learn-more"
-                    >EXPLORE →</a
-                  >
+                  <a href="#ecommerce-design" class="learn-more">EXPLORE →</a>
                 </div>
               </div>
               <div class="accordion-toggle">▼</div>
@@ -222,9 +220,7 @@
                     capture attention and keep your brand consistent across all
                     platforms.
                   </p>
-                  <a href="#social-media" class="learn-more"
-                    >EXPLORE →</a
-                  >
+                  <a href="#social-media" class="learn-more">EXPLORE →</a>
                 </div>
               </div>
               <div class="accordion-toggle">▼</div>
@@ -239,7 +235,9 @@
                 <h3 class="accordion-title">PowerPoint Presentations</h3>
                 <div class="accordion-details">
                   <p class="accordion-description">
-                    I create compelling and professional presentations that effectively communicate ideas, showcase projects, and engage audiences through clear visual storytelling.
+                    I create compelling and professional presentations that
+                    effectively communicate ideas, showcase projects, and engage
+                    audiences through clear visual storytelling.
                   </p>
                   <a href="#powerpoint-presentations" class="learn-more"
                     >EXPLORE →</a
@@ -378,7 +376,10 @@
         <div class="portfolio-grid">
           {% if social_media_posts %}
           {% with social_media_posts|first as first_post %}
-          <a href="{% url 'social_media_detail' first_post.id %}" class="social-media-link">
+          <a
+            href="{% url 'social_media_detail' first_post.id %}"
+            class="social-media-link"
+          >
             <div class="portfolio-item">
               <div class="image-container">
                 {% if first_post.preview_image %}
@@ -401,7 +402,11 @@
               </div>
               <div class="portfolio-text">
                 <h3>Social Media Design</h3>
-                <p>Creative social media posts for travel, cosmetics, clothes, and food brands showcasing visual storytelling and brand engagement.</p>
+                <p>
+                  Creative social media posts for travel, cosmetics, clothes,
+                  and food brands showcasing visual storytelling and brand
+                  engagement.
+                </p>
                 <ul class="tag-list">
                   <li class="tag-item">Social Media</li>
                   <li class="tag-item">Brand Design</li>
@@ -423,7 +428,11 @@
               </div>
               <div class="portfolio-text">
                 <h3>Social Media Ads & Campaigns</h3>
-                <p>Creative social media posts for travel, cosmetics, clothes, and food brands showcasing visual storytelling and brand engagement.</p>
+                <p>
+                  Creative social media posts for travel, cosmetics, clothes,
+                  and food brands showcasing visual storytelling and brand
+                  engagement.
+                </p>
                 <ul class="tag-list">
                   <li class="tag-item">Social Media</li>
                   <li class="tag-item">Brand Design</li>
@@ -440,7 +449,9 @@
       <section id="powerpoint-presentations" class="portfolio">
         <h2>PowerPoint Presentations</h2>
         <p>
-          Here are some PowerPoint presentations I've created, showcasing professional design and effective visual communication for various business and creative projects.
+          Here are some PowerPoint presentations I've created, showcasing
+          professional design and effective visual communication for various
+          business and creative projects.
         </p>
         <div class="dashed-line"></div>
         <div class="portfolio-grid">
@@ -448,19 +459,19 @@
           <a href="{% url 'powerpoint_detail' %}" class="powerpoint-link">
             <div class="portfolio-item">
               <div class="image-container">
-                 {% if presentation.home_preview_image %}
-                 <img
-                   src="{{ presentation.home_preview_image.url }}"
-                   alt="{{ presentation.title }} Preview"
-                 />
-                 {% else %}
-                 <img
-                   src="{% static 'images/ppt-preview.jpg' %}"
-                   alt="PowerPoint Presentation Preview"
-                   onerror="this.style.display='none'"
-                 />
-                 {% endif %}
-               </div>
+                {% if presentation.home_preview_image %}
+                <img
+                  src="{{ presentation.home_preview_image.url }}"
+                  alt="{{ presentation.title }} Preview"
+                />
+                {% else %}
+                <img
+                  src="{% static 'images/ppt-preview.jpg' %}"
+                  alt="PowerPoint Presentation Preview"
+                  onerror="this.style.display='none'"
+                />
+                {% endif %}
+              </div>
               <div class="portfolio-text">
                 <h3>{{ presentation.title }}</h3>
                 <p>{{ presentation.about_content|truncatewords:20 }}</p>
@@ -484,7 +495,11 @@
               </div>
               <div class="portfolio-text">
                 <h3>Business Presentation</h3>
-                <p>Professional presentation showcasing brand design, user experience, and project planning with comprehensive visual storytelling.</p>
+                <p>
+                  Professional presentation showcasing brand design, user
+                  experience, and project planning with comprehensive visual
+                  storytelling.
+                </p>
                 <ul class="tag-list">
                   <li class="tag-item">PowerPoint</li>
                   <li class="tag-item">Visual Design</li>
