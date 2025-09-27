@@ -1465,7 +1465,7 @@ html {
 .powerpoint-detail .tags-section {
   text-align: left;
   margin-top: 3rem;
-  margin-bottom: -5rem;
+  margin-bottom: 2rem;
 }
 
 .powerpoint-detail .tag-list {
@@ -1474,7 +1474,7 @@ html {
 
 .powerpoint-detail .go-back-container {
   text-align: center;
-  margin-top: 0;
+  margin-top: 2rem;
   margin-bottom: 8rem;
 }
 
