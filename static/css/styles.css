@@ -504,8 +504,8 @@ p,
 }
 
 .dashed-line {
-  border-top: 1.5px dashed #616b75;
-  margin-bottom: 1rem;
+  border-top: 1.5px solid rgba(255, 255, 255, 0.3);
+  margin-bottom: 1.5rem;
   width: 100%;
   box-sizing: border-box;
 }
@@ -1470,7 +1470,7 @@ html {
 }
 
 .powerpoint-detail .dashed-line {
-  margin: 2rem 0;
+  margin-bottom: 1.5rem;
 }
 
 .powerpoint-detail .powerpoint-link {
