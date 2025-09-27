@@ -158,7 +158,9 @@
                 {{ post.title }}
               </h3>
 
+              {% comment %}
               <div class="dashed-line"></div>
+              {% endcomment %}
 
               <!-- About Section -->
               {% if post.about %}
@@ -169,6 +171,7 @@
                     font-size: 1.4rem;
                     margin-bottom: 1rem;
                     font-weight: 600;
+                    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
                   "
                 >
                   About
@@ -178,8 +181,9 @@
                 </p>
               </div>
 
+              {% comment %}
               <div class="dashed-line"></div>
-              {% endif %}
+              {% endcomment %} {% endif %}
 
               <!-- Goals Section -->
               {% if post.goals %}
@@ -190,6 +194,7 @@
                     font-size: 1.4rem;
                     margin-bottom: 1rem;
                     font-weight: 600;
+                    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
                   "
                 >
                   Goals
@@ -199,8 +204,9 @@
                 </p>
               </div>
 
+              {% comment %}
               <div class="dashed-line"></div>
-              {% endif %}
+              {% endcomment %} {% endif %}
 
               <!-- Tools & Software Section -->
               {% if post.tools %}
@@ -211,6 +217,7 @@
                     font-size: 1.4rem;
                     margin-bottom: 1rem;
                     font-weight: 600;
+                    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
                   "
                 >
                   Tools & Software
@@ -220,8 +227,9 @@
                 </p>
               </div>
 
+              {% comment %}
               <div class="dashed-line"></div>
-              {% endif %}
+              {% endcomment %} {% endif %}
 
               <!-- Images Section -->
               {% if post.image %}

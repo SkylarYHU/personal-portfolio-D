@@ -1549,3 +1549,90 @@ html {
 }
 
 /* Accordion styles moved to accordion.css */
+
+/* Mobile Landing Page Detail Styles */
+.mobile-landing-detail .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.mobile-landing-detail .portfolio-section {
+  margin-top: 8rem;
+}
+
+.mobile-landing-detail .title-section {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.mobile-landing-detail .title {
+  color: white;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.mobile-landing-detail .content-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.mobile-landing-detail .content-grid {
+  display: grid;
+  gap: 3rem;
+}
+
+.mobile-landing-detail .image-section {
+  margin-bottom: 3rem;
+}
+
+.mobile-landing-detail .image-section img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.mobile-landing-detail .tags-section {
+  text-align: left;
+  margin-top: 2rem;
+}
+
+.mobile-landing-detail .tag-list {
+  justify-content: flex-start;
+}
+
+.mobile-landing-detail .project-link-section {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.mobile-landing-detail .project-link {
+  display: inline-block;
+  background-color: #3b4d62;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.mobile-landing-detail .go-back-section {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.mobile-landing-detail .go-back-btn {
+  display: inline-block;
+  background-color: white;
+  color: #2c3e50;
+  padding: 12px 24px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
