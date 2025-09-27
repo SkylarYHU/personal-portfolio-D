@@ -43,23 +43,18 @@ class BrandingProjectAdmin(admin.ModelAdmin):
 
 @admin.register(SocialMediaPost)
 class SocialMediaPostAdmin(admin.ModelAdmin):
-    list_display = ('title', 'about', 'tools', 'goals')
+    list_display = ('title', 'date_posted', 'order')
+    list_editable = ('order',)
     ordering = ('order',)
-
-    # 添加字段分组，便于管理图片和对应文本
     fieldsets = (
         ('基本信息', {
             'fields': ('title', 'preview_image', 'order')
         }),
-        ('拍立得相纸图片和文本', {
-            'fields': ('mockup_image_1', 'mockup_image_1_text',
-                       'mockup_image_2', 'mockup_image_2_text',
-                       'mockup_image_3', 'mockup_image_3_text'),
-            'description': '为每个拍立得相纸图片设置对应的显示文本'
+        ('项目内容', {
+            'fields': ('about', 'goals', 'tools')
         }),
-        ('详细信息', {
-            'fields': ('about', 'tools', 'goals'),
-            'classes': ('collapse',)
+        ('项目图片', {
+            'fields': ('image',)
         }),
     )
 

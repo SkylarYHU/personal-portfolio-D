@@ -123,17 +123,14 @@
               {% endif %}
               
               <!-- Images Section -->
+               {% if post.image %}
                <div class="images-section">
                  <h3 style="color: #4ECDC4; font-size: 1.4rem; margin-bottom: 2rem; font-weight: 600; text-align: center;">Design Showcase</h3>
-                 <div class="single-image-showcase" style="display: flex; justify-content: center;">
-                   {% if post.mockup_image_1 %}
-                   <div class="social-media-post">
-                     <img src="{{ post.mockup_image_1.url }}" alt="{{ post.mockup_image_1_text }}" />
-                     <p>{{ post.mockup_image_1_text }}</p>
-                   </div>
-                   {% endif %}
+                 <div class="project-image" style="text-align: center;">
+                   <img src="{{ post.image.url }}" alt="{{ post.title }}" style="max-width: 100%; height: auto; border-radius: 15px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);" />
                  </div>
                </div>
+               {% endif %}
             </div>
             {% endfor %}
           </div>
