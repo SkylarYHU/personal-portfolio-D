@@ -1754,3 +1754,102 @@ html {
   transition: all 0.3s ease;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
+
+/* E-commerce Detail Styles */
+.ecommerce-detail .portfolio {
+  margin-top: 8rem;
+}
+
+.ecommerce-detail .page-title {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.ecommerce-detail .page-title h1 {
+  color: white;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.ecommerce-detail .content-container {
+  margin-bottom: 3rem;
+}
+
+.ecommerce-detail .content-row h4 {
+  color: white;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.ecommerce-detail .content-row p {
+  color: #ced4da;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.ecommerce-detail .image-container img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+}
+
+.ecommerce-detail .tag-list-container {
+  text-align: left;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+}
+
+.ecommerce-detail .tag-list {
+  justify-content: flex-start;
+}
+
+.ecommerce-detail .project-link-container {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.ecommerce-detail .project-link {
+  display: inline-block;
+  background-color: #3b4d62;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.ecommerce-detail .project-link:hover {
+  background-color: #2c3e50;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.ecommerce-detail .go-back-container {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.ecommerce-detail .go-back-btn {
+  display: inline-block;
+  background-color: white;
+  color: #2c3e50;
+  padding: 12px 24px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  font-family: "Poppins", sans-serif;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.ecommerce-detail .go-back-btn:hover {
+  background-color: #f8f9fa;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}

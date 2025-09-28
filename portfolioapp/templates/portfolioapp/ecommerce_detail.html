@@ -1,360 +1,255 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ ecommerce_project.title }} - Skylar Hu Portfolio</title>
-    
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="{{ ecommerce_project.title }} - E-commerce Design Project by Skylar Hu"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/styles.css' %}"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Favicon and PWA Meta Tags -->
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="{% static 'images/favicon/favicon.ico' %}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="{% static 'images/favicon/favicon-16x16.png' %}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="{% static 'images/favicon/favicon-32x32.png' %}"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="{% static 'images/favicon/apple-touch-icon.png' %}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="{% static 'images/favicon/android-chrome-192x192.png' %}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="{% static 'images/favicon/android-chrome-512x512.png' %}"
+    />
+    <link
+      rel="manifest"
+      href="{% static 'images/favicon/site.webmanifest' %}"
+    />
+
     <!-- PWA Meta Tags -->
-    <meta name="theme-color" content="#000000">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    
-    <!-- CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="https://skylarhu-portfolio-static.s3.amazonaws.com/favicon.ico">
-    
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f8f9fa;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        /* Navigation */
-        .navbar {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            padding: 1rem 0;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
-        }
-        
-        .nav-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #333;
-            text-decoration: none;
-        }
-        
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-        
-        .nav-links a {
-            color: #333;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-        
-        .nav-links a:hover {
-            color: #007bff;
-        }
-        
-        /* Main Content */
-        .main-content {
-            margin-top: 80px;
-            padding: 2rem 0;
-        }
-        
-        .project-header {
-            text-align: center;
-            margin-bottom: 3rem;
-            padding: 2rem 0;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-        }
-        
-        .project-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #333;
-            margin-bottom: 1rem;
-        }
-        
-        .project-subtitle {
-            font-size: 1.2rem;
-            color: #666;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .project-content {
-            background: white;
-            border-radius: 12px;
-            padding: 2rem;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-        }
-        
-        .content-section {
-            margin-bottom: 2.5rem;
-        }
-        
-        .content-section:last-child {
-            margin-bottom: 0;
-        }
-        
-        .section-title {
-            font-size: 1.8rem;
-            font-weight: 600;
-            color: #333;
-            margin-bottom: 1rem;
-            border-bottom: 2px solid #007bff;
-            padding-bottom: 0.5rem;
-        }
-        
-        .section-content {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: #555;
-        }
-        
-        .section-content p {
-            margin-bottom: 1rem;
-        }
-        
-        .section-content p:last-child {
-            margin-bottom: 0;
-        }
-        
-        /* Images */
-        .project-image {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            margin: 1rem 0;
-        }
-        
-        .image-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1rem;
-            margin: 1rem 0;
-        }
-        
-        /* Links */
-        .project-links {
-            display: flex;
-            gap: 1rem;
-            margin: 2rem 0;
-            flex-wrap: wrap;
-        }
-        
-        .project-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.8rem 1.5rem;
-            background: #007bff;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-        
-        .project-link:hover {
-            background: #0056b3;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(0,123,255,0.3);
-        }
-        
-        /* Footer */
-        .footer {
-            background: #333;
-            color: white;
-            text-align: center;
-            padding: 2rem 0;
-            margin-top: 3rem;
-        }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            .project-title {
-                font-size: 2rem;
-            }
-            
-            .project-subtitle {
-                font-size: 1rem;
-            }
-            
-            .nav-links {
-                gap: 1rem;
-            }
-            
-            .nav-links a {
-                font-size: 0.9rem;
-            }
-            
-            .project-content {
-                padding: 1.5rem;
-            }
-            
-            .section-title {
-                font-size: 1.5rem;
-            }
-            
-            .image-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
-</head>
-<body>
+    <meta name="theme-color" content="#000000" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta name="apple-mobile-web-app-title" content="Skylar's Portfolio" />
+    <meta name="msapplication-TileColor" content="#000000" />
+    <meta
+      name="msapplication-config"
+      content="{% static 'images/favicon/browserconfig.xml' %}"
+    />
+
+    <title>{{ ecommerce_project.title }} - Skylar's Portfolio</title>
+  </head>
+  <body class="ecommerce-detail">
     <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-content">
-            <a href="/" class="logo">Skylar Hu</a>
-            <ul class="nav-links">
-                <li><a href="/#table-of-content">Content</a></li>
-                <li><a href="/#previous-role">Work</a></li>
-                <li><a href="/#client-experience">Client</a></li>
-                <li><a href="/#contact">Contact</a></li>
-            </ul>
+    <header>
+      <nav class="navbar">
+        <div class="logo">
+          <a href="{% url 'home' %}"
+            ><img src="{% static 'images/home.png' %}" alt="home logo"
+          /></a>
         </div>
-    </nav>
-
-    <!-- Main Content -->
-    <main class="main-content">
-        <div class="container">
-            <!-- Project Header -->
-            <div class="project-header">
-                <h1 class="project-title">{{ ecommerce_project.title }}</h1>
-                <p class="project-subtitle">{{ ecommerce_project.description }}</p>
-            </div>
-
-            <!-- Project Content -->
-            <div class="project-content">
-                <!-- Project Links -->
-                {% if ecommerce_project.link %}
-                <div class="content-section">
-                    <h2 class="section-title">Project Links</h2>
-                    <div class="project-links">
-                        <a href="{{ ecommerce_project.link }}" target="_blank" class="project-link">
-                            <i class="fas fa-external-link-alt"></i>
-                            View Project
-                        </a>
-                    </div>
-                </div>
-                {% endif %}
-
-                <!-- About Project -->
-                {% if ecommerce_project.about_project %}
-                <div class="content-section">
-                    <h2 class="section-title">About This Project</h2>
-                    <div class="section-content">
-                        {{ ecommerce_project.about_project|linebreaks }}
-                    </div>
-                </div>
-                {% endif %}
-
-                <!-- Goals -->
-                {% if ecommerce_project.goals %}
-                <div class="content-section">
-                    <h2 class="section-title">Goals</h2>
-                    <div class="section-content">
-                        {{ ecommerce_project.goals|linebreaks }}
-                    </div>
-                </div>
-                {% endif %}
-
-                <!-- Tools and Applications -->
-                {% if ecommerce_project.tools_apps %}
-                <div class="content-section">
-                    <h2 class="section-title">Tools & Applications</h2>
-                    <div class="section-content">
-                        {{ ecommerce_project.tools_apps|linebreaks }}
-                    </div>
-                </div>
-                {% endif %}
-
-                <!-- Design Process -->
-                {% if ecommerce_project.design_process_image %}
-                <div class="content-section">
-                    <h2 class="section-title">Design Process</h2>
-                    <img src="{{ ecommerce_project.design_process_image.url }}" alt="Design Process" class="project-image">
-                </div>
-                {% endif %}
-
-                <!-- User Interface -->
-                {% if ecommerce_project.user_interface_image %}
-                <div class="content-section">
-                    <h2 class="section-title">User Interface</h2>
-                    <img src="{{ ecommerce_project.user_interface_image.url }}" alt="User Interface" class="project-image">
-                </div>
-                {% endif %}
-
-                <!-- Mobile Design -->
-                {% if ecommerce_project.mobile_design_image %}
-                <div class="content-section">
-                    <h2 class="section-title">Mobile Design</h2>
-                    <img src="{{ ecommerce_project.mobile_design_image.url }}" alt="Mobile Design" class="project-image">
-                </div>
-                {% endif %}
-
-                <!-- Product Pages -->
-                {% if ecommerce_project.product_pages_image %}
-                <div class="content-section">
-                    <h2 class="section-title">Product Pages</h2>
-                    <img src="{{ ecommerce_project.product_pages_image.url }}" alt="Product Pages" class="project-image">
-                </div>
-                {% endif %}
-
-                <!-- Checkout Flow -->
-                {% if ecommerce_project.checkout_flow_image %}
-                <div class="content-section">
-                    <h2 class="section-title">Checkout Flow</h2>
-                    <img src="{{ ecommerce_project.checkout_flow_image.url }}" alt="Checkout Flow" class="project-image">
-                </div>
-                {% endif %}
-
-                <!-- Others -->
-                {% if ecommerce_project.others_image %}
-                <div class="content-section">
-                    <h2 class="section-title">Others</h2>
-                    <img src="{{ ecommerce_project.others_image.url }}" alt="Others" class="project-image">
-                </div>
-                {% endif %}
-            </div>
+        <div class="nav-right">
+          <div class="toggle" onclick="toggleMenu()">&#9776;</div>
+          <ul class="nav-links">
+            <li><a href="{% url 'home' %}#table-of-content">Content</a></li>
+            <li><a href="{% url 'home' %}#previous-role">Work</a></li>
+            <li><a href="{% url 'home' %}#client-experience">Client</a></li>
+            <li><a href="{% url 'home' %}#contact">Contact</a></li>
+          </ul>
         </div>
-    </main>
+      </nav>
+    </header>
+
+    <div class="container">
+      <!-- Project Detail Section -->
+      <section class="portfolio">
+        <div class="page-title">
+          <h1>{{ ecommerce_project.title }}</h1>
+        </div>
+
+        <div class="portfolio-detail">
+          <!-- Project Information Container -->
+          {% if ecommerce_project.about_project or ecommerce_project.goals or ecommerce_project.tools_apps %}
+          <div class="content-container">
+            {% if ecommerce_project.about_project %}
+            <div class="content-row">
+              <h4>About This Project</h4>
+              <p>{{ ecommerce_project.about_project|linebreaks }}</p>
+            </div>
+            {% endif %}
+            {% if ecommerce_project.goals %}
+            <div class="content-row">
+              <h4>Goals</h4>
+              <p>{{ ecommerce_project.goals|linebreaks }}</p>
+            </div>
+            {% endif %}
+            {% if ecommerce_project.tools_apps %}
+            <div class="content-row">
+              <h4>Tools & Applications</h4>
+              <p>{{ ecommerce_project.tools_apps|linebreaks }}</p>
+            </div>
+            {% endif %}
+          </div>
+          {% endif %}
+
+          <!-- Design Process Section -->
+          {% if ecommerce_project.design_process_image %}
+          <div class="content-container">
+            <div class="image-container">
+              <img
+                src="{{ ecommerce_project.design_process_image.url }}"
+                alt="Design Process for {{ ecommerce_project.title }}"
+              />
+            </div>
+          </div>
+          {% endif %}
+
+          <!-- User Interface Section -->
+          {% if ecommerce_project.user_interface_image %}
+          <div class="content-container">
+            <div class="image-container">
+              <img
+                src="{{ ecommerce_project.user_interface_image.url }}"
+                alt="User Interface for {{ ecommerce_project.title }}"
+              />
+            </div>
+          </div>
+          {% endif %}
+
+          <!-- Mobile Design Section -->
+          {% if ecommerce_project.mobile_design_image %}
+          <div class="content-container">
+            <div class="image-container">
+              <img
+                src="{{ ecommerce_project.mobile_design_image.url }}"
+                alt="Mobile Design for {{ ecommerce_project.title }}"
+              />
+            </div>
+          </div>
+          {% endif %}
+
+          <!-- Product Pages Section -->
+          {% if ecommerce_project.product_pages_image %}
+          <div class="content-container">
+            <div class="image-container">
+              <img
+                src="{{ ecommerce_project.product_pages_image.url }}"
+                alt="Product Pages for {{ ecommerce_project.title }}"
+              />
+            </div>
+          </div>
+          {% endif %}
+
+          <!-- Checkout Flow Section -->
+          {% if ecommerce_project.checkout_flow_image %}
+          <div class="content-container">
+            <div class="image-container">
+              <img
+                src="{{ ecommerce_project.checkout_flow_image.url }}"
+                alt="Checkout Flow for {{ ecommerce_project.title }}"
+              />
+            </div>
+          </div>
+          {% endif %}
+
+          <!-- Others Section -->
+          {% if ecommerce_project.others_image %}
+          <div class="content-container">
+            <div class="image-container">
+              <img
+                src="{{ ecommerce_project.others_image.url }}"
+                alt="Additional designs for {{ ecommerce_project.title }}"
+              />
+            </div>
+          </div>
+          {% endif %}
+
+          <!-- Project Link -->
+          {% if ecommerce_project.link %}
+          <div class="content-container">
+            <div class="project-link-container">
+              <a href="{{ ecommerce_project.link }}" target="_blank" class="project-link">
+                View Project
+              </a>
+            </div>
+          </div>
+          {% endif %}
+
+          <!-- Tags Section -->
+          <div class="content-container">
+            <div class="tag-list-container">
+              <ul class="tag-list">
+                {% for tag in ecommerce_project.tags.all %}
+                <li class="tag-item">{{ tag.name }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Go Back Button -->
+    <div class="go-back-container">
+      <a href="{% url 'home' %}" class="go-back-btn">Go Back to Portfolio</a>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <p>&copy; 2024 Skylar Hu. All rights reserved.</p>
-        </div>
+      <div class="container">
+        <p>&copy; 2024 Skylar Hu. All rights reserved.</p>
+      </div>
     </footer>
-</body>
+
+    <!-- JavaScript -->
+    <script src="{% static 'js/script.js' %}"></script>
+  </body>
 </html>
