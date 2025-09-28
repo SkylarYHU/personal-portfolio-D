@@ -18,6 +18,10 @@
       .ecommerce-detail .project-link-inline {
         position: relative !important;
         text-decoration: none !important;
+        color: #ffffff !important;
+        font-weight: 500 !important;
+        border-bottom: none !important;
+        transition: all 0.3s ease !important;
       }
       
       .ecommerce-detail .project-link-inline:hover {
@@ -156,7 +160,7 @@
             {% if ecommerce_project.link %}
             <div class="content-row">
               <h4>View Project</h4>
-              <p><a href="{{ ecommerce_project.link }}" target="_blank" class="project-link-inline" style="color: #ffffff !important; text-decoration: none !important; font-weight: 500 !important; border-bottom: none !important; transition: all 0.3s ease !important;">{{ ecommerce_project.link }}</a></p>
+              <p><a href="{{ ecommerce_project.link }}" target="_blank" class="project-link-inline">{{ ecommerce_project.link }}</a></p>
             </div>
             {% endif %}
             {% if ecommerce_project.about_project %}
