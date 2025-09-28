@@ -132,7 +132,7 @@
               {% endcomment %}
 
               <!-- Brand Information Container -->
-              {% if post.about or post.goals or post.tools %}
+              {% if post.about or post.goals or post.tools or post.image %}
               <div class="content-container">
                 {% if post.about %}
                 <div class="content-row">
@@ -154,21 +154,21 @@
                   <p>{{ post.tools }}</p>
                 </div>
                 {% endif %}
-              </div>
-              {% endif %}
-
-              <!-- Images Section -->
-              {% if post.image %}
-              <div class="images-section">
-                <h3 class="images-section-title">
-                  Design Showcase
-                </h3>
-                <div class="project-image">
-                  <img
-                    src="{{ post.image.url }}"
-                    alt="{{ post.title }}"
-                  />
+                
+                <!-- Images Section -->
+                {% if post.image %}
+                <div class="images-section">
+                  <h3 class="images-section-title">
+                    Design Showcase
+                  </h3>
+                  <div class="project-image">
+                    <img
+                      src="{{ post.image.url }}"
+                      alt="{{ post.title }}"
+                    />
+                  </div>
                 </div>
+                {% endif %}
               </div>
               {% endif %}
             </div>
