@@ -344,10 +344,16 @@
               data-link="{{ ecommerce_project.link }}"
             >
               <div class="image-container">
+                {% if ecommerce_project.image %}
                 <img
                   src="{{ ecommerce_project.image.url }}"
                   alt="Screenshot of {{ ecommerce_project.title }}"
                 />
+                {% else %}
+                <div class="placeholder-image">
+                  <span>{{ ecommerce_project.title }}</span>
+                </div>
+                {% endif %}
               </div>
               <div class="portfolio-text">
                 <h3>{{ ecommerce_project.title }}</h3>
