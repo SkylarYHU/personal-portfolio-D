@@ -6,7 +6,7 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('portfolioapp', '0023_mobilelandingpage_tools_apps'),
+        ('portfolioapp', '0023_auto_20250928_1256'),
         ('portfolioapp', '0024_socialmediapost_category'),
     ]
 
