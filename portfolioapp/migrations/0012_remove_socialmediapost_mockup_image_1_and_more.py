@@ -9,18 +9,7 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.RemoveField(
-            model_name="socialmediapost",
-            name="mockup_image_1",
-        ),
-        migrations.RemoveField(
-            model_name="socialmediapost",
-            name="mockup_image_2",
-        ),
-        migrations.RemoveField(
-            model_name="socialmediapost",
-            name="mockup_image_3",
-        ),
+        # Removed field operations moved to 0013_auto_20250928_0402.py for safe handling
         migrations.AddField(
             model_name="mobilelandingpage",
             name="landing_pages_image",
