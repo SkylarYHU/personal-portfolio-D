@@ -374,8 +374,8 @@
         </p>
         <div class="dashed-line"></div>
         <div class="portfolio-grid">
-          {% if social_media_posts %} {% with social_media_posts|first as
-          first_post %}
+          {% if social_media_posts %}
+          {% with social_media_posts|first as first_post %}
           <a
             href="{% url 'social_media_detail' first_post.id %}"
             class="social-media-link"
@@ -415,7 +415,8 @@
               </div>
             </div>
           </a>
-          {% endwith %} {% else %}
+          {% endwith %}
+          {% else %}
           <a href="#" class="social-media-link">
             <div class="portfolio-item">
               <div class="image-container">

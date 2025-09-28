@@ -124,7 +124,7 @@
             <div class="project-container">
               <!-- Project Title -->
               <h3 class="project-title">
-                {{ post.title }}
+                Social Media Design
               </h3>
 
               {% comment %}
@@ -132,8 +132,15 @@
               {% endcomment %}
 
               <!-- Brand Information Container -->
-              {% if post.about or post.goals or post.tools or post.image %}
+              {% if post.category or post.about or post.goals or post.tools or post.image %}
               <div class="content-container">
+                {% if post.category %}
+                <div class="content-row">
+                  <h4>Category</h4>
+                  <p>{{ post.category }}</p>
+                </div>
+                {% endif %}
+                
                 {% if post.about %}
                 <div class="content-row">
                   <h4>About Brand</h4>
@@ -156,19 +163,16 @@
                 {% endif %}
                 
                 <!-- Images Section -->
-                {% if post.image %}
-                <div class="images-section">
-                  <h3 class="images-section-title">
-                    Design Showcase
-                  </h3>
-                  <div class="project-image">
-                    <img
-                      src="{{ post.image.url }}"
-                      alt="{{ post.title }}"
-                    />
-                  </div>
-                </div>
-                {% endif %}
+                 {% if post.image %}
+                 <div class="images-section">
+                   <div class="project-image">
+                     <img
+                       src="{{ post.image.url }}"
+                       alt="{{ post.title }}"
+                     />
+                   </div>
+                 </div>
+                 {% endif %}
               </div>
               {% endif %}
             </div>

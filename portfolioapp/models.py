@@ -70,6 +70,7 @@ class BrandingProject(models.Model):
 
 class SocialMediaPost(models.Model):
     title = models.CharField(max_length=128)  # 项目标题
+    category = models.CharField(max_length=128, blank=True, help_text="项目分类")
     preview_image = models.ImageField(
         upload_to='images/social_media/preview/', 
         blank=True, 
