@@ -1792,26 +1792,7 @@ html {
   border-bottom: none;
 }
 
-.ecommerce-detail .content-row h4 {
-  flex: 0 0 200px !important;
-  margin: 0 !important;
-  font-size: 1.2rem !important;
-  font-weight: 600 !important;
-  color: white !important;
-  font-family: "Poppins", sans-serif !important;
-  line-height: 1.4 !important;
-  min-width: auto !important;
-}
 
-.ecommerce-detail .content-row p {
-  flex: 1 !important;
-  font-size: 1rem !important;
-  line-height: 1.6 !important;
-  color: #ced4da !important;
-  text-align: left !important;
-  letter-spacing: 0.5px !important;
-  margin: 0 !important;
-}
 
 .ecommerce-detail .image-container img {
   width: 100%;
