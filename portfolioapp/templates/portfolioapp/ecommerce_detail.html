@@ -12,7 +12,7 @@
     <link
       rel="stylesheet"
       type="text/css"
-      href="{% static 'css/styles.css' %}?v=2025-09-28-4"
+      href="{% static 'css/styles.css' %}?v=2025-09-28-5"
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -122,7 +122,7 @@
             {% if ecommerce_project.link %}
             <div class="content-row">
               <h4>View Project</h4>
-              <p><a href="{{ ecommerce_project.link }}" target="_blank" class="project-link-inline" style="color: #ffffff !important; text-decoration: none !important; font-weight: 500 !important; border-bottom: none !important; transition: all 0.3s ease !important;">{{ ecommerce_project.link }}</a></p>
+              <p><a href="{{ ecommerce_project.link }}" target="_blank" class="project-link-inline" style="color: #ff0000 !important; text-decoration: none !important; font-weight: 500 !important; border-bottom: 3px solid #00ff00 !important; transition: all 0.3s ease !important; background-color: #ffff00 !important; padding: 5px !important;">{{ ecommerce_project.link }}</a></p>
             </div>
             {% endif %}
             {% if ecommerce_project.about_project %}
