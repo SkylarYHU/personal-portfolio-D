@@ -1775,18 +1775,41 @@ html {
   margin-bottom: 3rem;
 }
 
+.ecommerce-detail .content-row {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  padding-bottom: 1.6rem;
+  width: 100%;
+  position: relative;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  box-sizing: border-box;
+}
+
+.ecommerce-detail .content-row:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
 .ecommerce-detail .content-row h4 {
-  color: white;
-  font-size: 1.4rem;
-  margin-bottom: 1rem;
+  flex: 0 0 200px;
+  margin: 0;
+  font-size: 1.2rem;
   font-weight: 600;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  line-height: 1.4;
 }
 
 .ecommerce-detail .content-row p {
-  color: #ced4da;
+  flex: 1;
   font-size: 1rem;
   line-height: 1.6;
-  margin-bottom: 1.5rem;
+  color: #ced4da;
+  text-align: left;
+  letter-spacing: 0.5px;
+  margin: 0;
 }
 
 .ecommerce-detail .image-container img {
@@ -1852,4 +1875,24 @@ html {
   background-color: #f8f9fa;
   transform: translateY(-2px);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Mobile responsive styles for ecommerce-detail */
+@media (max-width: 768px) {
+  .ecommerce-detail .content-row {
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .ecommerce-detail .content-row h4 {
+    flex: none;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .ecommerce-detail .content-row p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
 }
