@@ -87,7 +87,7 @@
 
     <title>Social Media Design - Skylar's Portfolio</title>
   </head>
-  <body>
+  <body class="social-media-detail">
     <!-- Navigation -->
     <header>
       <nav class="navbar">
@@ -110,51 +110,20 @@
 
     <div class="container">
       <!-- Project Detail Section -->
-      <section class="portfolio" style="margin-top: 8rem">
+      <section class="portfolio">
         <!-- Page Title -->
-        <h1
-          style="
-            text-align: center;
-            margin: 2rem 0 4rem 0;
-            color: white;
-            font-size: 3rem;
-            font-weight: 700;
-          "
-        >
+        <h1 class="page-title">
           Social Media Design
         </h1>
 
-        <div
-          class="portfolio-detail"
-          style="max-width: 1200px; margin: 0 auto; padding: 0 1rem"
-        >
+        <div class="portfolio-detail">
           <!-- Social Media Posts Grid -->
           {% if all_social_media_posts %}
-          <div
-            class="social-media-projects"
-            style="display: grid; gap: 4rem; max-width: 1200px; margin: 0 auto"
-          >
+          <div class="social-media-projects">
             {% for post in all_social_media_posts %}
-            <div
-              class="project-container"
-              style="
-                background: rgba(255, 255, 255, 0.1);
-                backdrop-filter: blur(15px);
-                border-radius: 25px;
-                padding: 3rem;
-                border: 1px solid rgba(255, 255, 255, 0.2);
-                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-              "
-            >
+            <div class="project-container">
               <!-- Project Title -->
-              <h3
-                style="
-                  color: white;
-                  margin-bottom: 2rem;
-                  font-size: 2.2rem;
-                  text-align: center;
-                "
-              >
+              <h3 class="project-title">
                 {{ post.title }}
               </h3>
 
@@ -162,64 +131,42 @@
               <div class="dashed-line"></div>
               {% endcomment %}
 
-              <!-- Content Grid Layout -->
-              <div class="content-wrapper" style="display: grid; grid-template-columns: 1fr 2fr; gap: 3rem; margin: 2rem 0;">
-                <!-- Left Column: About, Goals, Tools -->
-                <div class="left-content">
-                  {% if post.about %}
-                  <div class="content-row" style="margin-bottom: 2rem;">
-                    <h4 style="color: white; font-size: 1.2rem; margin-bottom: 1rem; font-weight: 600;">About</h4>
-                    <p style="color: white; line-height: 1.7; font-size: 0.95rem;">{{ post.about }}</p>
-                  </div>
-                  {% endif %}
-                  
-                  {% if post.goals %}
-                  <div class="content-row" style="margin-bottom: 2rem;">
-                    <h4 style="color: white; font-size: 1.2rem; margin-bottom: 1rem; font-weight: 600;">Goals</h4>
-                    <p style="color: white; line-height: 1.7; font-size: 0.95rem;">{{ post.goals }}</p>
-                  </div>
-                  {% endif %}
-                  
-                  {% if post.tools %}
-                  <div class="content-row" style="margin-bottom: 2rem;">
-                    <h4 style="color: white; font-size: 1.2rem; margin-bottom: 1rem; font-weight: 600;">Tools & Software</h4>
-                    <p style="color: white; line-height: 1.7; font-size: 0.95rem;">{{ post.tools }}</p>
-                  </div>
-                  {% endif %}
+              <!-- Brand Information Container -->
+              {% if post.about or post.goals or post.tools %}
+              <div class="content-container">
+                {% if post.about %}
+                <div class="content-row">
+                  <h4>About Brand</h4>
+                  <p>{{ post.about }}</p>
                 </div>
+                {% endif %}
                 
-                <!-- Right Column: Description/Content -->
-                <div class="right-content">
-                  <div class="description-section">
-                    <p style="color: white; line-height: 1.8; font-size: 1.1rem; text-align: justify;">
-                      Creative social media posts for travel, cosmetics, clothes, and food brands showcasing visual storytelling and brand engagement. These designs focus on capturing audience attention through compelling visuals and strategic messaging that drives engagement and brand awareness.
-                    </p>
-                  </div>
+                {% if post.goals %}
+                <div class="content-row">
+                  <h4>Goals</h4>
+                  <p>{{ post.goals }}</p>
                 </div>
+                {% endif %}
+                
+                {% if post.tools %}
+                <div class="content-row">
+                  <h4>Tools & Apps</h4>
+                  <p>{{ post.tools }}</p>
+                </div>
+                {% endif %}
               </div>
+              {% endif %}
 
               <!-- Images Section -->
               {% if post.image %}
               <div class="images-section">
-                <h3
-                  style="
-                    color: white;
-                    font-size: 1.4rem;
-                    margin-bottom: 2rem;
-                    font-weight: 600;
-                  "
-                >
+                <h3 class="images-section-title">
                   Design Showcase
                 </h3>
-                <div class="project-image" style="text-align: center">
+                <div class="project-image">
                   <img
                     src="{{ post.image.url }}"
                     alt="{{ post.title }}"
-                    style="
-                      max-width: 100%;
-                      height: auto;
-                      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-                    "
                   />
                 </div>
               </div>
@@ -230,26 +177,10 @@
           {% endif %}
 
           <!-- Go Back Button -->
-          <div
-            class="go-back-container"
-            style="text-align: center; margin-top: 3rem"
-          >
+          <div class="go-back-container">
             <a
               href="{% url 'home' %}#social-media"
               class="go-back-btn"
-              style="
-                display: inline-block;
-                background-color: white;
-                color: #2c3e50;
-                padding: 12px 24px;
-                border-radius: 25px;
-                text-decoration: none;
-                font-weight: 600;
-                font-size: 1.1rem;
-                font-family: 'Poppins', sans-serif;
-                transition: all 0.3s ease;
-                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-              "
             >
               < Go Back
             </a>
