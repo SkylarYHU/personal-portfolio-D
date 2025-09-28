@@ -1,5 +1,5 @@
 from django.db import models
-# Force sync models.py to Heroku - timestamp: 2025-01-27 14:40
+# Force sync models.py to Heroku - timestamp: 2025-01-27 14:45 - cache cleared
 
 # Create your models here.
 
