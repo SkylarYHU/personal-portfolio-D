@@ -1862,6 +1862,7 @@ html {
   color: #ffffff;
   text-decoration: none;
   font-weight: 500;
+  border-bottom: none;
   transition: all 0.3s ease;
 }
 
