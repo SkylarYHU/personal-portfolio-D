@@ -6,18 +6,16 @@ from django.db import migrations, connection
 def safe_remove_columns(apps, schema_editor):
     """Safely remove columns if they exist"""
     with connection.cursor() as cursor:
-        # Check if columns exist before trying to remove them
-        cursor.execute("""
-            SELECT column_name 
-            FROM information_schema.columns 
-            WHERE table_name='portfolioapp_socialmediapost' 
-            AND column_name IN ('mockup_image_1', 'mockup_image_2', 'mockup_image_3')
-        """)
-        existing_columns = [row[0] for row in cursor.fetchall()]
+        # For SQLite, we'll try to remove columns and ignore errors if they don't exist
+        columns_to_remove = ['mockup_image_1', 'mockup_image_2', 'mockup_image_3']
         
-        # Remove columns that actually exist
-        for column in existing_columns:
-            cursor.execute(f'ALTER TABLE portfolioapp_socialmediapost DROP COLUMN IF EXISTS {column}')
+        # Remove columns that might exist
+        for column in columns_to_remove:
+            try:
+                cursor.execute(f'ALTER TABLE portfolioapp_socialmediapost DROP COLUMN {column}')
+            except Exception:
+                # Column doesn't exist, which is fine
+                pass
 
 
 def reverse_safe_remove_columns(apps, schema_editor):

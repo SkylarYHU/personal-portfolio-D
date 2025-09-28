@@ -5,7 +5,7 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
     dependencies = [
-        ("portfolioapp", "0014_remove_socialmediapost_mockup_image_1_and_more"),
+        ("portfolioapp", "0013_auto_20250928_0402"),
     ]
 
     operations = [
