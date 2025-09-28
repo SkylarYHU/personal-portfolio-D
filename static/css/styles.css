@@ -830,7 +830,7 @@ p,
   border-radius: 10px;
   padding: 2rem;
   margin-top: 3rem;
-  gap:1.6rem;
+  gap: 1.6rem;
   min-height: 120px;
   position: relative;
   display: flex;
@@ -849,7 +849,6 @@ p,
   align-items: flex-start;
   padding-bottom: 1.6rem;
   width: 100%;
-  
 
   position: relative;
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
@@ -1628,7 +1627,7 @@ html {
   text-decoration: none;
   font-weight: 600;
   font-size: 1.1rem;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   transition: all 0.3s ease;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
@@ -1640,9 +1639,9 @@ html {
 
 .social-media-detail .page-title {
   text-align: center;
-  margin: 2rem 0 4rem 0;
+  margin-bottom: 1rem;
   color: white;
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 700;
 }
 
@@ -1654,12 +1653,10 @@ html {
 
 .social-media-detail .social-media-projects {
   display: grid;
-  gap: 4rem;
+  gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
 }
-
-
 
 .social-media-detail .project-title {
   color: white;
@@ -1667,7 +1664,6 @@ html {
   font-size: 2.2rem;
   text-align: center;
 }
-
 
 .social-media-detail .images-section-title {
   color: white;
@@ -1700,7 +1696,7 @@ html {
   text-decoration: none;
   font-weight: 600;
   font-size: 1.1rem;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   transition: all 0.3s ease;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
