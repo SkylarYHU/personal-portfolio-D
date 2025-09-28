@@ -117,11 +117,17 @@
 
         <div class="portfolio-detail">
           <!-- Project Information Container -->
-          {% if ecommerce_project.about_project or ecommerce_project.goals or ecommerce_project.tools_apps %}
+          {% if ecommerce_project.link or ecommerce_project.about_project or ecommerce_project.goals or ecommerce_project.tools_apps %}
           <div class="content-container">
+            {% if ecommerce_project.link %}
+            <div class="content-row">
+              <h4>View Project</h4>
+              <p><a href="{{ ecommerce_project.link }}" target="_blank" class="project-link-inline">{{ ecommerce_project.link }}</a></p>
+            </div>
+            {% endif %}
             {% if ecommerce_project.about_project %}
             <div class="content-row">
-              <h4>About This Project</h4>
+              <h4>About</h4>
               <p>{{ ecommerce_project.about_project|linebreaksbr }}</p>
             </div>
             {% endif %}
@@ -133,7 +139,7 @@
             {% endif %}
             {% if ecommerce_project.tools_apps %}
             <div class="content-row">
-              <h4>Tools & Applications</h4>
+              <h4>Tools & Apps</h4>
               <p>{{ ecommerce_project.tools_apps|linebreaksbr }}</p>
             </div>
             {% endif %}
@@ -212,16 +218,6 @@
           </div>
           {% endif %}
 
-          <!-- Project Link -->
-          {% if ecommerce_project.link %}
-          <div class="content-container">
-            <div class="project-link-container">
-              <a href="{{ ecommerce_project.link }}" target="_blank" class="project-link">
-                View Project
-              </a>
-            </div>
-          </div>
-          {% endif %}
 
           <!-- Tags Section -->
           <div class="content-container">
@@ -242,12 +238,6 @@
       <a href="{% url 'home' %}" class="go-back-btn">Go Back to Portfolio</a>
     </div>
 
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="container">
-        <p>&copy; 2024 Skylar Hu. All rights reserved.</p>
-      </div>
-    </footer>
 
     <!-- JavaScript -->
     <script src="{% static 'js/script.js' %}"></script>
