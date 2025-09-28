@@ -839,9 +839,6 @@ p,
   color: white;
 }
 
-.content-container:first-of-type {
-  margin-top: 2rem;
-}
 
 .content-row {
   display: flex;
@@ -1454,12 +1451,6 @@ html {
   margin-bottom: 1rem;
 }
 
-.powerpoint-detail .portfolio-detail {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-
 .powerpoint-detail .content-container {
   margin-bottom: 3rem;
 }
@@ -1525,6 +1516,7 @@ html {
 
 .powerpoint-detail .go-back-container {
   text-align: center;
+  margin-bottom: 8rem;
 }
 
 .powerpoint-detail .go-back-btn {
@@ -1643,15 +1635,8 @@ html {
   font-weight: 700;
 }
 
-.social-media-detail .portfolio-detail {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-
 .social-media-detail .social-media-projects {
   display: grid;
-  gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -1686,6 +1671,78 @@ html {
 }
 
 .social-media-detail .go-back-btn {
+  display: inline-block;
+  background-color: white;
+  color: #2c3e50;
+  padding: 12px 24px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  font-family: "Poppins", sans-serif;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Branding Detail Styles */
+.branding-detail .portfolio {
+  margin-top: 8rem;
+}
+
+.branding-detail .page-title {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.branding-detail .page-title h1 {
+  color: white;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+
+.branding-detail .content-container {
+  margin-bottom: 3rem;
+}
+
+.branding-detail .image-container img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.branding-detail .tag-list-container {
+  text-align: left;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+}
+
+.branding-detail .tag-list {
+  justify-content: flex-start;
+}
+
+.branding-detail .project-link-container {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.branding-detail .project-link {
+  display: inline-block;
+  background-color: #3b4d62;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.branding-detail .go-back-container {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.branding-detail .go-back-btn {
   display: inline-block;
   background-color: white;
   color: #2c3e50;

@@ -112,49 +112,44 @@
       <!-- Project Detail Section -->
       <section class="portfolio">
         <div class="portfolio-title">
-          <h1>
-            {{ presentation.title }}
-          </h1>
+          <h1>{{ presentation.title }}</h1>
         </div>
 
         <div class="portfolio-detail">
           <!-- Main Content Container -->
-            <div class="content-container" style="margin-bottom: 3rem;">
+          <div class="content-container" style="margin-bottom: 3rem">
             <!-- Project Link Section -->
             {% if presentation.canvas_link_url %}
             <div class="content-row">
               <h4>Project Link</h4>
               <p>
-                <a href="{{ presentation.canvas_link_url }}" target="_blank" 
-                   class="powerpoint-link">
+                <a
+                  href="{{ presentation.canvas_link_url }}"
+                  target="_blank"
+                  class="powerpoint-link"
+                >
                   {{ presentation.canvas_link_text }} ↗
                 </a>
               </p>
             </div>
             {% endif %}
-            
+
             <!-- About Section -->
             <div class="content-row">
               <h4>About</h4>
-              <p>
-                {{ presentation.about_content }}
-              </p>
+              <p>{{ presentation.about_content }}</p>
             </div>
 
             <!-- Key Features Section -->
             <div class="content-row">
               <h4>Key Features</h4>
-              <p>
-                {{ presentation.key_features_content|safe }}
-              </p>
+              <p>{{ presentation.key_features_content|safe }}</p>
             </div>
 
             <!-- Target Audience Section -->
             <div class="content-row">
               <h4>Target Audience</h4>
-              <p>
-                {{ presentation.target_audience_content }}
-              </p>
+              <p>{{ presentation.target_audience_content }}</p>
             </div>
 
             <!-- Tools & Software Section -->
@@ -165,8 +160,7 @@
           </div>
 
           <!-- Images Container -->
-          <div class="content-container" style="margin-bottom: 3rem;">
-
+          <div class="content-container" style="margin-bottom: 3rem">
             {% if presentation.preview_image %}
             <div class="image-container">
               <img
