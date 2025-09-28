@@ -264,11 +264,11 @@
                 {% endif %}
 
                 <!-- Tools and Applications -->
-                {% if ecommerce_project.tools_and_applications %}
+                {% if ecommerce_project.tools_apps %}
                 <div class="content-section">
                     <h2 class="section-title">Tools & Applications</h2>
                     <div class="section-content">
-                        {{ ecommerce_project.tools_and_applications|linebreaks }}
+                        {{ ecommerce_project.tools_apps|linebreaks }}
                     </div>
                 </div>
                 {% endif %}
@@ -289,11 +289,11 @@
                 </div>
                 {% endif %}
 
-                <!-- Model Images -->
-                {% if ecommerce_project.model_image %}
+                <!-- Mobile Design Images -->
+                {% if ecommerce_project.mobile_design_image %}
                 <div class="content-section">
-                    <h2 class="section-title">Model Design</h2>
-                    <img src="{{ ecommerce_project.model_image.url }}" alt="Model Design" class="project-image">
+                    <h2 class="section-title">Mobile Design</h2>
+                    <img src="{{ ecommerce_project.mobile_design_image.url }}" alt="Mobile Design" class="project-image">
                 </div>
                 {% endif %}
             </div>
