@@ -66,57 +66,61 @@
       sizes="512x512"
       href="{% static 'images/favicon/android-chrome-512x512.png' %}"
     />
-    <link
-      rel="manifest"
-      href="{% static 'images/favicon/site.webmanifest' %}"
-    />
+    <link rel="manifest" href="{% static 'images/favicon/site.webmanifest' %}" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
 
-    <!-- PWA Meta Tags -->
-    <meta name="theme-color" content="#000000" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta
-      name="apple-mobile-web-app-status-bar-style"
-      content="black-translucent"
-    />
-    <meta name="apple-mobile-web-app-title" content="Skylar's Portfolio" />
-    <meta name="msapplication-TileColor" content="#000000" />
-    <meta
-      name="msapplication-config"
-      content="{% static 'images/favicon/browserconfig.xml' %}"
-    />
-
-    <title>{{ ecommerce_project.title }} - Skylar's Portfolio</title>
+    <title>{{ ecommerce_project.title }} - Skylar Hu Portfolio</title>
   </head>
   <body>
-    <!-- Navigation -->
-    <header>
-      <nav class="navbar">
-        <div class="logo">
-          <a href="{% url 'home' %}"
-            ><img src="{% static 'images/home.png' %}" alt="home logo"
-          /></a>
-        </div>
-        <div class="nav-right">
-          <div class="toggle" onclick="toggleMenu()">&#9776;</div>
-          <ul class="nav-links">
-            <li><a href="{% url 'home' %}#table-of-content">Content</a></li>
-            <li><a href="{% url 'home' %}#previous-role">Work</a></li>
-            <li><a href="{% url 'home' %}#client-experience">Client</a></li>
-            <li><a href="{% url 'home' %}#contact">Contact</a></li>
-          </ul>
-        </div>
-      </nav>
-    </header>
-
     <div class="container">
-      <!-- Project Detail Section -->
-      <section class="portfolio" style="margin-top: 8rem">
-        <div style="text-align: center; margin-bottom: 3rem">
-          <h1 style="color: white; font-size: 2.5rem; margin-bottom: 1rem">
-            {{ ecommerce_project.title }}
-          </h1>
+      <!-- Header -->
+      <header class="header">
+        <div class="header-content">
+          <div class="logo">
+            <a href="{% url 'home' %}" class="logo-link">
+              <img
+                src="{% static 'images/logo.png' %}"
+                alt="Skylar Hu Logo"
+                class="logo-image"
+              />
+            </a>
+          </div>
+          <nav class="nav">
+            <ul class="nav-list">
+              <li class="nav-item">
+                <a href="{% url 'home' %}" class="nav-link">Home</a>
+              </li>
+              <li class="nav-item">
+                <a
+                  href="mailto:skylarhu.design@gmail.com"
+                  class="nav-link contact-link"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      <!-- Main Content -->
+      <main class="main-content">
+        <!-- Project Header -->
+        <div class="project-header">
+          <h1 class="project-title">{{ ecommerce_project.title }}</h1>
+          <div class="project-meta">
+            <span class="project-category">E-commerce Design</span>
+            {% if ecommerce_project.tags %}
+            <div class="project-tags">
+              {% for tag in ecommerce_project.tags.all %}
+              <span class="tag">{{ tag.name }}</span>
+              {% endfor %}
+            </div>
+            {% endif %}
+          </div>
         </div>
 
+        <!-- Project Content -->
         <div class="portfolio-detail" style="max-width: 1200px; margin: 0 auto">
           <!-- Project Information Container -->
           {% if ecommerce_project.link or ecommerce_project.about_project or ecommerce_project.goals or ecommerce_project.tools_apps %}
@@ -154,6 +158,7 @@
             </div>
             {% endif %}
           </div>
+          {% endif %}
 
           <!-- Design Process Section -->
           {% if ecommerce_project.design_process_image %}
@@ -181,121 +186,60 @@
           </div>
           {% endif %}
 
-          <!-- Mobile Design Section -->
-          {% if ecommerce_project.mobile_design_image %}
+          <!-- Mockup Images Section -->
+          {% if ecommerce_project.mockup_image_1 or ecommerce_project.mockup_image_2 or ecommerce_project.mockup_image_3 %}
           <div class="content-container" style="margin-bottom: 3rem">
-            <div class="image-container">
+            {% if ecommerce_project.mockup_image_1 %}
+            <div class="image-container" style="margin-bottom: 2rem">
               <img
-                src="{{ ecommerce_project.mobile_design_image.url }}"
-                alt="Mobile design for {{ ecommerce_project.title }}"
+                src="{{ ecommerce_project.mockup_image_1.url }}"
+                alt="Mockup 1 for {{ ecommerce_project.title }}"
                 style="width: 100%; height: auto; object-fit: contain"
               />
             </div>
-          </div>
-          {% endif %}
-
-          <!-- Product Pages Section -->
-          {% if ecommerce_project.product_pages_image %}
-          <div class="content-container" style="margin-bottom: 3rem">
-            <div class="image-container">
+            {% endif %}
+            {% if ecommerce_project.mockup_image_2 %}
+            <div class="image-container" style="margin-bottom: 2rem">
               <img
-                src="{{ ecommerce_project.product_pages_image.url }}"
-                alt="Product pages for {{ ecommerce_project.title }}"
+                src="{{ ecommerce_project.mockup_image_2.url }}"
+                alt="Mockup 2 for {{ ecommerce_project.title }}"
                 style="width: 100%; height: auto; object-fit: contain"
               />
             </div>
-          </div>
-          {% endif %}
-
-          <!-- Checkout Flow Section -->
-          {% if ecommerce_project.checkout_flow_image %}
-          <div class="content-container" style="margin-bottom: 3rem">
+            {% endif %}
+            {% if ecommerce_project.mockup_image_3 %}
             <div class="image-container">
               <img
-                src="{{ ecommerce_project.checkout_flow_image.url }}"
-                alt="Checkout flow for {{ ecommerce_project.title }}"
+                src="{{ ecommerce_project.mockup_image_3.url }}"
+                alt="Mockup 3 for {{ ecommerce_project.title }}"
                 style="width: 100%; height: auto; object-fit: contain"
               />
             </div>
-          </div>
-          {% endif %}
-
-          <!-- Others Section -->
-          {% if ecommerce_project.others_image %}
-          <div class="content-container" style="margin-bottom: 3rem">
-            <div class="image-container">
-              <img
-                src="{{ ecommerce_project.others_image.url }}"
-                alt="Other designs for {{ ecommerce_project.title }}"
-                style="width: 100%; height: auto; object-fit: contain"
-              />
-            </div>
-          </div>
-          {% endif %}
-
-          <!-- Tags and Link Section -->
-          {% if ecommerce_project.tags.all %}
-          <div style="text-align: left; margin-top: 3rem; margin-bottom: 2rem">
-            <ul class="tag-list" style="justify-content: flex-start">
-              {% for tag in ecommerce_project.tags.all %}
-              <li class="tag-item">{{ tag.name }}</li>
-              {% endfor %}
-            </ul>
-          </div>
-          {% endif %}
-          {% if ecommerce_project.link %}
-          <div
-            style="
-              text-align: center;
-              margin-bottom: 3rem;
-              display: flex;
-              gap: 1rem;
-              justify-content: center;
-              align-items: center;
-            "
-          >
-            <a
-              href="{{ ecommerce_project.link }}"
-              target="_blank"
-              rel="noopener noreferrer"
-              style="
-                display: inline-block;
-                padding: 12px 24px;
-                background-color: white;
-                color: #2c3e50;
-                font-family: 'Poppins', sans-serif;
-                border-radius: 25px;
-                text-decoration: none;
-                border-radius: 5px;
-                font-weight: 600;
-                font-size: 1.1rem;
-                transition: background-color 0.3s ease;
-              "
-              >Visit Project</a
-            >
-            <a
-              href="javascript:history.back()"
-              style="
-                display: inline-block;
-                padding: 12px 24px;
-                background-color: white;
-                color: #2c3e50;
-                font-family: 'Poppins', sans-serif;
-                border-radius: 25px;
-                text-decoration: none;
-                border-radius: 5px;
-                font-weight: 600;
-                font-size: 1.1rem;
-                transition: background-color 0.3s ease;
-              "
-              >< Go back</a
-            >
+            {% endif %}
           </div>
           {% endif %}
         </div>
-      </section>
-    </div>
 
-    <script src="{% static 'js/script.js' %}"></script>
+        <!-- Navigation -->
+        <div class="project-navigation">
+          <a href="{% url 'home' %}" class="back-link">← Back to Portfolio</a>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer-content">
+          <p>&copy; 2024 Skylar Hu. All rights reserved.</p>
+          <div class="social-links">
+            <a
+              href="mailto:skylarhu.design@gmail.com"
+              class="social-link"
+              aria-label="Email"
+              >Email</a
+            >
+          </div>
+        </div>
+      </footer>
+    </div>
   </body>
 </html>
