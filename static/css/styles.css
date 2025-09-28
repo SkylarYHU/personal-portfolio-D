@@ -1776,14 +1776,14 @@ html {
 }
 
 .ecommerce-detail .content-row {
-  display: flex;
-  gap: 1rem;
-  align-items: flex-start;
-  padding-bottom: 1.6rem;
-  width: 100%;
-  position: relative;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-  box-sizing: border-box;
+  display: flex !important;
+  gap: 1rem !important;
+  align-items: flex-start !important;
+  padding-bottom: 1.6rem !important;
+  width: 100% !important;
+  position: relative !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3) !important;
+  box-sizing: border-box !important;
 }
 
 .ecommerce-detail .content-row:last-child {
@@ -1793,23 +1793,24 @@ html {
 }
 
 .ecommerce-detail .content-row h4 {
-  flex: 0 0 200px;
-  margin: 0;
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: white;
-  font-family: "Poppins", sans-serif;
-  line-height: 1.4;
+  flex: 0 0 200px !important;
+  margin: 0 !important;
+  font-size: 1.2rem !important;
+  font-weight: 600 !important;
+  color: white !important;
+  font-family: "Poppins", sans-serif !important;
+  line-height: 1.4 !important;
+  min-width: auto !important;
 }
 
 .ecommerce-detail .content-row p {
-  flex: 1;
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #ced4da;
-  text-align: left;
-  letter-spacing: 0.5px;
-  margin: 0;
+  flex: 1 !important;
+  font-size: 1rem !important;
+  line-height: 1.6 !important;
+  color: #ced4da !important;
+  text-align: left !important;
+  letter-spacing: 0.5px !important;
+  margin: 0 !important;
 }
 
 .ecommerce-detail .image-container img {
@@ -1880,19 +1881,19 @@ html {
 /* Mobile responsive styles for ecommerce-detail */
 @media (max-width: 768px) {
   .ecommerce-detail .content-row {
-    flex-direction: column;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
+    flex-direction: column !important;
+    gap: 0.5rem !important;
+    margin-bottom: 1rem !important;
   }
 
   .ecommerce-detail .content-row h4 {
-    flex: none;
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
+    flex: none !important;
+    font-size: 1.1rem !important;
+    margin-bottom: 0.5rem !important;
   }
 
   .ecommerce-detail .content-row p {
-    font-size: 0.95rem;
-    line-height: 1.6;
+    font-size: 0.95rem !important;
+    line-height: 1.6 !important;
   }
 }
