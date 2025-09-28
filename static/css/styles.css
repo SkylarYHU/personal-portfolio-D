@@ -1694,9 +1694,6 @@ html {
 }
 
 /* Social Media Detail Page Content Styles */
-.social-media-detail .content-container {
-  margin-bottom: 3rem;
-}
 
 .social-media-detail .content-row {
   display: flex !important;
