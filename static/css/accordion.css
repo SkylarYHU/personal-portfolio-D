@@ -33,11 +33,11 @@
 
 .accordion-title {
   font-size: 2rem;
-  font-weight: 400;
+  font-weight: 500;
   color: #c5c5c5;
   margin: 0;
   transition: all 0.3s ease;
-  font-family: "Poppins", sans-serif;
+  font-family: Montserrat;
 }
 
 .accordion-details {
