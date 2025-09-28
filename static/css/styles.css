@@ -1779,7 +1779,6 @@ html {
   display: flex !important;
   gap: 1rem !important;
   align-items: flex-start !important;
-  padding-bottom: 1.6rem !important;
   width: 100% !important;
   position: relative !important;
   border-bottom: 1px solid rgba(255, 255, 255, 0.3) !important;
