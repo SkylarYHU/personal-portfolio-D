@@ -46,9 +46,10 @@ class SocialMediaPostAdmin(admin.ModelAdmin):
     list_display = ('title', 'category', 'date_posted', 'order')
     list_editable = ('order',)
     ordering = ('order',)
+    filter_horizontal = ('tags',)  # 允许在 admin 中选择标签
     fieldsets = (
         ('基本信息', {
-            'fields': ('title', 'category', 'preview_image', 'order')
+            'fields': ('title', 'category', 'preview_image', 'order', 'tags')
         }),
         ('项目内容', {
             'fields': ('about', 'goals', 'tools')
