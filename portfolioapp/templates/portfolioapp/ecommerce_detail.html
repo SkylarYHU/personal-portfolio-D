@@ -50,6 +50,11 @@
         border-bottom: none !important;
         border: none !important;
       }
+      
+      /* Remove border-bottom from Tools & Apps content-row */
+      .ecommerce-detail .tools-apps-row {
+        border-bottom: none !important;
+      }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -175,7 +180,7 @@
             </div>
             {% endif %}
             {% if ecommerce_project.tools_apps %}
-            <div class="content-row">
+            <div class="content-row tools-apps-row">
               <h4>Tools & Apps</h4>
               <p>{{ ecommerce_project.tools_apps|linebreaksbr }}</p>
             </div>
