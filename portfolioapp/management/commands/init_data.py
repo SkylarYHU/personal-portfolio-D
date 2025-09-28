@@ -69,9 +69,8 @@ class Command(BaseCommand):
         if not SocialMediaPost.objects.exists():
             social1 = SocialMediaPost.objects.create(
                 title='Food & Beverage',
-                mockup_image_1='images/meituan-logo.svg',
-                mockup_image_2='images/taobao-logo1.svg',
-                mockup_image_3='images/Alibaba-logo.svg',
+                category='Food & Beverage',
+                image='images/meituan-logo.svg',
                 about='Creative social media designs for food and beverage brands.',
                 tools='Adobe Photoshop, Illustrator, Figma',
                 goals='Increase brand engagement and visual appeal.'
