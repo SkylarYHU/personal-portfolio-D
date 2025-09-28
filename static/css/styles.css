@@ -1686,6 +1686,77 @@ html {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
+.social-media-detail .go-back-btn:hover {
+  background-color: #2c3e50;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Social Media Detail Page Content Styles */
+.social-media-detail .content-container {
+  margin-bottom: 3rem;
+}
+
+.social-media-detail .content-row {
+  display: flex !important;
+  gap: 1rem !important;
+  align-items: flex-start !important;
+  width: 100% !important;
+  position: relative !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3) !important;
+  box-sizing: border-box !important;
+  padding-bottom: 1.6rem !important;
+  margin-bottom: 1.6rem !important;
+}
+
+.social-media-detail .content-row:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.social-media-detail .content-row h4 {
+  flex: 0 0 200px !important;
+  margin: 0 !important;
+  font-size: 1.2rem !important;
+  font-weight: 600 !important;
+  color: white !important;
+  font-family: "Montserrat", sans-serif !important;
+  line-height: 1.4 !important;
+  min-width: auto !important;
+}
+
+.social-media-detail .content-row p {
+  flex: 1 !important;
+  font-size: 1rem !important;
+  line-height: 1.6 !important;
+  color: #ced4da !important;
+  text-align: left !important;
+  letter-spacing: 0.5px !important;
+  margin: 0 !important;
+}
+
+/* Mobile responsive for social media detail */
+@media (max-width: 768px) {
+  .social-media-detail .content-row {
+    flex-direction: column !important;
+    gap: 0.5rem !important;
+    margin-bottom: 1rem !important;
+  }
+
+  .social-media-detail .content-row h4 {
+    flex: none !important;
+    font-size: 1.1rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .social-media-detail .content-row p {
+    font-size: 0.95rem !important;
+    line-height: 1.6 !important;
+  }
+}
+
 /* Branding Detail Styles */
 .branding-detail .portfolio {
   margin-top: 8rem;
