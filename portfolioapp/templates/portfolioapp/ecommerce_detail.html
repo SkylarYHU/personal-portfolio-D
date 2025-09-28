@@ -223,20 +223,14 @@
             <!-- Project Content -->
             <div class="project-content">
                 <!-- Project Links -->
-                {% if ecommerce_project.live_demo_url or ecommerce_project.github_url %}
+                {% if ecommerce_project.link %}
                 <div class="content-section">
                     <h2 class="section-title">Project Links</h2>
                     <div class="project-links">
-                        {% if ecommerce_project.live_demo_url %}
-                        <a href="{{ ecommerce_project.live_demo_url }}" target="_blank" class="project-link">
+                        {% if ecommerce_project.link %}
+                        <a href="{{ ecommerce_project.link }}" target="_blank" class="project-link">
                             <i class="fas fa-external-link-alt"></i>
-                            Live Demo
-                        </a>
-                        {% endif %}
-                        {% if ecommerce_project.github_url %}
-                        <a href="{{ ecommerce_project.github_url }}" target="_blank" class="project-link">
-                            <i class="fab fa-github"></i>
-                            GitHub Repository
+                            View Project
                         </a>
                         {% endif %}
                     </div>
