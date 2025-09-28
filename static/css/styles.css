@@ -1797,7 +1797,6 @@ html {
   height: auto;
   object-fit: contain;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-  border-radius: 8px;
 }
 
 .ecommerce-detail .tag-list-container {
