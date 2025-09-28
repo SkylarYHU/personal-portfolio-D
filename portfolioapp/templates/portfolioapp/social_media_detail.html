@@ -186,16 +186,6 @@
           </div>
         </div>
 
-        <!-- Tags Section -->
-        <div class="tag-list-container">
-          <ul class="tag-list">
-            {% for post in all_social_media_posts %}
-              {% for tag in post.tags.all %}
-                <li class="tag-item">{{ tag.name }}</li>
-              {% endfor %}
-            {% endfor %}
-          </ul>
-        </div>
       </section>
     </div>
 

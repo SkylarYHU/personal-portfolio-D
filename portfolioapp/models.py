@@ -87,7 +87,6 @@ class SocialMediaPost(models.Model):
     tools = models.TextField(blank=True, help_text="Tools & Software 部分的文字介绍")
     date_posted = models.DateTimeField(auto_now_add=True, null=True)
     order = models.IntegerField(default=0)
-    tags = models.ManyToManyField(Tag, blank=True)  # 添加标签字段
 
     class Meta:
         ordering = ['order']
