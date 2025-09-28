@@ -117,12 +117,10 @@
           </h1>
         </div>
 
-        <div
-          class="portfolio-detail"
-          style="max-width: 1200px; margin: 0 auto; padding: 0 1rem"
-        >
+        <div class="portfolio-detail" style="max-width: 1200px; margin: 0 auto">
           <!-- Project Information Container -->
-          {% if ecommerce_project.link or ecommerce_project.about_project or ecommerce_project.goals or ecommerce_project.tools_apps %}
+          {% if ecommerce_project.link or ecommerce_project.about_project or
+          ecommerce_project.goals or ecommerce_project.tools_apps %}
           <div class="content-container" style="margin-bottom: 3rem">
             {% if ecommerce_project.link %}
             <div class="content-row">
@@ -137,20 +135,17 @@
                 >
               </p>
             </div>
-            {% endif %}
-            {% if ecommerce_project.about_project %}
+            {% endif %} {% if ecommerce_project.about_project %}
             <div class="content-row">
               <h4>About Project</h4>
               <p>{{ ecommerce_project.about_project }}</p>
             </div>
-            {% endif %}
-            {% if ecommerce_project.goals %}
+            {% endif %} {% if ecommerce_project.goals %}
             <div class="content-row">
               <h4>Goals</h4>
               <p>{{ ecommerce_project.goals }}</p>
             </div>
-            {% endif %}
-            {% if ecommerce_project.tools_apps %}
+            {% endif %} {% if ecommerce_project.tools_apps %}
             <div class="content-row">
               <h4>Tools & Apps</h4>
               <p>{{ ecommerce_project.tools_apps }}</p>
@@ -246,8 +241,7 @@
               {% endfor %}
             </ul>
           </div>
-          {% endif %}
-          {% if ecommerce_project.link %}
+          {% endif %} {% if ecommerce_project.link %}
           <div
             style="
               text-align: center;
