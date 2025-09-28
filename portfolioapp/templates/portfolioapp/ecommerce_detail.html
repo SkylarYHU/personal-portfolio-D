@@ -30,24 +30,61 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
-    
+
     <!-- Favicon and PWA Meta Tags -->
-    <link rel="icon" type="image/x-icon" href="{% static 'images/favicon/favicon.ico' %}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicon/favicon-16x16.png' %}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/favicon/favicon-32x32.png' %}">
-    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/favicon/apple-touch-icon.png' %}">
-    <link rel="icon" type="image/png" sizes="192x192" href="{% static 'images/favicon/android-chrome-192x192.png' %}">
-    <link rel="icon" type="image/png" sizes="512x512" href="{% static 'images/favicon/android-chrome-512x512.png' %}">
-    <link rel="manifest" href="{% static 'images/favicon/site.webmanifest' %}">
-    
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="{% static 'images/favicon/favicon.ico' %}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="{% static 'images/favicon/favicon-16x16.png' %}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="{% static 'images/favicon/favicon-32x32.png' %}"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="{% static 'images/favicon/apple-touch-icon.png' %}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="{% static 'images/favicon/android-chrome-192x192.png' %}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="{% static 'images/favicon/android-chrome-512x512.png' %}"
+    />
+    <link
+      rel="manifest"
+      href="{% static 'images/favicon/site.webmanifest' %}"
+    />
+
     <!-- PWA Meta Tags -->
-    <meta name="theme-color" content="#000000">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="Skylar's Portfolio">
-    <meta name="msapplication-TileColor" content="#000000">
-    <meta name="msapplication-config" content="{% static 'images/favicon/browserconfig.xml' %}">
-    
+    <meta name="theme-color" content="#000000" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta name="apple-mobile-web-app-title" content="Skylar's Portfolio" />
+    <meta name="msapplication-TileColor" content="#000000" />
+    <meta
+      name="msapplication-config"
+      content="{% static 'images/favicon/browserconfig.xml' %}"
+    />
+
     <title>{{ ecommerce_project.title }} - Skylar's Portfolio</title>
   </head>
   <body>
@@ -85,30 +122,33 @@
           style="max-width: 1200px; margin: 0 auto; padding: 0 1rem"
         >
           <!-- Project Information Container -->
-          {% if ecommerce_project.link or ecommerce_project.about_project or ecommerce_project.goals or ecommerce_project.tools_apps %}
-          <div class="content-container" style="margin-bottom: 3rem;">
+          {% if ecommerce_project.link or ecommerce_project.about_project or
+          ecommerce_project.goals or ecommerce_project.tools_apps %}
+          <div class="content-container" style="margin-bottom: 3rem">
             {% if ecommerce_project.link %}
             <div class="content-row">
               <h4>Project Link</h4>
-              <p><a href="{{ ecommerce_project.link }}" target="_blank" rel="noopener noreferrer" class="project-link">{{ ecommerce_project.link }}</a></p>
+              <p>
+                <a
+                  href="{{ ecommerce_project.link }}"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="project-link"
+                  >{{ ecommerce_project.link }}</a
+                >
+              </p>
             </div>
-            {% endif %}
-            
-            {% if ecommerce_project.about_project %}
+            {% endif %} {% if ecommerce_project.about_project %}
             <div class="content-row">
               <h4>About Project</h4>
               <p>{{ ecommerce_project.about_project }}</p>
             </div>
-            {% endif %}
-            
-            {% if ecommerce_project.goals %}
+            {% endif %} {% if ecommerce_project.goals %}
             <div class="content-row">
               <h4>Goals</h4>
               <p>{{ ecommerce_project.goals }}</p>
             </div>
-            {% endif %}
-            
-            {% if ecommerce_project.tools_apps %}
+            {% endif %} {% if ecommerce_project.tools_apps %}
             <div class="content-row">
               <h4>Tools & Apps</h4>
               <p>{{ ecommerce_project.tools_apps }}</p>
@@ -119,7 +159,7 @@
 
           <!-- Design Process Section -->
           {% if ecommerce_project.design_process_image %}
-          <div class="content-container" style="margin-bottom: 3rem;">
+          <div class="content-container" style="margin-bottom: 3rem">
             <div class="image-container">
               <img
                 src="{{ ecommerce_project.design_process_image.url }}"
@@ -132,7 +172,7 @@
 
           <!-- User Interface Section -->
           {% if ecommerce_project.user_interface_image %}
-          <div class="content-container" style="margin-bottom: 3rem;">
+          <div class="content-container" style="margin-bottom: 3rem">
             <div class="image-container">
               <img
                 src="{{ ecommerce_project.user_interface_image.url }}"
@@ -145,7 +185,7 @@
 
           <!-- Mobile Design Section -->
           {% if ecommerce_project.mobile_design_image %}
-          <div class="content-container" style="margin-bottom: 3rem;">
+          <div class="content-container" style="margin-bottom: 3rem">
             <div class="image-container">
               <img
                 src="{{ ecommerce_project.mobile_design_image.url }}"
@@ -158,7 +198,7 @@
 
           <!-- Product Pages Section -->
           {% if ecommerce_project.product_pages_image %}
-          <div class="content-container" style="margin-bottom: 3rem;">
+          <div class="content-container" style="margin-bottom: 3rem">
             <div class="image-container">
               <img
                 src="{{ ecommerce_project.product_pages_image.url }}"
@@ -171,7 +211,7 @@
 
           <!-- Checkout Flow Section -->
           {% if ecommerce_project.checkout_flow_image %}
-          <div class="content-container" style="margin-bottom: 3rem;">
+          <div class="content-container" style="margin-bottom: 3rem">
             <div class="image-container">
               <img
                 src="{{ ecommerce_project.checkout_flow_image.url }}"
@@ -184,7 +224,7 @@
 
           <!-- Others Section -->
           {% if ecommerce_project.others_image %}
-          <div class="content-container" style="margin-bottom: 3rem;">
+          <div class="content-container" style="margin-bottom: 3rem">
             <div class="image-container">
               <img
                 src="{{ ecommerce_project.others_image.url }}"
@@ -197,19 +237,24 @@
 
           <!-- Tags and Link Section -->
           {% if ecommerce_project.tags.all %}
-          <div
-            style="text-align: left; margin-top: 3rem; margin-bottom: 2rem"
-          >
+          <div style="text-align: left; margin-top: 3rem; margin-bottom: 2rem">
             <ul class="tag-list" style="justify-content: flex-start">
               {% for tag in ecommerce_project.tags.all %}
               <li class="tag-item">{{ tag.name }}</li>
               {% endfor %}
             </ul>
           </div>
-          {% endif %} 
-          
-          {% if ecommerce_project.link %}
-          <div style="text-align: center; margin-bottom: 3rem; display: flex; gap: 1rem; justify-content: center; align-items: center;">
+          {% endif %} {% if ecommerce_project.link %}
+          <div
+            style="
+              text-align: center;
+              margin-bottom: 3rem;
+              display: flex;
+              gap: 1rem;
+              justify-content: center;
+              align-items: center;
+            "
+          >
             <a
               href="{{ ecommerce_project.link }}"
               target="_blank"
@@ -251,11 +296,6 @@
         </div>
       </section>
     </div>
-
-    <!-- Footer -->
-    <footer style="text-align: center; padding: 2rem; color: #8297bd">
-      <p>&copy; 2024 Skylar Hu. All rights reserved.</p>
-    </footer>
 
     <script src="{% static 'js/script.js' %}"></script>
   </body>
