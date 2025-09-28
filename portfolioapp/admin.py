@@ -43,12 +43,12 @@ class BrandingProjectAdmin(admin.ModelAdmin):
 
 @admin.register(SocialMediaPost)
 class SocialMediaPostAdmin(admin.ModelAdmin):
-    list_display = ('title', 'date_posted', 'order')
+    list_display = ('title', 'category', 'date_posted', 'order')
     list_editable = ('order',)
     ordering = ('order',)
     fieldsets = (
         ('基本信息', {
-            'fields': ('title', 'preview_image', 'order')
+            'fields': ('title', 'category', 'preview_image', 'order')
         }),
         ('项目内容', {
             'fields': ('about', 'goals', 'tools')
