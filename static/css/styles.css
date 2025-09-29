@@ -1535,6 +1535,13 @@ html {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
+.powerpoint-detail .go-back-btn:hover {
+  background-color: #2c3e50;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
 /* Accordion styles moved to accordion.css */
 
 /* Mobile Landing Page Detail Styles */
@@ -1626,6 +1633,13 @@ html {
   font-family: "Poppins", sans-serif;
   transition: all 0.3s ease;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-landing-detail .go-back-btn:hover {
+  background-color: #2c3e50;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 /* Social Media Detail Page Styles */
@@ -1829,6 +1843,13 @@ html {
   font-family: "Poppins", sans-serif;
   transition: all 0.3s ease;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.branding-detail .go-back-btn:hover {
+  background-color: #2c3e50;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 /* E-commerce Detail Styles */
