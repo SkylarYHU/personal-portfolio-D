@@ -480,7 +480,7 @@
               </div>
               <div class="portfolio-text">
                 <h3>{{ presentation.title }}</h3>
-                <p>{{ presentation.description }}</p>
+                <p>{{ presentation.about_content|truncatewords:20 }}</p>
                 <ul class="tag-list">
                   {% for tag in presentation.tags.all %}
                   <li class="tag-item">{{ tag.name }}</li>

@@ -167,10 +167,6 @@ class EcommerceProject(models.Model):
 
 class PowerPointPresentation(models.Model):
     title = models.CharField(max_length=128, default="PowerPoint Presentations")
-    description = models.TextField(
-        default="Professional business presentations showcasing design principles, visual hierarchy, and strategic project planning.",
-        help_text="Brief description for preview cards"
-    )
     
     # PowerPoint Link section (above About)
     powerpoint_link_url = models.URLField(
