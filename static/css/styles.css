@@ -1586,7 +1586,7 @@ html {
 
 /* Remove spacing between tags within mobile-landing-detail context */
 .mobile-landing-detail .tags-section .tag-list {
-  gap: 0;
+  gap: 7.2px;
 }
 
 .mobile-landing-detail .tag-list {
