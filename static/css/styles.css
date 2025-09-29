@@ -1959,11 +1959,3 @@ html {
   }
 }
 
-/* Mobile Landing Detail Page Styles */
-.mobile-landing-detail .content-grid {
-  display: grid;
-}
-
-.mobile-landing-detail .tags-section {
-  text-align: left;
-}
