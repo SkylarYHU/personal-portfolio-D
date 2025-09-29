@@ -831,7 +831,6 @@ p,
   backdrop-filter: blur(10px);
   border-radius: 10px;
   padding: 2rem;
-  margin-top: 3rem;
   gap: 1.6rem;
   min-height: 120px;
   position: relative;
@@ -1568,7 +1567,7 @@ html {
 
 .mobile-landing-detail .content-grid {
   display: grid;
-  gap: 0;
+  gap: 3rem;
 }
 
 .mobile-landing-detail .image-section {
