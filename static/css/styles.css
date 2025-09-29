@@ -1642,9 +1642,11 @@ html {
 }
 
 .social-media-detail .social-media-projects {
-  display: grid;
+  display: flex;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 3rem auto;
+  flex-direction: column;
+  gap: 3rem;
 }
 
 .social-media-detail .project-title {
