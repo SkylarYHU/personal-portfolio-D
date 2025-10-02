@@ -19,21 +19,21 @@ def fix_migrations():
     print("Fixing Heroku migration inconsistencies...")
     
     with connection.cursor() as cursor:
-        # Check if MotionGraphicsProject table exists
+        # Check if MotionGraphicsProject table exists (PostgreSQL)
         cursor.execute("""
-            SELECT name FROM sqlite_master 
-            WHERE type='table' AND name='portfolioapp_motiongraphicsproject';
+            SELECT table_name FROM information_schema.tables 
+            WHERE table_schema = 'public' AND table_name = 'portfolioapp_motiongraphicsproject';
         """)
         
         if cursor.fetchone():
             print("MotionGraphicsProject table already exists!")
             return
         
-        # Create MotionGraphicsProject table manually
+        # Create MotionGraphicsProject table manually (PostgreSQL)
         print("Creating MotionGraphicsProject table...")
         cursor.execute("""
             CREATE TABLE "portfolioapp_motiongraphicsproject" (
-                "id" integer NOT NULL PRIMARY KEY AUTOINCREMENT,
+                "id" bigserial NOT NULL PRIMARY KEY,
                 "title" varchar(128) NOT NULL,
                 "description" text NOT NULL,
                 "video_file" varchar(100) NOT NULL,
@@ -45,16 +45,16 @@ def fix_migrations():
                 "process_image" varchar(100) NOT NULL,
                 "storyboard_image" varchar(100) NOT NULL,
                 "final_output_image" varchar(100) NOT NULL,
-                "date_posted" datetime,
+                "date_posted" timestamp with time zone,
                 "order" integer NOT NULL,
-                "is_active" bool NOT NULL
+                "is_active" boolean NOT NULL
             );
         """)
         
         # Create the many-to-many table for tags
         cursor.execute("""
             CREATE TABLE "portfolioapp_motiongraphicsproject_tags" (
-                "id" integer NOT NULL PRIMARY KEY AUTOINCREMENT,
+                "id" bigserial NOT NULL PRIMARY KEY,
                 "motiongraphicsproject_id" bigint NOT NULL REFERENCES "portfolioapp_motiongraphicsproject" ("id") DEFERRABLE INITIALLY DEFERRED,
                 "tag_id" bigint NOT NULL REFERENCES "portfolioapp_tag" ("id") DEFERRABLE INITIALLY DEFERRED
             );
@@ -84,7 +84,7 @@ def fix_migrations():
         # Mark the migration as applied
         cursor.execute("""
             INSERT INTO django_migrations (app, name, applied) 
-            VALUES ('portfolioapp', '0037_auto_20251002_2329', datetime('now'));
+            VALUES ('portfolioapp', '0037_auto_20251002_2329', NOW());
         """)
         
         print("MotionGraphicsProject table created successfully!")
