@@ -269,9 +269,28 @@
           </div>
           <div class="accordion-separator"></div>
 
-          <div class="accordion-item" data-target="#portfolio">
+          <div class="accordion-item" data-target="#motion-graphics">
             <div class="accordion-header">
               <div class="accordion-number">06</div>
+              <div class="accordion-content">
+                <h3 class="accordion-title">Motion Graphics</h3>
+                <div class="accordion-details">
+                  <p class="accordion-description">
+                    I create dynamic and engaging motion graphics and video content
+                    that bring brands to life through compelling visual storytelling
+                    and professional animation techniques.
+                  </p>
+                  <a href="#motion-graphics" class="learn-more">EXPLORE →</a>
+                </div>
+              </div>
+              <div class="accordion-toggle">▼</div>
+            </div>
+          </div>
+          <div class="accordion-separator"></div>
+
+          <div class="accordion-item" data-target="#portfolio">
+            <div class="accordion-header">
+              <div class="accordion-number">07</div>
               <div class="accordion-content">
                 <h3 class="accordion-title">Websites</h3>
                 <div class="accordion-details">
@@ -550,6 +569,70 @@
               </div>
             </div>
           </a>
+          {% endfor %}
+        </div>
+      </section>
+
+      <!-- Motion Graphics -->
+      <section id="motion-graphics" class="portfolio">
+        <h2>Motion Graphics</h2>
+        <p>
+          Here are some motion graphics and video projects I've created, showcasing
+          dynamic visual storytelling and professional animation techniques for
+          various brands and campaigns.
+        </p>
+        <div class="dashed-line"></div>
+        <div class="portfolio-grid">
+          {% for motion_project in motion_graphics_projects %}
+          <a
+            href="{% url 'motion_graphics_detail' motion_project.id %}"
+            class="motion-graphics-link"
+          >
+            <div class="portfolio-item">
+              <div class="image-container">
+                {% if motion_project.preview_image %}
+                <img
+                  src="{{ motion_project.preview_image.url }}"
+                  alt="{{ motion_project.title }} Preview"
+                />
+                {% else %}
+                <div class="placeholder-image">
+                  <span>{{ motion_project.title }}</span>
+                </div>
+                {% endif %}
+              </div>
+              <div class="portfolio-text">
+                <h3>{{ motion_project.title }}</h3>
+                <p>{{ motion_project.description }}</p>
+                <ul class="tag-list">
+                  {% for tag in motion_project.tags.all %}
+                  <li class="tag-item">{{ tag.name }}</li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+          </a>
+          {% empty %}
+          <div class="portfolio-item">
+            <div class="image-container">
+              <div class="placeholder-image">
+                <span>Motion Graphics Projects</span>
+              </div>
+            </div>
+            <div class="portfolio-text">
+              <h3>Product Motion Graphics</h3>
+              <p>
+                Dynamic and engaging motion graphics for product advertising,
+                showcasing professional animation techniques and compelling
+                visual storytelling.
+              </p>
+              <ul class="tag-list">
+                <li class="tag-item">After Effects</li>
+                <li class="tag-item">Motion Graphics</li>
+                <li class="tag-item">Video Production</li>
+              </ul>
+            </div>
+          </div>
           {% endfor %}
         </div>
       </section>

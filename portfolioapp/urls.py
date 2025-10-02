@@ -12,5 +12,7 @@ urlpatterns = [
          views.ecommerce_detail, name="ecommerce_detail"),
     path('powerpoint/', views.powerpoint_detail, name="powerpoint_detail"),
     path('social-media/<int:social_media_id>',
-         views.social_media_detail, name="social_media_detail")
+         views.social_media_detail, name="social_media_detail"),
+    path('motion-graphics/<int:motion_graphics_id>',
+         views.motion_graphics_detail, name="motion_graphics_detail")
 ]

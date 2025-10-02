@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Project, BrandingProject, SocialMediaPost, MobileLandingPage, EcommerceProject, PowerPointPresentation
+from .models import Project, BrandingProject, SocialMediaPost, MobileLandingPage, EcommerceProject, PowerPointPresentation, MotionGraphicsProject
 
 # Create your views here.
 
@@ -11,13 +11,15 @@ def home(request):
     mobile_landing_pages = MobileLandingPage.objects.all()
     ecommerce_projects = EcommerceProject.objects.all()
     powerpoint_presentations = PowerPointPresentation.objects.filter(is_active=True)
+    motion_graphics_projects = MotionGraphicsProject.objects.filter(is_active=True)
     return render(request, 'portfolioapp/home.html', {
         'projects': projects,
         'branding_projects': branding_projects,
         'social_media_posts': social_media_posts,
         'mobile_landing_pages': mobile_landing_pages,
         'ecommerce_projects': ecommerce_projects,
-        'powerpoint_presentations': powerpoint_presentations
+        'powerpoint_presentations': powerpoint_presentations,
+        'motion_graphics_projects': motion_graphics_projects
     })
 
 
@@ -64,4 +66,11 @@ def social_media_detail(request, social_media_id):
     return render(request, 'portfolioapp/social_media_detail.html', {
         'social_media_post': social_media_post,
         'all_social_media_posts': all_social_media_posts
+    })
+
+
+def motion_graphics_detail(request, motion_graphics_id):
+    motion_graphics_project = get_object_or_404(MotionGraphicsProject, id=motion_graphics_id)
+    return render(request, 'portfolioapp/motion_graphics_detail.html', {
+        'motion_graphics_project': motion_graphics_project
     })

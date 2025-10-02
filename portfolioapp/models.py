@@ -249,3 +249,71 @@ class PowerPointPresentation(models.Model):
     
     def __str__(self):
         return self.title
+
+
+class MotionGraphicsProject(models.Model):
+    title = models.CharField(max_length=128)
+    description = models.TextField()
+    
+    # Video files
+    video_file = models.FileField(
+        upload_to='videos/motion_graphics/',
+        blank=True,
+        help_text="Main video file (MP4, MOV, etc.)"
+    )
+    video_url = models.URLField(
+        blank=True,
+        help_text="External video URL (YouTube, Vimeo, etc.)"
+    )
+    
+    # Preview image
+    preview_image = models.ImageField(
+        upload_to='images/motion_graphics/preview/',
+        blank=True,
+        help_text="Preview thumbnail image"
+    )
+    
+    # Project details
+    about_project = models.TextField(
+        blank=True, 
+        help_text="About project section content"
+    )
+    goals = models.TextField(
+        blank=True, 
+        help_text="Goals section content"
+    )
+    tools_software = models.TextField(
+        blank=True, 
+        help_text="Tools & Software section content"
+    )
+    
+    # Additional images for detail page
+    process_image = models.ImageField(
+        upload_to='images/motion_graphics/process/',
+        blank=True,
+        help_text="Design process section image"
+    )
+    storyboard_image = models.ImageField(
+        upload_to='images/motion_graphics/storyboard/',
+        blank=True,
+        help_text="Storyboard section image"
+    )
+    final_output_image = models.ImageField(
+        upload_to='images/motion_graphics/final/',
+        blank=True,
+        help_text="Final output section image"
+    )
+    
+    # Meta fields
+    date_posted = models.DateTimeField(auto_now_add=True, null=True)
+    order = models.IntegerField(default=0)
+    is_active = models.BooleanField(default=True, help_text="Whether this project is active")
+    tags = models.ManyToManyField(Tag, blank=True)
+    
+    class Meta:
+        ordering = ['order']
+        verbose_name = 'Motion Graphics Project'
+        verbose_name_plural = 'Motion Graphics Projects'
+    
+    def __str__(self):
+        return self.title

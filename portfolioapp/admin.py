@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Project, BrandingProject, Tag, SocialMediaPost, MobileLandingPage, EcommerceProject, PowerPointPresentation
+from .models import Project, BrandingProject, Tag, SocialMediaPost, MobileLandingPage, EcommerceProject, PowerPointPresentation, MotionGraphicsProject
 from adminsortable2.admin import SortableAdminMixin
 
 
@@ -148,6 +148,39 @@ class PowerPointPresentationAdmin(admin.ModelAdmin):
         except Exception as e:
             from django.contrib import messages
             messages.error(request, f'保存失败: {str(e)}。请检查图片文件大小是否超过10MB限制。')
+
+
+@admin.register(MotionGraphicsProject)
+class MotionGraphicsProjectAdmin(admin.ModelAdmin):
+    list_display = ('title', 'is_active', 'date_posted', 'order')
+    ordering = ('order',)
+    list_filter = ('is_active', 'date_posted')
+    filter_horizontal = ('tags',)
+    
+    fieldsets = (
+        ('基本信息', {
+            'fields': ('title', 'description', 'order', 'is_active', 'tags')
+        }),
+        ('视频文件', {
+            'fields': ('video_file', 'video_url', 'preview_image'),
+            'classes': ('collapse',)
+        }),
+        ('项目详情', {
+            'fields': ('about_project', 'goals', 'tools_software'),
+            'classes': ('collapse',)
+        }),
+        ('设计图片', {
+            'fields': ('process_image', 'storyboard_image', 'final_output_image'),
+            'classes': ('collapse',)
+        }),
+    )
+    
+    def save_model(self, request, obj, form, change):
+        try:
+            super().save_model(request, obj, form, change)
+        except Exception as e:
+            from django.contrib import messages
+            messages.error(request, f'保存失败: {str(e)}。请检查文件大小是否超过限制。')
 
 
 admin.site.register(Tag)
