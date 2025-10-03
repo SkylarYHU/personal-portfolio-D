@@ -126,7 +126,6 @@
             <p>{{ motion_graphics_project.about_project|linebreaks }}</p>
           </div>
         </div>
-        <div class="dashed-line"></div>
         {% endif %}
 
         <!-- Goals Section -->
@@ -137,18 +136,16 @@
             <p>{{ motion_graphics_project.goals|linebreaks }}</p>
           </div>
         </div>
-        <div class="dashed-line"></div>
         {% endif %}
 
-        <!-- Tools & Software Section -->
+        <!-- Tools & Apps Section -->
         {% if motion_graphics_project.tools_software %}
         <div class="content-row">
-          <h2>Tools & Software</h2>
+          <h2>Tools & Apps</h2>
           <div class="content-text">
             <p>{{ motion_graphics_project.tools_software|linebreaks }}</p>
           </div>
         </div>
-        <div class="dashed-line"></div>
         {% endif %}
 
         <!-- Tags Section -->
@@ -303,6 +300,7 @@
 
       .motion-graphics-detail .content-container {
         margin-bottom: 3rem;
+        gap: 0;
       }
 
       .motion-graphics-detail .content-row {
@@ -339,15 +337,12 @@
 
       .motion-graphics-detail .content-container h2 {
         color: white;
-        font-size: 1.8rem;
+        font-size: 1.2rem;
         margin-bottom: 1rem;
         margin-top: 0;
+        font-family: "Poppins", sans-serif;
       }
 
-      .motion-graphics-detail .dashed-line {
-        margin-top: 1.5rem;
-        margin-bottom: 1.5rem;
-      }
 
       .motion-graphics-detail .tag-list-container {
         margin-top: 1rem;
