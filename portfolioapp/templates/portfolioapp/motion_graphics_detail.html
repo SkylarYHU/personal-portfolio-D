@@ -148,17 +148,6 @@
         </div>
         {% endif %}
 
-        <!-- Tags Section -->
-        {% if motion_graphics_project.tags.all %}
-        <h2>Tags</h2>
-        <div class="tag-list-container">
-          <ul class="tag-list">
-            {% for tag in motion_graphics_project.tags.all %}
-            <li class="tag-item">{{ tag.name }}</li>
-            {% endfor %}
-          </ul>
-        </div>
-        {% endif %}
       </div>
 
       <!-- Video Section -->
@@ -218,6 +207,17 @@
         <div class="image-container">
           <img src="{{ motion_graphics_project.final_output_image.url }}" alt="Final Output" />
         </div>
+      </div>
+      {% endif %}
+
+      <!-- Tags Section -->
+      {% if motion_graphics_project.tags.all %}
+      <div class="tag-list-container">
+        <ul class="tag-list">
+          {% for tag in motion_graphics_project.tags.all %}
+          <li class="tag-item">{{ tag.name }}</li>
+          {% endfor %}
+        </ul>
       </div>
       {% endif %}
 
@@ -345,8 +345,9 @@
 
 
       .motion-graphics-detail .tag-list-container {
-        margin-top: 1rem;
-        margin-bottom: 1.5rem;
+        text-align: center;
+        margin-top: 3rem;
+        margin-bottom: 2rem;
       }
 
       .motion-graphics-detail .image-container {
@@ -381,6 +382,7 @@
         font-family: "Poppins", sans-serif;
         transition: all 0.3s ease;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        background-color: white;
       }
 
       .motion-graphics-detail .go-back-btn:hover {
