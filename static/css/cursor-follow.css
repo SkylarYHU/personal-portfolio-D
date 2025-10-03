@@ -23,7 +23,7 @@ body {
 }
 
 a, button, .clickable {
-  cursor: none;
+  text-decoration: none;
 }
 
 /* Show default cursor on form inputs */
