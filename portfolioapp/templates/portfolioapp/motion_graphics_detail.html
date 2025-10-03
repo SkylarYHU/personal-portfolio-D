@@ -120,27 +120,33 @@
       <div class="content-container">
         <!-- About Section -->
         {% if motion_graphics_project.about_project %}
-        <h2>About This Project</h2>
-        <div class="content-text">
-          <p>{{ motion_graphics_project.about_project|linebreaks }}</p>
+        <div class="content-row">
+          <h2>About</h2>
+          <div class="content-text">
+            <p>{{ motion_graphics_project.about_project|linebreaks }}</p>
+          </div>
         </div>
         <div class="dashed-line"></div>
         {% endif %}
 
         <!-- Goals Section -->
         {% if motion_graphics_project.goals %}
-        <h2>Goals & Objectives</h2>
-        <div class="content-text">
-          <p>{{ motion_graphics_project.goals|linebreaks }}</p>
+        <div class="content-row">
+          <h2>Goals</h2>
+          <div class="content-text">
+            <p>{{ motion_graphics_project.goals|linebreaks }}</p>
+          </div>
         </div>
         <div class="dashed-line"></div>
         {% endif %}
 
         <!-- Tools & Software Section -->
         {% if motion_graphics_project.tools_software %}
-        <h2>Tools & Software</h2>
-        <div class="content-text">
-          <p>{{ motion_graphics_project.tools_software|linebreaks }}</p>
+        <div class="content-row">
+          <h2>Tools & Software</h2>
+          <div class="content-text">
+            <p>{{ motion_graphics_project.tools_software|linebreaks }}</p>
+          </div>
         </div>
         <div class="dashed-line"></div>
         {% endif %}
@@ -240,6 +246,7 @@
       /* Motion Graphics Detail Page Styles */
       .motion-graphics-detail .portfolio {
         margin-top: 8rem;
+        margin: 0;
       }
 
       .motion-graphics-detail .page-title {
@@ -298,26 +305,43 @@
         margin-bottom: 3rem;
       }
 
+      .motion-graphics-detail .content-row {
+        display: flex;
+        gap: 1rem;
+        align-items: flex-start;
+        width: 100%;
+        position: relative;
+        margin-bottom: 1.5rem;
+      }
+
+      .motion-graphics-detail .content-row h2 {
+        flex: 0 0 200px;
+        margin: 0;
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: white;
+        text-align: left;
+      }
+
+      .motion-graphics-detail .content-text {
+        flex: 1;
+        font-size: 1rem;
+        line-height: 1.6;
+        color: white;
+        text-align: left;
+        margin: 0;
+      }
+
+      .motion-graphics-detail .content-text p {
+        color: white;
+        margin: 0;
+      }
+
       .motion-graphics-detail .content-container h2 {
         color: white;
         font-size: 1.8rem;
         margin-bottom: 1rem;
         margin-top: 0;
-      }
-
-      .motion-graphics-detail .content-container h2:first-child {
-        margin-top: 0;
-      }
-
-      .motion-graphics-detail .content-text {
-        margin-bottom: 1.5rem;
-        line-height: 1.8;
-        color: white;
-      }
-
-      .motion-graphics-detail .content-text p {
-        color: white;
-        margin-bottom: 0;
       }
 
       .motion-graphics-detail .dashed-line {
@@ -377,6 +401,23 @@
         
         .motion-graphics-detail .content-container h2 {
           font-size: 1.5rem;
+        }
+
+        .motion-graphics-detail .content-row {
+          flex-direction: column;
+          gap: 0.5rem;
+          margin-bottom: 1rem;
+        }
+
+        .motion-graphics-detail .content-row h2 {
+          flex: none;
+          font-size: 1.1rem;
+          margin-bottom: 0.5rem;
+        }
+
+        .motion-graphics-detail .content-text {
+          font-size: 0.95rem;
+          line-height: 1.6;
         }
       }
     </style>
