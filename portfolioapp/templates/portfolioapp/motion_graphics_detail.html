@@ -116,6 +116,48 @@
         </div>
       </section>
 
+      <!-- Content Section - All text content above video -->
+      <div class="content-container">
+        <!-- About Section -->
+        {% if motion_graphics_project.about_project %}
+        <h2>About This Project</h2>
+        <div class="content-text">
+          <p>{{ motion_graphics_project.about_project|linebreaks }}</p>
+        </div>
+        <div class="dashed-line"></div>
+        {% endif %}
+
+        <!-- Goals Section -->
+        {% if motion_graphics_project.goals %}
+        <h2>Goals & Objectives</h2>
+        <div class="content-text">
+          <p>{{ motion_graphics_project.goals|linebreaks }}</p>
+        </div>
+        <div class="dashed-line"></div>
+        {% endif %}
+
+        <!-- Tools & Software Section -->
+        {% if motion_graphics_project.tools_software %}
+        <h2>Tools & Software</h2>
+        <div class="content-text">
+          <p>{{ motion_graphics_project.tools_software|linebreaks }}</p>
+        </div>
+        <div class="dashed-line"></div>
+        {% endif %}
+
+        <!-- Tags Section -->
+        {% if motion_graphics_project.tags.all %}
+        <h2>Tags</h2>
+        <div class="tag-list-container">
+          <ul class="tag-list">
+            {% for tag in motion_graphics_project.tags.all %}
+            <li class="tag-item">{{ tag.name }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+        {% endif %}
+      </div>
+
       <!-- Video Section -->
       <section class="video-section">
         <div class="video-container">
@@ -146,44 +188,10 @@
         </div>
       </section>
 
-      <!-- About Section -->
-      {% if motion_graphics_project.about_project %}
-      <div class="content-container">
-        <h2>About This Project</h2>
-        <div class="dashed-line"></div>
-        <div class="content-text">
-          <p>{{ motion_graphics_project.about_project|linebreaks }}</p>
-        </div>
-      </div>
-      {% endif %}
-
-      <!-- Goals Section -->
-      {% if motion_graphics_project.goals %}
-      <div class="content-container">
-        <h2>Goals & Objectives</h2>
-        <div class="dashed-line"></div>
-        <div class="content-text">
-          <p>{{ motion_graphics_project.goals|linebreaks }}</p>
-        </div>
-      </div>
-      {% endif %}
-
-      <!-- Tools & Software Section -->
-      {% if motion_graphics_project.tools_software %}
-      <div class="content-container">
-        <h2>Tools & Software</h2>
-        <div class="dashed-line"></div>
-        <div class="content-text">
-          <p>{{ motion_graphics_project.tools_software|linebreaks }}</p>
-        </div>
-      </div>
-      {% endif %}
-
       <!-- Process Section -->
       {% if motion_graphics_project.process_image %}
       <div class="content-container">
         <h2>Design Process</h2>
-        <div class="dashed-line"></div>
         <div class="image-container">
           <img src="{{ motion_graphics_project.process_image.url }}" alt="Design Process" />
         </div>
@@ -194,7 +202,6 @@
       {% if motion_graphics_project.storyboard_image %}
       <div class="content-container">
         <h2>Storyboard</h2>
-        <div class="dashed-line"></div>
         <div class="image-container">
           <img src="{{ motion_graphics_project.storyboard_image.url }}" alt="Storyboard" />
         </div>
@@ -205,21 +212,9 @@
       {% if motion_graphics_project.final_output_image %}
       <div class="content-container">
         <h2>Final Output</h2>
-        <div class="dashed-line"></div>
         <div class="image-container">
           <img src="{{ motion_graphics_project.final_output_image.url }}" alt="Final Output" />
         </div>
-      </div>
-      {% endif %}
-
-      <!-- Tags Section -->
-      {% if motion_graphics_project.tags.all %}
-      <div class="tag-list-container">
-        <ul class="tag-list">
-          {% for tag in motion_graphics_project.tags.all %}
-          <li class="tag-item">{{ tag.name }}</li>
-          {% endfor %}
-        </ul>
       </div>
       {% endif %}
 
@@ -307,16 +302,32 @@
         color: white;
         font-size: 1.8rem;
         margin-bottom: 1rem;
+        margin-top: 0;
+      }
+
+      .motion-graphics-detail .content-container h2:first-child {
+        margin-top: 0;
       }
 
       .motion-graphics-detail .content-text {
-        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
         line-height: 1.8;
         color: white;
       }
 
       .motion-graphics-detail .content-text p {
         color: white;
+        margin-bottom: 0;
+      }
+
+      .motion-graphics-detail .dashed-line {
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .motion-graphics-detail .tag-list-container {
+        margin-top: 1rem;
+        margin-bottom: 1.5rem;
       }
 
       .motion-graphics-detail .image-container {
@@ -329,12 +340,6 @@
         height: auto;
         border-radius: 8px;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-      }
-
-      .motion-graphics-detail .tag-list-container {
-        text-align: left;
-        margin-top: 3rem;
-        margin-bottom: 2rem;
       }
 
       .motion-graphics-detail .tag-list {
