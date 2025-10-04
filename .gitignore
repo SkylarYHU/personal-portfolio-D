@@ -48,9 +48,14 @@ __pycache__/
 *.json
 *_backup_*.md
 
-# 大文件
+# 大文件 (排除 Screenshots 文件夹)
 *.png
 *.jpg
 *.jpeg
 *.gif
 *.webp
+!Screenshots/*.png
+!Screenshots/*.jpg
+!Screenshots/*.jpeg
+!Screenshots/*.gif
+!Screenshots/*.webp
