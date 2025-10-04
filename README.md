@@ -4,7 +4,7 @@ This is my personal portfolio website showcasing various projects. It is built u
 
 ## Project URL
 
-You can view the live website here: [Skylar's Portfolio Website](https://skylarhu.atwebpages.com/)
+You can view the live website here: [Skylar's Portfolio Website](https://skylarhu.work/)
 
 ## Features
 
