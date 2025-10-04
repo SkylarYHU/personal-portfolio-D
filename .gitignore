@@ -26,3 +26,31 @@ __pycache__/
 .idea/
 *.swp
 *.swo
+*~
+
+# 日志文件
+*.log
+*.pid
+*.seed
+*.pid.lock
+
+# 临时文件
+*.tmp
+*.temp
+
+# 备份文件
+*.bak
+*.backup
+
+# 敏感文件
+*.env
+*.pdf
+*.json
+*_backup_*.md
+
+# 大文件
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.webp
